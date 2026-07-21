@@ -1,0 +1,87 @@
+/* -------------------------------------------------- */
+/* Reset                                               */
+/* -------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* -------------------------------------------------- */
+/* Base                                                */
+/* -------------------------------------------------- */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------- */
+/* Nav                                                 */
+/* -------------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__links a,
+.nav__logo {
+  text-decoration: none;
+}
+
+/* -------------------------------------------------- */
+/* Hero                                                */
+/* -------------------------------------------------- */
+.hero {
+  min-height: 40vh;
+  padding: 2rem 1.5rem;
+}
+
+/* -------------------------------------------------- */
+/* Footer                                              */
+/* -------------------------------------------------- */
+.site-footer {
+  padding: 1.5rem;
+}
