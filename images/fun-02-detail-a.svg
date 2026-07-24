@@ -1,0 +1,8 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close-up of route contour detail">
+  <rect width="1200" height="900" fill="#e3dbc9"/>
+  <g fill="none" stroke="#15130f" stroke-width="3">
+    <ellipse cx="600" cy="450" rx="420" ry="260"/>
+    <ellipse cx="600" cy="450" rx="300" ry="180"/>
+  </g>
+  <path d="M200,600 C 400,500 500,350 700,380 S 950,300 1050,200" fill="none" stroke="#d6371f" stroke-width="6"/>
+</svg>

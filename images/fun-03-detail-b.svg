@@ -1,0 +1,7 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close-up of mood indicator detail">
+  <rect width="1200" height="900" fill="#ede7dc"/>
+  <circle cx="600" cy="450" r="220" fill="#d6371f"/>
+  <circle cx="520" cy="400" r="20" fill="#15130f"/>
+  <circle cx="680" cy="400" r="20" fill="#15130f"/>
+  <path d="M500,530 Q600,600 700,530" fill="none" stroke="#15130f" stroke-width="14" stroke-linecap="round"/>
+</svg>

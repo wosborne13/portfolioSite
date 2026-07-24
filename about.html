@@ -3,27 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
+  <title>About — Wil Osborne</title>
+  <meta name="description" content="About Wil Osborne — background, focus areas, and experience.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a href="index.html" class="nav__logo">Your Name</a>
+      <a href="index.html" class="nav__mark">Wil Osborne<span class="nav__mark-dot"></span></a>
       <ul class="nav__links">
-        <li><a href="index.html">Work</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="fun.html">Fun</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <span class="nav__status"><span class="dot"></span>Available for freelance</span>
     </nav>
   </header>
 
   <main>
-    <!-- About content goes here -->
+    <section class="hero container">
+      <div class="hero__frame">
+        <h1 class="hero__title">About<span class="dot"></span></h1>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="stack container">
+      <div class="about-grid">
+        <div>
+          <p class="u-caption info-bar__label">Who I am</p>
+          <p class="u-lead" style="max-width: 60ch;">I'm Wil, a product designer and front-end developer
+            based in the mountain west. I spend most of my time turning messy workflows — ledgers, booking
+            calendars, content queues — into interfaces people don't have to think about. Outside of client
+            work, I build small, slightly ridiculous side projects to keep my hands moving.</p>
+          <p style="max-width: 60ch; color: var(--color-muted);">I've spent the last several years working
+            with fintech, travel, and media teams, usually joining early enough to help shape the product
+            direction, not just the pixels.</p>
+        </div>
+        <div>
+          <p class="u-caption info-bar__label">What I do</p>
+          <ul class="list-plain">
+            <li>Product &amp; interaction design</li>
+            <li>Design systems and component libraries</li>
+            <li>Front-end development (React, vanilla JS)</li>
+            <li>Prototyping and usability testing</li>
+            <li>Brand-adjacent visual design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="resume">
+        <p class="u-caption info-bar__label">Selected experience</p>
+        <ul class="timeline">
+          <li>
+            <span class="timeline__period">2023 — Now</span>
+            <span class="timeline__role">Senior Product Designer</span>
+            <span class="timeline__org">Northwind Financial</span>
+          </li>
+          <li>
+            <span class="timeline__period">2021 — 2023</span>
+            <span class="timeline__role">Product Designer</span>
+            <span class="timeline__org">Trailhead Outdoor Co.</span>
+          </li>
+          <li>
+            <span class="timeline__period">2019 — 2021</span>
+            <span class="timeline__role">UX Designer</span>
+            <span class="timeline__org">Foundry Media Group</span>
+          </li>
+          <li>
+            <span class="timeline__period">2017 — 2019</span>
+            <span class="timeline__role">Junior Designer</span>
+            <span class="timeline__org">Studio Halden</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-bar" style="grid-template-columns: 1fr 2fr; padding-inline: 0;">
+        <p class="u-caption info-bar__label">Next step</p>
+        <p class="info-bar__body">Have a project in mind, or just want to talk shop? <a href="contact.html" style="text-decoration: underline;">Get in touch</a> — I'm usually quick to reply.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Your Name</p>
+    <hr class="rule rule--thin">
+    <div class="container">
+      <p class="u-caption">© 2026 Wil Osborne</p>
+      <ul class="site-footer__links">
+        <li><a class="u-caption" href="work.html">Work</a></li>
+        <li><a class="u-caption" href="fun.html">Fun</a></li>
+        <li><a class="u-caption" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>

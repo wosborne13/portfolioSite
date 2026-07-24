@@ -1,0 +1,52 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract flow map of the original migration flow, with several self-selection branch points highlighted">
+  <rect width="1200" height="900" fill="#ede7dc"/>
+
+  <!-- root -->
+  <rect x="530" y="80" width="140" height="70" fill="#15130f"/>
+
+  <!-- connectors to branch points -->
+  <g stroke="#15130f" stroke-width="2" fill="none">
+    <line x1="600" y1="150" x2="270" y2="240"/>
+    <line x1="600" y1="150" x2="600" y2="240"/>
+    <line x1="600" y1="150" x2="930" y2="240"/>
+  </g>
+
+  <!-- branch points: self-selection (highlighted) -->
+  <g fill="#d6371f">
+    <rect x="200" y="240" width="140" height="70"/>
+    <rect x="530" y="240" width="140" height="70"/>
+    <rect x="860" y="240" width="140" height="70"/>
+  </g>
+
+  <!-- connectors down to subsequent screens -->
+  <g stroke="#15130f" stroke-width="2" fill="none">
+    <line x1="270" y1="310" x2="180" y2="400"/>
+    <line x1="270" y1="310" x2="360" y2="400"/>
+    <line x1="600" y1="310" x2="530" y2="400"/>
+    <line x1="600" y1="310" x2="680" y2="400"/>
+    <line x1="930" y1="310" x2="860" y2="400"/>
+    <line x1="930" y1="310" x2="1010" y2="400"/>
+  </g>
+
+  <!-- subsequent screens -->
+  <g fill="#15130f">
+    <rect x="120" y="400" width="120" height="60"/>
+    <rect x="300" y="400" width="120" height="60"/>
+    <rect x="470" y="400" width="120" height="60"/>
+    <rect x="620" y="400" width="120" height="60"/>
+    <rect x="800" y="400" width="120" height="60"/>
+    <rect x="950" y="400" width="120" height="60"/>
+  </g>
+
+  <!-- final confirmation row -->
+  <g stroke="#15130f" stroke-width="2" fill="none">
+    <line x1="180" y1="460" x2="180" y2="540"/>
+    <line x1="530" y1="460" x2="530" y2="540"/>
+    <line x1="860" y1="460" x2="860" y2="540"/>
+  </g>
+  <g fill="#15130f">
+    <rect x="120" y="540" width="120" height="60"/>
+    <rect x="470" y="540" width="120" height="60"/>
+    <rect x="800" y="540" width="120" height="60"/>
+  </g>
+</svg>

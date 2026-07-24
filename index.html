@@ -3,33 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Wil Osborne — Product Designer &amp; Developer</title>
+  <meta name="description" content="Portfolio of Wil Osborne — selected client work and personal side projects.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="gate.js" defer data-mode="teaser"></script>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a href="index.html" class="nav__logo">Your Name</a>
+      <a href="index.html" class="nav__mark">Wil Osborne<span class="nav__mark-dot"></span></a>
       <ul class="nav__links">
-        <li><a href="index.html">Work</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="fun.html">Fun</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <span class="nav__status"><span class="dot"></span>Available for freelance</span>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <!-- Hero content goes here -->
+    <section class="hero container">
+      <div class="hero__frame">
+        <h1 class="hero__title">Wil Osborne</h1>
+      </div>
     </section>
 
-    <section class="case-studies">
-      <!-- Case study entries go here -->
+    <hr class="rule">
+
+    <section class="info-bar container">
+      <p class="u-caption info-bar__label">Portfolio</p>
+      <div>
+        <p class="u-caption info-bar__label">Statement</p>
+        <p class="info-bar__body">I design and build digital products — mostly interfaces that handle
+          complicated things (dashboards, booking flows, content systems) without feeling complicated.
+          This site collects client work and the smaller things I make for fun in between.</p>
+      </div>
+      <ul class="info-bar__links">
+        <li class="u-caption"><a href="about.html#resume">Resume ↓</a></li>
+        <li class="u-caption"><a href="contact.html">Get in touch ↗</a></li>
+      </ul>
+    </section>
+
+    <hr class="rule rule--thin">
+
+    <section class="section container" id="work">
+      <div class="section__head">
+        <h2 class="section__title">Work<span class="dot"></span></h2>
+        <p class="section__intro">Client and studio projects — product design, front-end builds, and the
+          occasional full rebuild.</p>
+      </div>
+      <div class="gate-teaser">
+      <div class="carousel">
+        <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Scroll work projects left">‹</button>
+        <div class="carousel__track">
+          <a class="card card--framed" href="case-studies/backpack-design-system.html">
+            <div class="card__frame">
+              <img src="images/backpack-hero.svg" alt="Abstract artwork showing scattered shapes resolving into an ordered grid of components, representing the Backpack design system">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Backpack Design System</h3>
+              <span class="card__year">2022–Present</span>
+            </div>
+            <p class="card__tagline">Built a 336-component design system alone, then got engineering to adopt it without a mandate.</p>
+          </a>
+          <a class="card card--framed" href="case-studies/easy-apply-k12.html">
+            <div class="card__frame">
+              <img src="images/easyapply-hero.svg" alt="Abstract diagram of a single job-seeker profile connecting to multiple job postings, one flagged as Easy Apply">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Easy Apply — K-12 Job Spot</h3>
+              <span class="card__year">2023</span>
+            </div>
+            <p class="card__tagline">Rejected a copy-the-competitor plan for a profile-based model that removed the tradeoff entirely.</p>
+          </a>
+          <a class="card card--framed" href="case-studies/k12-migration-redesign.html">
+            <div class="card__frame">
+              <img src="images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">K-12 Migration Redesign</h3>
+              <span class="card__year">2026</span>
+            </div>
+            <p class="card__tagline">Rebuilt a broken migration flow under a two-day deadline, raising completion from 50% to 88%.</p>
+          </a>
+          <a class="card card--framed" href="case-studies/checks-and-balances.html">
+            <div class="card__frame">
+              <img src="images/checksandbalances-hero.svg" alt="Abstract illustration of a balance scale weighing a ballot against a dollar bill">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Checks &amp; Balances</h3>
+              <span class="card__year">Concept</span>
+            </div>
+            <p class="card__tagline">A satirical app proposal for crowdfunded bribery, where citizens vote with their wallets.</p>
+          </a>
+        </div>
+        <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Scroll work projects right">›</button>
+      </div>
+      <div class="gate-teaser__overlay">
+        <button type="button" class="btn gate-teaser__trigger">Enter Password</button>
+        <form class="gate-teaser__form" hidden>
+          <div class="gate-teaser__row">
+            <input type="password" class="gate-teaser__input" autocomplete="off" placeholder="Password">
+            <button type="submit" class="btn">Enter</button>
+          </div>
+          <p class="gate-teaser__error" hidden>Incorrect password — try again.</p>
+        </form>
+      </div>
+      </div>
+    </section>
+
+    <hr class="rule rule--thin">
+
+    <section class="section container" id="fun">
+      <div class="section__head">
+        <h2 class="section__title">Fun<span class="dot"></span></h2>
+        <p class="section__intro">Weekend builds and side projects — no client, no brief, mostly an
+          excuse to try something new.</p>
+      </div>
+      <div class="carousel">
+        <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Scroll fun projects left">‹</button>
+        <div class="carousel__track">
+          <a class="card card--framed" href="fun/birds-arent-real.html">
+            <div class="card__frame">
+              <img src="images/Birds1.jpg" alt="Red silhouette of a trench-coated figure stepping into a wedge of light, Saul Bass style, representing the Birds Aren't Real project">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Birds Aren't Real</h3>
+              <span class="card__year">2021</span>
+            </div>
+            <p class="card__tagline">A Saul Bass-inspired PSA on the internet's most important issue.</p>
+          </a>
+          <a class="card card--framed" href="fun/fine-bookbinding.html">
+            <div class="card__frame">
+              <img src="images/FineBinding1.JPG" alt="A miniature dark navy leather book with a gold-tooled floral border and an oval PO monogram stamped on the cover, representing the Fine Bookbinding project">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Fine Bookbinding</h3>
+              <span class="card__year">2024</span>
+            </div>
+            <p class="card__tagline">Leather covers finished with hand-heated brass tooling, sometimes gold, sometimes blind.</p>
+          </a>
+          <a class="card card--framed" href="fun/carte-triestine.html">
+            <div class="card__frame">
+              <img src="images/Carte1.jpg" alt="An open red Carte Triestine Nuove box beside a spread of playing cards, representing the Carte Triestine project">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Carte Triestine</h3>
+              <span class="card__year">2020</span>
+            </div>
+            <p class="card__tagline">An updated regional Italian card design, made and sold in an online pop-up shop.</p>
+          </a>
+          <a class="card card--framed" href="fun/bookbinding.html">
+            <div class="card__frame">
+              <img src="images/Bookbinding1.jpg" alt="Close-up angled view of five bound book spines lined up, in black cloth, brown cloth, teal with a gold scroll pattern, purple cloth with exposed hand-sewn pink thread, and black with a green marbled cover">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Bookbinding</h3>
+              <span class="card__year">2020</span>
+            </div>
+            <p class="card__tagline">Sewn text blocks, cloth spines, and patterned paper covers.</p>
+          </a>
+          <a class="card card--framed" href="fun/fabric-design.html">
+            <div class="card__frame">
+              <img src="images/Fabric1.jpg" alt="A stack of folded fabric bolts in different colorways, each printed with a grumpy sun, moon, and star pattern, representing the Fabric Design project">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Fabric Design</h3>
+              <span class="card__year">2023</span>
+            </div>
+            <p class="card__tagline">Grumpy celestial bodies, cut from paper and printed onto fabric.</p>
+          </a>
+          <a class="card card--framed" href="fun/brass-type-cabinet.html">
+            <div class="card__frame">
+              <img src="images/TypeCabinet1.JPG" alt="Overhead view of a cream-painted wooden cabinet with 24 case drawers fitted with dark cast iron pulls, representing the Brass Type Cabinet project">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Brass Type Cabinet</h3>
+              <span class="card__year">2025</span>
+            </div>
+            <p class="card__tagline">A hand-built home for 24 cases of brass type, sized to an antique Hamilton quarter case.</p>
+          </a>
+          <a class="card card--framed" href="fun/bloque-typeface.html">
+            <div class="card__frame">
+              <img src="images/Bloque1.png" alt="The Bloque typeface specimen, a bold blocky uppercase alphabet built from stacked rectangular forms, representing the Bloque Typeface project">
+            </div>
+            <div class="card__meta">
+              <h3 class="card__title">Bloque Typeface</h3>
+              <span class="card__year">2019</span>
+            </div>
+            <p class="card__tagline">A sturdy, blocky experimental typeface, free to download.</p>
+          </a>
+        </div>
+        <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Scroll fun projects right">›</button>
+      </div>
     </section>
   </main>
 
+  <script src="main.js" defer></script>
+
   <footer class="site-footer">
-    <p>&copy; 2026 Your Name</p>
+    <hr class="rule rule--thin">
+    <div class="container">
+      <p class="u-caption">© 2026 Wil Osborne</p>
+      <ul class="site-footer__links">
+        <li><a class="u-caption" href="work.html">Work</a></li>
+        <li><a class="u-caption" href="fun.html">Fun</a></li>
+        <li><a class="u-caption" href="about.html">About</a></li>
+        <li><a class="u-caption" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>

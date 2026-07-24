@@ -1,0 +1,10 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close-up of glow ring detail">
+  <rect width="1200" height="900" fill="#15130f"/>
+  <g fill="none" stroke="#ede7dc" stroke-width="2" opacity="0.8">
+    <circle cx="400" cy="450" r="120"/>
+    <circle cx="400" cy="450" r="220"/>
+  </g>
+  <circle cx="400" cy="450" r="50" fill="#d6371f"/>
+  <circle cx="900" cy="220" r="14" fill="#ede7dc"/>
+  <circle cx="1020" cy="600" r="8" fill="#ede7dc"/>
+</svg>

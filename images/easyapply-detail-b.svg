@@ -1,0 +1,49 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract diagram mapping profile sections to application fields, alongside the three-click Easy Apply flow">
+  <rect width="1200" height="900" fill="#ede7dc"/>
+
+  <!-- profile column -->
+  <rect x="110" y="120" width="260" height="360" fill="#15130f"/>
+  <g fill="#ede7dc">
+    <rect x="140" y="160" width="200" height="30"/>
+    <rect x="140" y="210" width="200" height="30"/>
+    <rect x="140" y="260" width="200" height="30"/>
+    <rect x="140" y="310" width="140" height="30"/>
+    <rect x="140" y="360" width="170" height="30"/>
+    <rect x="140" y="410" width="200" height="30"/>
+  </g>
+
+  <!-- mapping lines to application column -->
+  <g stroke="#15130f" stroke-width="2" stroke-dasharray="6 8">
+    <line x1="370" y1="175" x2="640" y2="175"/>
+    <line x1="370" y1="225" x2="640" y2="225"/>
+    <line x1="370" y1="275" x2="640" y2="275"/>
+    <line x1="370" y1="325" x2="640" y2="325"/>
+    <line x1="370" y1="375" x2="640" y2="375"/>
+    <line x1="370" y1="425" x2="640" y2="425"/>
+  </g>
+
+  <!-- application column -->
+  <rect x="640" y="120" width="260" height="360" fill="none" stroke="#15130f" stroke-width="3"/>
+  <g fill="#15130f">
+    <rect x="670" y="160" width="200" height="30"/>
+    <rect x="670" y="210" width="200" height="30"/>
+    <rect x="670" y="260" width="200" height="30"/>
+    <rect x="670" y="310" width="140" height="30"/>
+    <rect x="670" y="360" width="170" height="30"/>
+    <rect x="670" y="410" width="200" height="30"/>
+  </g>
+
+  <!-- three-click flow -->
+  <g stroke="#15130f" stroke-width="3" fill="none">
+    <line x1="230" y1="620" x2="970" y2="620"/>
+  </g>
+  <circle cx="230" cy="620" r="26" fill="#15130f"/>
+  <circle cx="600" cy="620" r="26" fill="#15130f"/>
+  <circle cx="970" cy="620" r="26" fill="#15130f"/>
+
+  <!-- Easy Apply flag -->
+  <g>
+    <rect x="1000" y="580" width="130" height="80" fill="#d6371f"/>
+    <polygon points="1000,580 1000,660 970,620" fill="#d6371f"/>
+  </g>
+</svg>

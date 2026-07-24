@@ -1,0 +1,13 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Close-up of waveform bars detail">
+  <rect width="1200" height="900" fill="#15130f"/>
+  <g stroke="#ede7dc" stroke-width="14" stroke-linecap="round">
+    <line x1="300" y1="620" x2="300" y2="420"/>
+    <line x1="400" y1="680" x2="400" y2="320"/>
+    <line x1="500" y1="560" x2="500" y2="480"/>
+    <line x1="600" y1="720" x2="600" y2="220"/>
+    <line x1="700" y1="560" x2="700" y2="480"/>
+    <line x1="800" y1="680" x2="800" y2="320"/>
+    <line x1="900" y1="620" x2="900" y2="420"/>
+  </g>
+  <circle cx="600" cy="470" r="16" fill="#d6371f"/>
+</svg>

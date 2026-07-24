@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="gate-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-12 Migration Redesign — Wil Osborne</title>
+  <meta name="description" content="Salvaging a migration redesign after the ideal fix died two days before launch.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../gate.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav__mark">Wil Osborne<span class="nav__mark-dot"></span></a>
+      <ul class="nav__links">
+        <li><a href="../work.html" aria-current="page">Work</a></li>
+        <li><a href="../fun.html">Fun</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <span class="nav__status"><span class="dot"></span>Available for freelance</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
+      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Identity Migration / K-12 Job Spot</p>
+      <h1 class="project-hero__title project-hero__title--sentence">Salvaging a migration redesign after the ideal fix died two days before launch</h1>
+    </section>
+
+    <hr class="rule">
+
+    <section class="project-meta container">
+      <div>
+        <span class="u-caption project-meta__label">Role</span>
+        <p class="project-meta__value">Designer who reframed the problem, proposed the routing model, and led the fallback under deadline; partnered with a PM and tech lead throughout</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">Team</span>
+        <p class="project-meta__value">Product + Engineering trio, working across a separate platform-owned identity team</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">Product / Timeline</span>
+        <p class="project-meta__value">K-12 Job Spot rebuild · May–June 2026</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">Impact</span>
+        <p class="project-meta__value">Migration completion rose from 50% to 88%. The flow dropped from 8–10 screens to 2–4 — and held that result even after the ideal technical solution became impossible two days before the final sprint.</p>
+      </div>
+    </section>
+
+    <figure class="project-figure container">
+      <img src="../images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
+    </figure>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>The short version</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Only half the users who started migrating from the old K-12 Job Spot to the new one actually
+            finished — one of the biggest risks to the launch. The flow forced users to understand
+            Frontline's own account architecture before they could sign in. I proposed flipping it: user
+            enters an email, the system figures out the account type and routes them automatically.
+            Engineering couldn't build the real-time detection in time, so two days before the final
+            sprint we fell back to a blunter, date-based model. It still worked — because the redesign was
+            never really about the routing mechanism. It was about cutting the number of decisions a user
+            had to make.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Context</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Launching a new version of K-12 Job Spot meant migrating users from a legacy identity system
+            to a new platform-owned identity and authentication system. Early-adopter metrics showed only
+            about half of the users who started migration completed it. The migration flow had become one
+            of the highest-risk obstacles to launching the new platform at all.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Problem</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The existing flow asked users to self-identify their account type before signing in: new K-12
+            Job Spot account, legacy account, or no account. Each choice branched into more screens and
+            confirmations — a user could hit anywhere from 8 to 10 screens before getting through. Worse,
+            legacy-account users were asked to review and validate migrated profile data immediately after
+            signing in: extra work at the exact moment they were just trying to get into the product.</p>
+          <p>The constraints made this harder than a typical login redesign:</p>
+          <ul class="list-plain" style="max-width: 52ch; margin-bottom: 1rem;">
+            <li>Legacy and modern databases couldn't communicate freely.</li>
+            <li>Authentication was owned by a separate platform team, not by K-12 Job Spot.</li>
+            <li>K-12 Job Spot couldn't customize the platform-owned login screens.</li>
+            <li>Legacy passwords didn't always meet modern security requirements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/k12migration-detail-a.svg" alt="Abstract flow map of the original migration flow, with several self-selection branch points highlighted">
+        <figcaption>Original flow map — 8–10 screens, self-selection branch points highlighted</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Questioning the profile-migration assumption</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Before redesigning anything, I pushed back on an assumption baked into the existing flow:
+            that migrating legacy profile data was worth the friction it added. I asked the PM to pull the
+            numbers. About 80,000 profiles had been created or updated in the prior year, and fewer than
+            half held meaningful information beyond the basic account fields — most of it incomplete or
+            outdated. That gave us grounds to deprioritize profile migration and point the redesign at a
+            single goal: get the user signed in.</p>
+          <p>Cutting scope isn't the interesting part. Cutting it because the data said the preserved
+            thing had little value is — it turned a vague "reduce friction" mandate into a specific,
+            defensible decision.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>The solution I proposed</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Instead of asking users to figure out which account path applied to them, I proposed flipping
+            the model. The user enters their email; the system determines behind the scenes whether it
+            belongs to a new K-12 Job Spot account, an existing Frontline identity account, or a legacy
+            account, then routes them to the right platform-owned screen automatically. One input from the
+            user, all the branching logic moved to the system. I worked with the PM and tech lead to map
+            the routing logic against what was actually feasible on the identity platform's side.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/k12migration-detail-b.svg" alt="Abstract diagram of an email-first routing model, with one user input and system-side branching to three destinations">
+        <figcaption>Email-first routing model — one input, system-side branching</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>The pivot</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Two days before the final sprint before launch, engineering came back with bad news: the
+            identity platform team couldn't build the real-time account-type detection the routing model
+            depended on. The constraint was two-sided — a genuine platform limitation, and an identity
+            team already at (and a little past) capacity, with no room to take on the work in the time we
+            had.</p>
+          <p>The elegant version was dead. We had two days to land on something shippable.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What shipped instead</h2>
+        </div>
+        <div class="project-body__block">
+          <p>We fell back to a simpler, date-based self-selection model. If a user hadn't created or
+            logged into their account since April 2026, we told them they'd need a new one. The user got
+            two buttons — sign in, or create an account. If someone tried to create an account but already
+            had one, we redirected them to sign in; if someone tried to sign in without an account, we
+            redirected them to creation. Inline error messaging covered the most likely failure mode — a
+            user entering old but technically-correct legacy credentials — by telling them plainly they
+            needed a new account rather than dumping them on a generic error.</p>
+          <p>It wasn't the system doing the work for the user the way the original concept did. But it
+            kept the same underlying principle: reduce the decision to the fewest possible choices, and
+            handle edge cases with clear guidance instead of more screens. Sign-in landed at 2 screens,
+            account creation at 3, and even a user who guessed wrong on their first try topped out around
+            4 — down from 8–10.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/k12migration-detail-c.svg" alt="Abstract diagram of the shipped flow, showing a two-screen sign-in path and a three-screen creation path with a wrong-guess redirect between them">
+        <figcaption>Shipped flow — 2/3/4 screens with the wrong-guess redirect path</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Outcome</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Migration completion went from 50% to 88%.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Key lessons</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The biggest lesson wasn't about identity systems — it was about when to validate technical
+            feasibility. We aligned on the ideal solution, believed it was buildable, and only found out
+            two days before the final sprint that a dependency team's capacity made it impossible in the
+            time we had. That's an expensive point in a project to learn something like that. A capacity
+            gut-check with the identity team's lead earlier — even an informal one — might have gotten the
+            ideal version built, or at least let us plan the fallback with more than two days of runway.</p>
+          <p>The more reassuring lesson: the fallback worked because the redesign was never really about
+            the routing mechanism. It was about cutting the number of decisions a user had to make. The
+            email-first model was the more sophisticated way to do that; the date-based model did the same
+            job with a blunter tool. Getting the underlying principle right is what let the project survive
+            losing its ideal implementation.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What I'd do differently</h2>
+        </div>
+        <div class="project-body__block">
+          <p>I'd pull in the identity platform team — or at least get a capacity gut-check from their lead
+            — before committing to the routing design, not after. A five-minute conversation earlier could
+            have surfaced the capacity issue before it became a two-day scramble.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule rule--thin">
+
+    <section class="container">
+      <div class="project-next">
+        <span class="u-caption">Next project</span>
+        <a class="project-next__link" href="checks-and-balances.html">Checks &amp; Balances →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="rule rule--thin">
+    <div class="container">
+      <p class="u-caption">© 2026 Wil Osborne</p>
+      <ul class="site-footer__links">
+        <li><a class="u-caption" href="../fun.html">Fun</a></li>
+        <li><a class="u-caption" href="../about.html">About</a></li>
+        <li><a class="u-caption" href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

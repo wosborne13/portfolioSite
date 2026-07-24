@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun — Wil Osborne</title>
+  <meta name="description" content="Weekend builds and side projects by Wil Osborne.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__mark">Wil Osborne<span class="nav__mark-dot"></span></a>
+      <ul class="nav__links">
+        <li><a href="work.html">Work</a></li>
+        <li><a href="fun.html" aria-current="page">Fun</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <span class="nav__status"><span class="dot"></span>Available for freelance</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero__frame">
+        <h1 class="hero__title">Fun<span class="dot"></span></h1>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="stack container">
+      <p class="u-lead">Weekend builds and side projects — no client, no brief, mostly an excuse to
+        try something new. Seven things below that I made purely because I wanted to.</p>
+    </section>
+
+    <section class="section container">
+      <div class="sort-bar">
+        <label class="u-caption sort-bar__label" for="fun-sort">Sort</label>
+        <select class="sort-bar__select" id="fun-sort">
+          <option value="recommended">Recommended</option>
+          <option value="chronological">Chronological</option>
+          <option value="cost">$$$ of materials</option>
+        </select>
+      </div>
+      <div class="grid" id="fun-grid">
+        <a class="card card--framed" href="fun/birds-arent-real.html" data-order="1" data-year="2021" data-cost="6">
+          <div class="card__frame">
+            <img src="images/Birds1.jpg" alt="Red silhouette of a trench-coated figure stepping into a wedge of light, Saul Bass style, representing the Birds Aren't Real project">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Birds Aren't Real</h3>
+            <span class="card__year">2021</span>
+          </div>
+          <p class="card__tagline">A Saul Bass-inspired PSA on the internet's most important issue.</p>
+        </a>
+        <a class="card card--framed" href="fun/fine-bookbinding.html" data-order="2" data-year="2024" data-cost="1">
+          <div class="card__frame">
+            <img src="images/FineBinding1.JPG" alt="A miniature dark navy leather book with a gold-tooled floral border and an oval PO monogram stamped on the cover, representing the Fine Bookbinding project">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Fine Bookbinding</h3>
+            <span class="card__year">2024</span>
+          </div>
+          <p class="card__tagline">Leather covers finished with hand-heated brass tooling, sometimes gold, sometimes blind.</p>
+        </a>
+        <a class="card card--framed" href="fun/carte-triestine.html" data-order="3" data-year="2020" data-cost="5">
+          <div class="card__frame">
+            <img src="images/Carte1.jpg" alt="An open red Carte Triestine Nuove box beside a spread of playing cards, representing the Carte Triestine project">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Carte Triestine</h3>
+            <span class="card__year">2020</span>
+          </div>
+          <p class="card__tagline">An updated regional Italian card design, made and sold in an online pop-up shop.</p>
+        </a>
+        <a class="card card--framed" href="fun/bookbinding.html" data-order="4" data-year="2020" data-cost="4">
+          <div class="card__frame">
+            <img src="images/Bookbinding1.jpg" alt="Close-up angled view of five bound book spines lined up, in black cloth, brown cloth, teal with a gold scroll pattern, purple cloth with exposed hand-sewn pink thread, and black with a green marbled cover">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Bookbinding</h3>
+            <span class="card__year">2020</span>
+          </div>
+          <p class="card__tagline">Sewn text blocks, cloth spines, and patterned paper covers.</p>
+        </a>
+        <a class="card card--framed" href="fun/fabric-design.html" data-order="5" data-year="2023" data-cost="3">
+          <div class="card__frame">
+            <img src="images/Fabric1.jpg" alt="A stack of folded fabric bolts in different colorways, each printed with a grumpy sun, moon, and star pattern, representing the Fabric Design project">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Fabric Design</h3>
+            <span class="card__year">2023</span>
+          </div>
+          <p class="card__tagline">Grumpy celestial bodies, cut from paper and printed onto fabric.</p>
+        </a>
+        <a class="card card--framed" href="fun/brass-type-cabinet.html" data-order="6" data-year="2025" data-cost="2">
+          <div class="card__frame">
+            <img src="images/TypeCabinet1.JPG" alt="Overhead view of a cream-painted wooden cabinet with 24 case drawers fitted with dark cast iron pulls, representing the Brass Type Cabinet project">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Brass Type Cabinet</h3>
+            <span class="card__year">2025</span>
+          </div>
+          <p class="card__tagline">A hand-built home for 24 cases of brass type, sized to an antique Hamilton quarter case.</p>
+        </a>
+        <a class="card card--framed" href="fun/bloque-typeface.html" data-order="7" data-year="2019" data-cost="7">
+          <div class="card__frame">
+            <img src="images/Bloque1.png" alt="The Bloque typeface specimen, a bold blocky uppercase alphabet built from stacked rectangular forms, representing the Bloque Typeface project">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Bloque Typeface</h3>
+            <span class="card__year">2019</span>
+          </div>
+          <p class="card__tagline">A sturdy, blocky experimental typeface, free to download.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js" defer></script>
+
+  <footer class="site-footer">
+    <hr class="rule rule--thin">
+    <div class="container">
+      <p class="u-caption">© 2026 Wil Osborne</p>
+      <ul class="site-footer__links">
+        <li><a class="u-caption" href="work.html">Work</a></li>
+        <li><a class="u-caption" href="about.html">About</a></li>
+        <li><a class="u-caption" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
