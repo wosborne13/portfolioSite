@@ -5,6 +5,24 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   if (!track || !prev || !next) return;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cards = Array.from(track.querySelectorAll(".card"));
+
+  const dotsEl = document.createElement("div");
+  dotsEl.className = "carousel__dots";
+  dotsEl.setAttribute("role", "tablist");
+  dotsEl.setAttribute("aria-label", "Carousel position");
+  cards.forEach((card, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel__dot";
+    dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+    dot.addEventListener("click", () => {
+      card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest", inline: "start" });
+    });
+    dotsEl.appendChild(dot);
+  });
+  carousel.appendChild(dotsEl);
+  const dots = Array.from(dotsEl.children);
 
   function step() {
     const card = track.querySelector(".card");
@@ -14,9 +32,25 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   }
 
   function updateArrows() {
+    const edge = parseFloat(getComputedStyle(track).paddingLeft) + 1;
     const maxScroll = track.scrollWidth - track.clientWidth;
-    prev.disabled = track.scrollLeft <= 1;
-    next.disabled = track.scrollLeft >= maxScroll - 1;
+    prev.disabled = track.scrollLeft <= edge;
+    next.disabled = track.scrollLeft >= maxScroll - edge;
+  }
+
+  function updateDots() {
+    if (!cards.length) return;
+    const trackLeft = track.getBoundingClientRect().left;
+    let closest = 0;
+    let closestDist = Infinity;
+    cards.forEach((card, index) => {
+      const dist = Math.abs(card.getBoundingClientRect().left - trackLeft);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closest = index;
+      }
+    });
+    dots.forEach((dot, index) => dot.classList.toggle("is-active", index === closest));
   }
 
   prev.addEventListener("click", () => {
@@ -27,9 +61,16 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
     track.scrollBy({ left: step(), behavior: reduceMotion ? "auto" : "smooth" });
   });
 
-  track.addEventListener("scroll", updateArrows, { passive: true });
-  window.addEventListener("resize", updateArrows);
+  track.addEventListener("scroll", () => {
+    updateArrows();
+    updateDots();
+  }, { passive: true });
+  window.addEventListener("resize", () => {
+    updateArrows();
+    updateDots();
+  });
   updateArrows();
+  updateDots();
 });
 
 document.querySelectorAll(".gate-teaser").forEach((teaser) => {
@@ -103,6 +144,26 @@ function buildLightbox() {
   overlay.querySelector(".lightbox__close").addEventListener("click", closeLightbox);
   overlay.querySelector(".lightbox__arrow--prev").addEventListener("click", () => stepLightbox(-1));
   overlay.querySelector(".lightbox__arrow--next").addEventListener("click", () => stepLightbox(1));
+
+  let touchStartX = null;
+  let touchStartY = null;
+
+  overlay.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) return;
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  }, { passive: true });
+
+  overlay.addEventListener("touchend", (event) => {
+    if (touchStartX === null) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+    touchStartX = null;
+    touchStartY = null;
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+    stepLightbox(dx < 0 ? 1 : -1);
+  }, { passive: true });
 
   return overlay;
 }

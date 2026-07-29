@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="gate-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Nation Scoring — Wil Osborne</title>
+  <meta name="description" content="Fixing a scoring system that punished players for playing, without touching the score itself.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../gate.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav__mark">Wil Osborne<span class="nav__mark-dot"></span></a>
+      <ul class="nav__links">
+        <li><a href="../work.html" aria-current="page">Work</a></li>
+        <li><a href="../fun.html">Fun</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <span class="nav__status"><span class="dot"></span>Available for freelance</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
+      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Team Nation Sports — a mobile app that teaches athletes their playbooks · Lead Product Designer/PM, owned end-to-end</p>
+      <h1 class="project-hero__title project-hero__title--sentence">Fixing a scoring system that punished players for playing</h1>
+    </section>
+
+    <hr class="rule">
+
+    <section class="project-meta container">
+      <div>
+        <span class="u-caption project-meta__label">What I did</span>
+        <p class="project-meta__value">As the designer and PM on this 0-to-1 platform, I diagnosed a drop in engagement as a motivation problem, not a scoring bug, and shipped a second points system alongside the existing skill score rather than touching the score itself.</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">Why I did it</span>
+        <p class="project-meta__value">Games played per team climbed when a team first joined, then plateaued, then fell off. Coaches and players kept telling us the same thing: the Readiness score felt like it was punishing them for continuing to play.</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">What broke</span>
+        <p class="project-meta__value">Readiness was working exactly as designed — a fluctuating read on current skill, not a number that should only climb. The problem everyone assumed was broken math was really about which number we'd put in front of players.</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">What changed</span>
+        <p class="project-meta__value">I added a separate, cumulative points system and left Readiness alone. Games played by top-performing players went up 3x; across the whole player base, 1.5x.</p>
+      </div>
+    </section>
+
+    <figure class="project-figure container">
+      <img src="../images/teamnation-hero.svg" alt="Abstract diagram of a fluctuating line and a steadily climbing bar chart side by side, representing the split between Readiness and cumulative points">
+    </figure>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Context</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Team Nation teaches athletes their playbooks through mobile learning games: coaches upload the content, players drill it through games, and everyone's performance lands on a leaderboard. The core metric was Readiness — a percentage per skill area plus an Overall Readiness, calculated from how many questions a player got right and how quickly they answered.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Problem</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The same shape kept showing up in weekly usage: games played per team climbed when a team first joined, then plateaued, then dropped off. When we asked coaches and players why, the answer was consistent — they felt punished for continuing to play. Readiness was an average, so a player who'd built up a high score could play another game, do fine, and still watch the number tick down. Once players caught on, the smart move was to stop playing the moment their score looked good. The leaderboard made it worse: with a 100% ceiling, the top players bunched into what looked like ten-way ties, which flattened any sense of competition.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>The reasoning</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The obvious fix is to change the formula so good performance can't drag your score down. I didn't do that, and why I didn't is the whole decision.</p>
+          <p>Readiness isn't supposed to only go up. It's a proxy for how well someone knows the material right now, and like any skill, that should slip when you stop practicing and climb when you keep at it. An average that can fall is doing exactly what a measure of current competency should do. So the math wasn't broken. What was broken was that Readiness was the only number players could see — the one metric built to move honestly in both directions was also the only thing we'd given them to chase.</p>
+          <p>So I left Readiness alone and added a second number beside it: points, earned every game, that only ever go up. Coaches kept the honest, current read on skill they relied on. Players got something that rewarded them for showing up without quietly lying about how ready they were.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/teamnation-detail-a.svg" alt="Abstract comparison of a fluctuating Readiness line, coach-facing, against a steadily climbing Points bar, player-facing">
+        <figcaption>Readiness (fluctuating, coach-facing) vs. Points (cumulative, player-facing) — the split model</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Design</h2>
+        </div>
+        <div class="project-body__block">
+          <p>I rebuilt the mobile leaderboard around points instead of Readiness, giving the top four spots visual emphasis to sharpen the competition at the top of a team. The rest of the leaderboard shifted to center each player's performance relative to the pack instead of a flat ranked list. Coaches kept their own leaderboard and analytics view, still built on Readiness, since that was the number that actually mattered to them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/teamnation-detail-b.svg" alt="Abstract mobile leaderboard layout with the top four positions spotlighted and the remaining players arranged relative to the pack">
+        <figcaption>Redesigned mobile leaderboard — top-four spotlight + player-relative view</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Outcome</h2>
+        </div>
+        <div class="project-body__block">
+          <p>After launch, games played by top-performing players went up 3x. Across the full player base, games played rose 1.5x. The drop-off we'd watched hit teams as they plateaued stopped following the same curve — the number that had been discouraging play was no longer the one in front of players.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What I'd do differently</h2>
+        </div>
+        <div class="project-body__block">
+          <p>I'd give coaches direct control over the incentive layer, not just visibility into it. Right now points reward playing games generically, but coaches know their content better than any formula does. Letting them weight specific content — make a critical play worth more than a drill they consider basic — award bonus points for strong in-game performance, or periodically reset scores to reopen the leaderboard for players who'd fallen behind, would turn points into a coaching tool rather than just a player-facing motivator. What we shipped fixed the "players stop playing" problem. It didn't yet give coaches a way to shape what players chase.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What it came down to</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The pull was to fix the formula. That would have solved engagement and quietly wrecked the thing coaches relied on: an honest read on where their players actually stood. The real problem was that one number was being asked to do two jobs — measure skill and motivate play — and those jobs pull in opposite directions, so no single formula could serve both. Splitting them let each number be good at its own job.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule rule--thin">
+
+    <section class="container">
+      <div class="project-next">
+        <span class="u-caption">Next project</span>
+        <a class="project-next__link" href="checks-and-balances.html">Checks &amp; Balances →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="rule rule--thin">
+    <div class="container">
+      <p class="u-caption">© 2026 Wil Osborne</p>
+      <ul class="site-footer__links">
+        <li><a class="u-caption" href="../fun.html">Fun</a></li>
+        <li><a class="u-caption" href="../about.html">About</a></li>
+        <li><a class="u-caption" href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

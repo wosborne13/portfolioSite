@@ -12,7 +12,7 @@
   --font-display: "IBM Plex Sans", Arial, sans-serif;
   --font-body: "IBM Plex Serif", Georgia, serif;
 
-  --fs-hero: clamp(3rem, 15cqw, 15rem);
+  --fs-hero: clamp(3.07rem, 15.37cqw, 15.37rem);
   --fs-h1: clamp(2.25rem, 8vw, 5rem);
   --fs-h2: clamp(1.375rem, 3.4vw, 2.125rem);
   --fs-lead: clamp(1.05rem, 1.6vw, 1.375rem);
@@ -143,7 +143,6 @@ a {
   top: 0;
   z-index: 50;
   background: var(--color-bg);
-  padding-inline: var(--container-pad);
 }
 
 .nav {
@@ -153,6 +152,9 @@ a {
   justify-content: space-between;
   gap: 0.75rem 1.5rem;
   padding-block: 1.5rem;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
 }
 
 .nav__mark {
@@ -246,44 +248,8 @@ a {
 /* -------------------------------------------------- */
 /* Info bar                                            */
 /* -------------------------------------------------- */
-.info-bar {
-  display: grid;
-  grid-template-columns: 1fr 2.2fr 1fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  padding-block: clamp(1.5rem, 3vw, 2.25rem);
-}
-
 .info-bar__label {
   margin: 0 0 0.75rem;
-}
-
-.info-bar__body {
-  margin: 0;
-  color: var(--color-ink);
-  max-width: 60ch;
-}
-
-.info-bar__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.info-bar__links a {
-  text-decoration: none;
-}
-
-.info-bar__links a:hover {
-  color: var(--color-accent);
-}
-
-@media (max-width: 860px) {
-  .info-bar {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 /* -------------------------------------------------- */
@@ -449,22 +415,27 @@ a {
   padding-bottom: 1.25rem;
 }
 
+.grid .card__tagline {
+  max-width: none;
+}
+
 /* -------------------------------------------------- */
 /* Carousel (index)                                    */
 /* -------------------------------------------------- */
 .carousel {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 1rem 0.75rem;
+  container-type: inline-size;
 }
 
 .carousel__track {
+  grid-row: 1;
+  grid-column: 1 / -1;
   display: flex;
-  flex: 1;
-  min-width: 0;
+  width: 100%;
   gap: 1.5rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
   padding: 0.25rem 0.25rem 0.5rem;
@@ -475,18 +446,17 @@ a {
 }
 
 .carousel__track .card {
-  flex: 0 0 clamp(240px, 30%, 380px);
-  scroll-snap-align: start;
+  flex: 0 0 clamp(240px, 28cqw, 380px);
 }
 
 @media (max-width: 720px) {
   .carousel__track .card {
-    flex-basis: 78%;
+    flex-basis: 70cqw;
   }
 }
 
 .carousel__arrow {
-  flex: 0 0 auto;
+  grid-row: 2;
   width: 3rem;
   height: 3rem;
   padding: 0;
@@ -504,6 +474,14 @@ a {
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
 }
 
+.carousel__arrow--prev {
+  grid-column: 1;
+}
+
+.carousel__arrow--next {
+  grid-column: 2;
+}
+
 .carousel__arrow:hover:not(:disabled) {
   background: var(--color-ink);
   color: var(--color-bg);
@@ -512,6 +490,62 @@ a {
 .carousel__arrow:disabled {
   opacity: 0.3;
   cursor: default;
+}
+
+.carousel__dots {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.carousel__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-ink);
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel__dot.is-active {
+  background: var(--color-ink);
+  transform: scale(1.4);
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carousel__track {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .carousel__track .card {
+    flex-basis: 88%;
+  }
+
+  .carousel__arrow {
+    flex: 0 0 auto;
+  }
+
+  .carousel__arrow--prev {
+    order: 2;
+  }
+
+  .carousel__dots {
+    order: 3;
+    display: flex;
+  }
+
+  .carousel__arrow--next {
+    order: 4;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -720,7 +754,7 @@ a {
 }
 
 .project-figure {
-  margin: 0;
+  margin-block: 0;
 }
 
 .rule + .project-figure {
@@ -770,6 +804,7 @@ a {
 @media (max-width: 860px) {
   .project-body {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
   .project-body__block,
   .project-body__block:first-child {
@@ -1173,4 +1208,23 @@ html.gate-page:not(.is-unlocked) .site-footer {
   color: var(--color-accent);
   font-size: 0.9rem;
   text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* Orphan / widow prevention                           */
+/* -------------------------------------------------- */
+.project-hero__title,
+.card__title,
+.project-statement,
+.project-body__block h2,
+.project-next__link,
+.gate-form__title {
+  text-wrap: balance;
+}
+
+.u-lead,
+.card__tagline,
+.project-body__block p,
+.project-meta__value {
+  text-wrap: pretty;
 }

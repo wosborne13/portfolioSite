@@ -1,0 +1,33 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract before-and-after diagram of a shipped product screen, unstyled utility blocks resolving into a cohesive styled interface">
+  <rect width="1200" height="900" fill="#ede7dc"/>
+
+  <!-- left: unstyled, inconsistent utility blocks -->
+  <g fill="none" stroke="#15130f" stroke-width="2">
+    <rect x="90" y="120" width="420" height="60"/>
+    <rect x="90" y="210" width="180" height="180"/>
+    <rect x="290" y="210" width="220" height="80"/>
+    <rect x="290" y="310" width="140" height="80"/>
+    <rect x="450" y="310" width="60" height="80"/>
+    <rect x="90" y="420" width="420" height="40"/>
+    <rect x="90" y="480" width="200" height="40"/>
+    <rect x="310" y="480" width="200" height="40"/>
+    <rect x="90" y="540" width="420" height="120"/>
+  </g>
+
+  <!-- divider -->
+  <line x1="600" y1="80" x2="600" y2="820" stroke="#15130f" stroke-width="2" stroke-dasharray="2 14"/>
+
+  <!-- right: cohesive, styled interface built on Backpack -->
+  <g>
+    <rect x="690" y="120" width="420" height="60" fill="#15130f"/>
+    <rect x="690" y="210" width="180" height="180" fill="#15130f"/>
+    <rect x="890" y="210" width="220" height="80" fill="#d6371f"/>
+    <rect x="890" y="310" width="100" height="80" fill="#15130f"/>
+    <rect x="1010" y="310" width="100" height="80" fill="#15130f" opacity="0.6"/>
+    <rect x="690" y="420" width="420" height="40" fill="#15130f" opacity="0.15"/>
+    <rect x="690" y="480" width="200" height="40" fill="#15130f"/>
+    <rect x="910" y="480" width="200" height="40" fill="#15130f"/>
+    <rect x="690" y="540" width="420" height="120" fill="#15130f" opacity="0.15"/>
+    <rect x="710" y="560" width="120" height="30" fill="#d6371f"/>
+  </g>
+</svg>
