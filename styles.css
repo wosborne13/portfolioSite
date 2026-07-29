@@ -201,27 +201,6 @@ a {
   border-bottom-color: var(--color-ink);
 }
 
-.nav__status {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.nav__status .dot {
-  width: 0.6em;
-  height: 0.6em;
-}
-
-@media (max-width: 900px) {
-  .nav__status {
-    display: none;
-  }
-}
-
 /* -------------------------------------------------- */
 /* Hero                                                */
 /* -------------------------------------------------- */
@@ -736,9 +715,15 @@ a {
   padding-block: clamp(1.5rem, 3vw, 2rem);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
   .project-meta {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-meta {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -750,7 +735,7 @@ a {
 
 .project-meta__value {
   margin: 0;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .project-figure {
