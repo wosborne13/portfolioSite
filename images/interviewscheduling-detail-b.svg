@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract stepper diagram showing a sequenced flow from selecting interviewers through locking their availability, selecting applicants, configuring details, and sending confirmations">
+  <rect width="1600" height="500" fill="#ede7dc"/>
+
+  <line x1="200" y1="250" x2="1400" y2="250" stroke="#15130f" stroke-width="2"/>
+
+  <g fill="#d6371f">
+    <circle cx="200" cy="250" r="40"/>
+    <circle cx="500" cy="250" r="40"/>
+  </g>
+  <g fill="none" stroke="#15130f" stroke-width="3">
+    <circle cx="800" cy="250" r="40"/>
+    <circle cx="1100" cy="250" r="40"/>
+    <circle cx="1400" cy="250" r="40"/>
+  </g>
+
+  <g stroke="#ede7dc" stroke-width="6">
+    <line x1="182" y1="250" x2="218" y2="250"/>
+    <line x1="482" y1="250" x2="518" y2="250"/>
+  </g>
+</svg>

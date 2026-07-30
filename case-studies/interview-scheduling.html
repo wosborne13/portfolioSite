@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="gate-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Scheduling — Wil Osborne</title>
+  <meta name="description" content="Rebuilding an interview scheduler two calls into user testing, after finding the coordination model was backwards.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../gate.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="nav__mark">Wil Osborne<span class="nav__mark-dot"></span></a>
+      <ul class="nav__links">
+        <li><a href="../work.html" aria-current="page">Work</a></li>
+        <li><a href="../fun.html">Fun</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
+      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Frontline Recruiting &amp; Hiring</p>
+      <h1 class="project-hero__title">Interview Scheduling</h1>
+      <p class="u-lead">Rebuilding an interview scheduler two calls into user testing.</p>
+    </section>
+
+    <hr class="rule">
+
+    <section class="project-meta container">
+      <div>
+        <span class="u-caption project-meta__label">What I did</span>
+        <p class="project-meta__value">Shaped the discovery for interview management in the rebuilt applicant tracking system, ran the usability round myself, and designed the scheduling flow that shipped.</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">Why I did it</span>
+        <p class="project-meta__value">The new product had an interview stage in name only. Around half of the customers still on the legacy version used its interview management regularly, and the gap was holding up their migration.</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">What broke</span>
+        <p class="project-meta__value">The first prototype was built on a coordination model no district actually uses. Two calls into a five-district testing round, it was clear we had the process backwards.</p>
+      </div>
+      <div>
+        <span class="u-caption project-meta__label">What changed</span>
+        <p class="project-meta__value">I rebuilt the flow between sessions and tested the new structure on the remaining three districts. 85% of districts on the new Recruiting &amp; Hiring now use interview scheduling.</p>
+      </div>
+    </section>
+
+    <figure class="project-figure container">
+      <img src="../images/interviewscheduling-hero.svg" alt="Abstract composition of scattered individual contacts on the left resolving into a single locked calendar block with automatic confirmations on the right">
+    </figure>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Context</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Recruiting &amp; Hiring is Frontline's applicant tracking system, and it was being rebuilt from the ground up. In the new version, each job posting gets a hiring funnel made of configurable stages, and one of those stage types is Interview. It existed as a label and nothing more — districts could move an applicant into it, then had to leave the product entirely to do anything about it: phone calls, email, a calendar tool, a room booking system, depending on the district.</p>
+          <p>That mattered commercially. Roughly half the customers still on the legacy product used its interview management consistently, and a rebuild that couldn't do interviews gave them a reason not to move. This was a migration blocker before it was a usability problem.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Why we started with scheduling</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The work started with generative research across districts, questions I wrote with the PM, calls she ran while I sat in and followed up as things came up. Districts didn't agree on what hurt most — one named room availability, another background check turnaround, another inconsistency between hiring managers. But scheduling kept coming back, and it sat upstream of most of the others. The typical version: a coordinator works out who should interview, chases their availability by phone or email, then contacts applicants once there's a window. If the two don't line up, or an interviewer drops, the whole sequence restarts, room included.</p>
+          <p>Compiling interview notes came up too, and it would have been easy to read that as a feature request. But districts keep notes for legal reasons and almost never reopen them — they ask the interviewer directly and trust the answer. Panels take notes round-robin by hand, and several districts said a laptop open during the interview puts a wall between the panel and the candidate. Digitizing that would have saved filing cabinet space and solved nothing else, so I left it out of scope and spent the room on scheduling instead.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>A prototype built to be argued with</h2>
+        </div>
+        <div class="project-body__block">
+          <p>I looked at how scheduling works in Calendly, Outlook, and a few applicant tracking systems to understand what conventions people would carry in, then built a clickable prototype in Lovable — intentionally rough, closer to a wireframe than a finished interface, since its job was to give district administrators something concrete to react to. Building it in an AI tool meant I could rebuild it between sessions instead of between rounds, which turned out to matter.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/interviewscheduling-detail-a.svg" alt="Abstract diagram of the first prototype, interviewers and applicants polled together at once, resulting in interviews scattered across a calendar instead of gathered into a block">
+        <figcaption>First prototype — interviewers and applicants polled together, scheduled wherever availability overlapped</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Two calls in, the model was wrong</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The first version had the coordinator select interviewers and applicants on the same screen, poll everyone at once, and schedule wherever availability overlapped. Reasonable model. No district in the round works that way.</p>
+          <p>Two things came back immediately. Interviews are conducted by a panel, and getting a panel into one room is the hard part — districts book a single block and run every candidate through it back to back. One administrator described a four-hour block with the next candidate reading the questions in the last fifteen minutes of the interview before theirs; there's no version of the world where she gets her directors into a room three separate times in one week. And polling interviewers and applicants at the same time produces exactly the outcome districts are trying to avoid: interviews scattered across days instead of gathered into a block. Interviewer availability has to be locked before applicants are ever asked.</p>
+          <p>The sharpest correction: in several districts nobody polls the panel at all. The person setting up the interview outranks the people in it, sets the time, and tells them to be there. A flow that required a poll would be dead weight for a meaningful share of the customer base. I rebuilt the prototype between sessions and tested the new version on the remaining three districts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Locking interviewer availability first</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The new structure separated the steps: select interviewers, set the interview window and either poll them or skip the poll if you already know their availability, select applicants, configure the interview details, configure confirmation emails, then review and send. Applicants receive a link and book their own slot; once they do, the system sends confirmations with a calendar file attached, and the coordinator's job ends at "send."</p>
+          <p>The skip option came directly from the third finding — it's the clearest case in this project of testing changing the product instead of polishing it, since nothing in the original concept had a path for a coordinator who already knows when the interviews are happening.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/interviewscheduling-detail-b.svg" alt="Abstract stepper diagram showing a sequenced flow from selecting interviewers through locking their availability, selecting applicants, configuring details, and sending confirmations">
+        <figcaption>Rebuilt flow — interviewer availability locked before applicants are ever asked</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>The problem the rebuild created</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Splitting the steps introduced an ambiguity I hadn't anticipated. Users now saw two calendars in one flow — one for polling interviewer availability, one showing the slots offered to applicants — and several read the first as scheduling the actual interviews. One participant hit the applicant slots and said the header needed rewriting because what she thought she'd done and what she'd actually done were two different things. Another pair worked out mid-session that the times they'd set as poll options had become the times offered to candidates, and said they wouldn't have caught it without seeing the later screen.</p>
+          <p>The fix was two-part: I replaced the tab structure with a stepper, so the sequence reads as a process with a position in it, and I made the poll step impossible to pass through passively. The coordinator either sends a poll or explicitly marks that no poll is needed. Skipping had been the quiet default; making it a stated choice is what separated the two calendars in people's heads.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <figure class="project-inline-figure">
+        <img src="../images/interviewscheduling-detail-c.svg" alt="Abstract diagram of a two-state stepper, one row showing the poll step explicitly sent and the other showing it explicitly marked as not needed, both continuing into the same remaining steps">
+        <figcaption>The poll step in both states — sent, or explicitly marked not needed</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What I cut</h2>
+        </div>
+        <div class="project-body__block">
+          <p><strong>Room booking.</strong> A genuine pain point in discovery, but we had no source of truth for what rooms exist at a given site, and building one would have meant districts maintaining a room database inside our product. What shipped uses what the platform already knows: one location field pulls site suggestions from the same directory the staff list comes from, the other is plain text for the room.</p>
+          <p><strong>Calendar integration.</strong> The obvious request, held for the first version even setting feasibility aside. Districts can't guarantee calendar access across their own staff, and one customer's district privatizes interview invites so other staff can't see candidate names — with outside panelists she can't verify who has visibility into a calendar. Integration would have pushed candidate information somewhere she deliberately keeps it out of.</p>
+          <p><strong>Essential vs. optional interviewers.</strong> Real, and tempting to model, but the coordinator already knows the superintendent has to be there. Encoding it would have added configuration to every setup to serve a judgment users make instantly and for free.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What I pushed for</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Every district in the round had interviewers outside the system: a co-op employee with a district email who isn't in the staff directory, a partner district's administrator, a specialist brought in for one panel. Engineering's initial position was reasonable — build for interviewers we can look up, handle the rest later. That would have left the coordinator doing the same manual email chase for external panelists that the feature exists to eliminate.</p>
+          <p>Three cases existed: interviewers with product access, interviewers in the directory without it, and people outside the organization entirely. Two of the three couldn't authenticate. I argued the complexity belonged on our side, since building one path for everyone was less work than building two and explaining the difference. Engineering landed on a single unauthenticated link, unique per recipient — the coordinator adds an outside interviewer by typing an email address into the same field they use for everyone else.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Outcome</h2>
+        </div>
+        <div class="project-body__block">
+          <p>85% of districts on the new Recruiting &amp; Hiring are using interview scheduling — close to universal adoption among the districts who have it, against a customer base still smaller than the legacy product's since migration is ongoing. The old process ran through a chain of individual touches: identify interviewers, contact each one, wait, follow up, settle on a window, contact each applicant, wait, discover a conflict, start over. The new process: select interviewers, send one poll or skip it, select applicants, set the details, send. In testing, districts estimated this would take scheduling from a multi-hour task down to under half an hour. It also moved sales conversations, which was the original business case — the feature exists because its absence was a reason for legacy customers to stay put.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What I'd do differently</h2>
+        </div>
+        <div class="project-body__block">
+          <p>Two of five testing sessions went to discovering that the coordination model was wrong. Finding it in testing beats finding it after a build, and I don't count the round as wasted, but I could have found it earlier and cheaper. The model came out of research I helped design the questions for, which makes the miss mine as much as anyone's — it was plausible enough that nobody questioned it. A single sketch walkthrough with one district, no prototype, just a whiteboard of the sequence and a question about whether it matched how they work, would very likely have caught it before I built anything.</p>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>What it came down to</h2>
+        </div>
+        <div class="project-body__block">
+          <p>The prototype's most useful moment was the moment it failed. I built it rough on purpose, but I still built it around an assumption about how districts coordinate interviews, and that assumption came from listening to them describe the process rather than watching them work through it. Descriptions of a process are tidier than the process — the gap between the two is where the pivot came from, and it's the same gap that made cutting room booking, holding off on calendar integration, and leaving interview notes on paper look like decisions instead of features we failed to ship.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule rule--thin">
+
+    <section class="container">
+      <div class="project-next">
+        <span class="u-caption">Next project</span>
+        <a class="project-next__link" href="backpack-design-system.html">Backpack Design System →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <hr class="rule rule--thin">
+    <div class="container">
+      <p class="u-caption">© 2026 Wil Osborne</p>
+      <ul class="site-footer__links">
+        <li><a class="u-caption" href="../fun.html">Fun</a></li>
+        <li><a class="u-caption" href="../about.html">About</a></li>
+        <li><a class="u-caption" href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

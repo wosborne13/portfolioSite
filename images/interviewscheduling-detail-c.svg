@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1600 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract diagram of a two-state stepper, one row showing the poll step explicitly sent and the other showing it explicitly marked as not needed, both continuing into the same remaining steps">
+  <rect width="1600" height="700" fill="#ede7dc"/>
+
+  <!-- row 1: poll sent -->
+  <line x1="200" y1="200" x2="1400" y2="200" stroke="#15130f" stroke-width="2"/>
+  <circle cx="200" cy="200" r="34" fill="#15130f"/>
+  <circle cx="600" cy="200" r="34" fill="#d6371f"/>
+  <path d="M 580 200 L 596 216 L 624 184" fill="none" stroke="#ede7dc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke="#15130f" stroke-width="3">
+    <circle cx="1000" cy="200" r="34"/>
+    <circle cx="1200" cy="200" r="34"/>
+    <circle cx="1400" cy="200" r="34"/>
+  </g>
+
+  <!-- row 2: no poll needed -->
+  <line x1="200" y1="500" x2="1400" y2="500" stroke="#15130f" stroke-width="2"/>
+  <circle cx="200" cy="500" r="34" fill="#15130f"/>
+  <circle cx="600" cy="500" r="34" fill="#ede7dc" stroke="#d6371f" stroke-width="4"/>
+  <line x1="582" y1="482" x2="618" y2="518" stroke="#d6371f" stroke-width="6" stroke-linecap="round"/>
+  <line x1="618" y1="482" x2="582" y2="518" stroke="#d6371f" stroke-width="6" stroke-linecap="round"/>
+  <g fill="none" stroke="#15130f" stroke-width="3">
+    <circle cx="1000" cy="500" r="34"/>
+    <circle cx="1200" cy="500" r="34"/>
+    <circle cx="1400" cy="500" r="34"/>
+  </g>
+</svg>

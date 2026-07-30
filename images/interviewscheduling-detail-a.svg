@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract diagram of the first prototype, interviewers and applicants polled together at once, resulting in interviews scattered across a calendar instead of gathered into a block">
+  <rect width="1200" height="900" fill="#ede7dc"/>
+
+  <!-- interviewer icons, upper left -->
+  <g fill="#15130f">
+    <circle cx="180" cy="180" r="22"/>
+    <circle cx="280" cy="150" r="22"/>
+    <circle cx="280" cy="240" r="22"/>
+  </g>
+
+  <!-- applicant icons, lower left -->
+  <g fill="none" stroke="#15130f" stroke-width="3">
+    <rect x="160" y="620" width="44" height="44"/>
+    <rect x="250" y="600" width="44" height="44"/>
+    <rect x="250" y="690" width="44" height="44"/>
+  </g>
+
+  <!-- both converge on a single poll node at once -->
+  <g stroke="#15130f" stroke-width="2" fill="none">
+    <line x1="300" y1="170" x2="560" y2="420"/>
+    <line x1="300" y1="220" x2="560" y2="430"/>
+    <line x1="272" y1="640" x2="560" y2="460"/>
+    <line x1="272" y1="710" x2="560" y2="480"/>
+  </g>
+  <circle cx="600" cy="450" r="34" fill="#d6371f"/>
+
+  <!-- scattered result: a calendar grid with interviews scattered across days -->
+  <g stroke="#15130f" stroke-width="2" fill="none">
+    <line x1="670" y1="420" x2="800" y2="200"/>
+    <line x1="670" y1="440" x2="800" y2="360"/>
+    <line x1="670" y1="460" x2="800" y2="520"/>
+    <line x1="670" y1="480" x2="800" y2="680"/>
+  </g>
+  <g fill="none" stroke="#15130f" stroke-width="2">
+    <rect x="820" y="140" width="90" height="600"/>
+    <rect x="930" y="140" width="90" height="600"/>
+    <rect x="1040" y="140" width="90" height="600"/>
+  </g>
+  <g fill="#d6371f">
+    <circle cx="865" cy="200" r="14"/>
+    <circle cx="975" cy="360" r="14"/>
+    <circle cx="865" cy="520" r="14"/>
+    <circle cx="1085" cy="680" r="14"/>
+  </g>
+</svg>
