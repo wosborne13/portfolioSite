@@ -30,7 +30,7 @@
       <a class="back-link u-caption" href="../work.html">← Back to Work</a>
       <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Frontline Education - K12JobSpot</p>
       <h1 class="project-hero__title">User Migration Redesign</h1>
-      <p class="u-lead">Fixing an account migration flow that didn't need to actually migrate anything.</p>
+      <p class="u-lead">Achieving a 104% increase in flow completion after a time-constrained redesign.</p>
     </section>
 
     <hr class="rule">
@@ -42,15 +42,15 @@
       </div>
       <div>
         <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">Just under 1/2 the users moving from the old K-12JobSpot to the new one finished the process. Migration was the single biggest threat to the launch, since nothing else would matter if people couldn't get in.</p>
+        <p class="project-meta__value">The migration flow to the new version of K12JobSpot had just under a 50% completion rate. Clearly a rework was needed, as the whole product rebuild depended on user adoption.</p>
       </div>
       <div>
-        <span class="u-caption project-meta__label">What broke</span>
+        <span class="u-caption project-meta__label">When it went sideways</span>
         <p class="project-meta__value">Two days before the final sprint, engineering found the identity platform couldn't build the real-time detection the redesign depended on.</p>
       </div>
       <div>
         <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">We shipped a blunter, date-based fallback in the time we had. Migration completion went from 47% to 88%, and the flow dropped from 8-10 screens down to 2-4.</p>
+        <p class="project-meta__value">We shipped a blunter, date-based fallback in the time we had. Migration completion went from 47% to 96%, and the flow dropped from 8-10 screens down to 2-4.</p>
       </div>
     </section>
 
@@ -64,7 +64,7 @@
           <h2>Context</h2>
         </div>
         <div class="project-body__block">
-          <p>Launching the new K-12JobSpot, the largest education-focused job board in the country, meant moving all 2.6 million users off a legacy identity system and onto a new one owned by our platform team. This required every user to create a new account, with an option to migrate some of the data from their old account. Early adopter numbers were bad: just under 1/2 of the users who started the migration finished it. Everything else about the launch rode on people actually reaching the product, so figuring this out was critical.</p>
+          <p>Launching a new version of K12JobSpot, the largest education-focused job board in the country, meant moving all 2.6 million users off a legacy identity system and onto a new one owned by our platform team. This required every user to create a new account, with an option to migrate some of the data from their old account. Early adopter numbers were bad: just under 1/2 of the users who started the migration finished it. Everything else about the launch rode on people actually reaching the product, so figuring this out was critical.</p>
         </div>
       </div>
 
@@ -73,13 +73,15 @@
           <h2>The Problem</h2>
         </div>
         <div class="project-body__block">
-          <p>The existing flow asked users to sort themselves before signing in — new account, legacy account, or no account yet. Every choice opened another branch of screens and confirmations, and a user could pass through eight to ten of them before getting in. Additionally, any users with legacy accounts that managed to make it through the flow were immediately forced to migrate their data, or lose it for good. A huge roadblock when all they were trying to do was get into the product.</p>
+          <p>The existing flow asked users to sort themselves before signing in. They had 3 options: new account, legacy account, or no account yet. Each choice opened another branch of screens and confirmations, and a user could pass through eight to ten of them before getting in. Additionally, any users with legacy accounts that managed to make it through the flow were immediately forced to migrate their data, or lose it for good. A huge roadblock when all they were trying to do was get into the product.</p>
           <p>A few constraints made this harder than a normal login redesign:</p>
           <ul class="list-plain" style="max-width: 52ch; margin-bottom: 1rem;">
             <li>The legacy and modern databases couldn't talk to each other freely.</li>
             <li>A separate platform team owned authentication.</li>
             <li>We couldn't customize the platform-owned login screens.</li>
             <li>Legacy passwords didn't always clear the new security requirements.</li>
+            <li>Data from the old account didn't line up perfectly with the new form fields.</li>
+            <li>Profile data in the new system can only be saved in sections. If a user didn't have data in every field in a seciton, they were unable to save it until they filled in the missing information.</li>
           </ul>
         </div>
       </div>
@@ -99,7 +101,13 @@
         </div>
         <div class="project-body__block">
           <p>Once I had a clear picture of the flow, I began with what seemed to be the most obvious problem: the unexpected data migration. Was it necessary? We didn't have time to rework the process, so it was a question of whether or not to cut it entirely. It had been in the plan long enough to have become a given. When I raised cutting it, Product pushed back — their worry was reasonable, that users would be upset to find old data gone.</p>
-          <p>Rather than argue, I asked the PM to pull three numbers: how many profiles had been created in the past year, how many edited in the past year, and how many of those held anything beyond a bare name and email. About 80,000 had been created or updated, and only about 1/3rd had more than the basics. That meant that only about 1.2% of users would lose data that wasn't likely stale.</p>
+          <p>Rather than argue, I asked the PM to pull three numbers:</p> 
+          <ul class="list-plain" style="max-width: 52ch; margin-bottom: 1rem;">
+            <li>How many profiles had been created in the past year?</li>
+            <li>How many edited in the past year?</li>
+            <li>How many of those held anything beyond a name and email?</li>
+          </ul>
+          <p>About 80,000 accounts had been created/updated in the past year, and only about 1/3rd of themhad more than the basics. That meant that only about 1.2% of users would lose data that wasn't likely stale.</p>
           <p>Additionally, the fields in the legacy product didn't match the new product, so even when we did migrate data, it was incomplete. Users were forced to fill in the gaps immediately after getting through the long account flow, which was worse than just starting fresh.</p>
           <p>Once Product saw the numbers, they came around, and were relieved to let it go. They added a line to the migration announcement email telling users who wanted their old data to retrieve it first, since it wouldn't carry over. With data migration off the table, the redesign narrowed to a single job: get the user signed in.</p>
         </div>
@@ -128,7 +136,7 @@
           <h2>The Wrench</h2>
         </div>
         <div class="project-body__block">
-          <p>Two days before the final sprint was due to begin, engineering came back with a problem: the platform team couldn't build the account checks the whole design relied on. They were underwater — buried in requests and firefighting a backend that kept going down, with no room to take on more. Second, and more problematic: their identity system is shared across every Frontline product. Checking for legacy accounts couldn't be scoped to K-12 Job Spot alone — switch it on for us and you switch it on everywhere, for every product on the platform. This meant we had to find a new approach, and fast.</p>
+          <p>Two days before the final sprint was due to begin, engineering came back with a problem: the platform team couldn't build the account checks the whole design relied on. They were underwater — buried in requests and firefighting a backend that kept going down, with no room to take on more. Even more problematic: their identity system is shared across every Frontline product. Checking for legacy accounts couldn't be scoped to K-12 Job Spot alone — switch it on for us and you switch it on everywhere, for every product on the platform. This meant we had to find a new approach, and fast.</p>
         </div>
       </div>
 
@@ -156,7 +164,7 @@
           <h2>Outcome</h2>
         </div>
         <div class="project-body__block">
-          <p>Migration completion went from 47% to 88%. Both figures come from Pendo, measured over comparable two-week windows — the first once we had enough volume to be confident the original flow was failing, the second in the two weeks after the new version deployed. In all honestly I was surprised by how well the bandaid solution worked.</p>
+          <p>Migration completion went from 47% to 96%. Both figures come from Pendo, measured over comparable two-week windows — the first once we had enough volume to be confident the original flow was failing, the second in the two weeks after the new version deployed. Thanks to the flood of new users, the districts have seen a significant increase in quality applicants for the jobs they are posting, which is the ultimate customer outcome we were aiming for.</p>
         </div>
       </div>
 
@@ -166,7 +174,7 @@
         </div>
         <div class="project-body__block">
           <p>Clearly the biggest misstep on this project was the disconnect between the K12JobSpot team and the Platform team. I'm still not quite sure how it happened, since we were meeting with them regularly, but the result was that we didn't know what the platform could and couldn't do until it was almost too late to react. The ideal solution that I had spent time working out and vetting with the K12Jobspot team wasn't viable. Since this project I've made sure to triple-check with my tech leads regarding viability, especially when external teams are involved.</p>
-          <p>The part that held up better than I expected was the bandaid solution itself. It worked because everything in the redesign traced back to the goal of automating the decisions that the old flow put on the user. The email-first model was the better way to get there; the date-based model got there slightly less effectively, but it did get there. Because the goal was right, the project survived losing the version I actually wanted to build.</p>
+          <p>Fortunately, the band-aid version of the flow worked well, exceeding expectations. It worked because both versions traced back to the goal of automating the decisions that the old flow put on the user. Because I was laser focused on shifting the complexity from the user to the system, the quick pivot still served that goal, and the user experience was clearly improved.</p>
         </div>
       </div>
     </div>
