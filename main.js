@@ -215,6 +215,90 @@ function closeLightbox() {
   lightboxState = null;
 }
 
+document.querySelectorAll(".spread-viewer").forEach((viewer) => {
+  const slideList = viewer.querySelector(".spread-viewer__slides");
+  const stageImg = viewer.querySelector(".spread-viewer__img");
+  const caption = viewer.querySelector(".spread-viewer__caption");
+  const prev = viewer.querySelector(".spread-viewer__arrow--prev");
+  const next = viewer.querySelector(".spread-viewer__arrow--next");
+  const frame = viewer.querySelector(".spread-viewer__frame");
+  if (!slideList || !stageImg || !prev || !next) return;
+
+  const slides = Array.from(slideList.children).map((li) => {
+    const img = li.querySelector("img");
+    const paragraphs = Array.from(li.querySelectorAll("p")).map((p) => p.textContent.trim());
+    return {
+      src: img ? img.getAttribute("src") : "",
+      alt: img ? img.getAttribute("alt") || "" : "",
+      captions: paragraphs,
+    };
+  });
+  if (!slides.length) return;
+
+  let index = 0;
+
+  function render() {
+    const slide = slides[index];
+    stageImg.src = slide.src;
+    stageImg.alt = slide.alt;
+    if (caption) {
+      caption.innerHTML = "";
+      slide.captions.forEach((text) => {
+        const p = document.createElement("p");
+        const labelMatch = text.match(/^([^:]+:)\s*(.*)$/s);
+        if (labelMatch) {
+          const strong = document.createElement("strong");
+          strong.textContent = labelMatch[1];
+          p.appendChild(strong);
+          p.appendChild(document.createTextNode(" " + labelMatch[2]));
+        } else {
+          p.textContent = text;
+        }
+        caption.appendChild(p);
+      });
+    }
+  }
+
+  function step(delta) {
+    index = (index + delta + slides.length) % slides.length;
+    render();
+  }
+
+  prev.addEventListener("click", () => step(-1));
+  next.addEventListener("click", () => step(1));
+
+  if (frame) {
+    frame.addEventListener("click", (event) => {
+      const rect = frame.getBoundingClientRect();
+      const clickedLeftHalf = event.clientX - rect.left < rect.width / 2;
+      step(clickedLeftHalf ? -1 : 1);
+    });
+
+    let touchStartX = null;
+    let touchStartY = null;
+
+    frame.addEventListener("touchstart", (event) => {
+      if (event.touches.length !== 1) return;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+
+    frame.addEventListener("touchend", (event) => {
+      if (touchStartX === null) return;
+      const touch = event.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+      touchStartX = null;
+      touchStartY = null;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      event.preventDefault();
+      step(dx < 0 ? 1 : -1);
+    });
+  }
+
+  render();
+});
+
 document.querySelectorAll(".gallery").forEach((gallery) => {
   const images = Array.from(gallery.querySelectorAll("img"));
   images.forEach((img, index) => {

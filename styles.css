@@ -441,7 +441,7 @@ a {
   padding: 0;
   border-radius: 50%;
   border: 1px solid var(--color-ink);
-  background: var(--color-bg);
+  background: transparent;
   color: var(--color-ink);
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -867,6 +867,102 @@ a {
 @media (max-width: 640px) {
   .gallery.gallery--portrait {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery.gallery--spaced {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.gallery.gallery--spaced-bottom {
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* -------------------------------------------------- */
+/* Spread viewer (single-image carousel)                */
+/* -------------------------------------------------- */
+.spread-viewer-band {
+  background: var(--color-surface);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+
+.spread-viewer__stage {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: 1rem 0.75rem;
+}
+
+.spread-viewer__frame {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.spread-viewer__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spread-viewer__arrow {
+  grid-row: 2;
+}
+
+.spread-viewer__arrow--prev {
+  grid-column: 1;
+}
+
+.spread-viewer__arrow--next {
+  grid-column: 2;
+}
+
+.spread-viewer__caption {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  margin: 0 auto;
+  max-width: 52ch;
+  text-align: left;
+  color: var(--color-ink);
+}
+
+.spread-viewer__caption p {
+  margin: 0 0 0.75rem;
+  color: var(--color-ink);
+}
+
+.spread-viewer__caption p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 860px) {
+  .spread-viewer__stage {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .spread-viewer__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .spread-viewer__arrow--prev {
+    grid-column: 1;
+  }
+
+  .spread-viewer__arrow--next {
+    grid-column: 3;
+  }
+
+  .spread-viewer__caption {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    margin: 0.75rem auto 0;
   }
 }
 
