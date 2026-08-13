@@ -30,7 +30,7 @@
       <a class="back-link u-caption" href="../work.html">← Back to Work</a>
       <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Team Nation Sports</p>
       <h1 class="project-hero__title">Team Nation Scoring</h1>
-      <p class="u-lead">Fixing a scoring system that punished players for playing.</p>
+      <p class="u-lead">Fixing a scoring system that punished players for playing on a learning games platform.</p>
     </section>
 
     <hr class="rule">
@@ -38,19 +38,19 @@
     <section class="project-meta container">
       <div>
         <span class="u-caption project-meta__label">What I did</span>
-        <p class="project-meta__value">As the designer and PM on this 0-to-1 platform, I diagnosed a drop in engagement as a motivation problem, not a scoring bug, and shipped a second points system alongside the existing skill score rather than touching the score itself.</p>
+        <p class="project-meta__value">As the designer and PM on this 0-to-1 platform, I diagnosed a drop in engagement as a motivation problem, not a lack of interest, and readjusted the way players were scored to incentivize continued play.</p>
       </div>
       <div>
         <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">Games played per team climbed when a team first joined, then plateaued, then fell off. Coaches and players kept telling us the same thing: the Readiness score felt like it was punishing them for continuing to play.</p>
+        <p class="project-meta__value">Games played per team climbed when a team first joined, then plateaued, then fell off. Upon investigation, coaches and players told us the way scores were calculated felt like a punishment for continuing to play.</p>
       </div>
       <div>
-        <span class="u-caption project-meta__label">What broke</span>
-        <p class="project-meta__value">Readiness was working exactly as designed — a fluctuating read on current skill, not a number that should only climb. The problem everyone assumed was broken math was really about which number we'd put in front of players.</p>
+        <span class="u-caption project-meta__label">When it went sideways</span>
+        <p class="project-meta__value">The Player Readiness Score was working exactly as designed — a fluctuating read on current skill, not a number that kept climbing. So the issue was that we were missing a sense of growth, not that the scoring algorithm was broken.</p>
       </div>
       <div>
         <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">I added a separate, cumulative points system and left Readiness alone. Games played by top-performing players went up 3x; across the whole player base, 1.5x.</p>
+        <p class="project-meta__value">I added a separate, cumulative points system and left the Player Readiness Score alone. Engagement skyrocketed, with games played by top-performing players up 3x; across the whole player base, 1.5x.</p>
       </div>
     </section>
 
@@ -64,7 +64,8 @@
           <h2>Context</h2>
         </div>
         <div class="project-body__block">
-          <p>Team Nation teaches athletes their playbooks through mobile learning games: coaches upload the content, players drill it through games, and everyone's performance lands on a leaderboard. The core metric was Readiness — a percentage per skill area plus an Overall Readiness, calculated from how many questions a player got right and how quickly they answered.</p>
+          <p>Team Nation teaches athletes their playbooks through gamification: coaches upload their playbooks and other content, players drill it by playing learning games, and everyone's performance lands on a leaderboard.</p>
+          <p>The core metric was the Player Readiness Score, which was based on a player's performance in learning games. Readiness was calculated from how many questions a player got right and how quickly they answered when they played a game. The intent was that as players continued to practice, their score would reflect their current level of competency, or "Readiness."</p>
         </div>
       </div>
 
@@ -73,7 +74,7 @@
           <h2>Problem</h2>
         </div>
         <div class="project-body__block">
-          <p>The same shape kept showing up in weekly usage: games played per team climbed when a team first joined, then plateaued, then dropped off. When we asked coaches and players why, the answer was consistent — they felt punished for continuing to play. Readiness was an average, so a player who'd built up a high score could play another game, do fine, and still watch the number tick down. Once players caught on, the smart move was to stop playing the moment their score looked good. The leaderboard made it worse: with a 100% ceiling, the top players bunched into what looked like ten-way ties, which flattened any sense of competition.</p>
+          <p>The same story replayed each time we onboarded a team to our beta: games played per team climbed when a team first joined, then plateaued, then dropped off. When we asked coaches and players why, the answer was consistent — they felt punished for continuing to play. Readiness was an average, so a player who'd built up a high score could play another game, do fine, and still watch their score tick down. Once players caught on, the smart move was to stop playing the moment their score looked good. The leaderboard made it worse: with a 100% ceiling, the top players bunched into what looked like ten-way ties, which flattened any sense of competition.</p>
         </div>
       </div>
 
@@ -82,9 +83,8 @@
           <h2>The reasoning</h2>
         </div>
         <div class="project-body__block">
-          <p>The obvious fix is to change the formula so good performance can't drag your score down. I didn't do that, and why I didn't is the whole decision.</p>
-          <p>Readiness isn't supposed to only go up. It's a proxy for how well someone knows the material right now, and like any skill, that should slip when you stop practicing and climb when you keep at it. An average that can fall is doing exactly what a measure of current competency should do. So the math wasn't broken. What was broken was that Readiness was the only number players could see — the one metric built to move honestly in both directions was also the only thing we'd given them to chase.</p>
-          <p>So I left Readiness alone and added a second number beside it: points, earned every game, that only ever go up. Coaches kept the honest, current read on skill they relied on. Players got something that rewarded them for showing up without quietly lying about how ready they were.</p>
+          <p>Readiness isn't supposed to only go up. It's a proxy for how well someone knows the material right now, and like any skill, that should slip when you stop practicing and climb when you keep at it. An average that can fall is doing exactly what a measure of current competency should do. The way Readiness was calculated and behaved was correct, it just wasn't the right thing to push players to chase. In fact, as part of this change, I added a decay to the Readiness calculation to better reflect the natural decline in skills when not practiced.</p>
+          <p>Rather than rework the Readiness Score, I added a second number beside it: points, earned every game, that only ever go up. This way, even if a player's Readiness score fluctuates, they can still see their progress and feel rewarded for their effort.</p>
         </div>
       </div>
     </div>
@@ -102,7 +102,7 @@
           <h2>Design</h2>
         </div>
         <div class="project-body__block">
-          <p>I rebuilt the mobile leaderboard around points instead of Readiness, giving the top four spots visual emphasis to sharpen the competition at the top of a team. The rest of the leaderboard shifted to center each player's performance relative to the pack instead of a flat ranked list. Coaches kept their own leaderboard and analytics view, still built on Readiness, since that was the number that actually mattered to them.</p>
+          <p>I rebuilt the mobile leaderboard around points instead of Readiness, giving the top four spots visual emphasis to sharpen the competition at the top of a team. I also added graphs and other visualizations to help players see their performance over time.</p>
         </div>
       </div>
     </div>
@@ -126,19 +126,10 @@
 
       <div class="project-body">
         <div class="project-body__block">
-          <h2>What I'd do differently</h2>
+          <h2>Building on this</h2>
         </div>
         <div class="project-body__block">
-          <p>I'd give coaches direct control over the incentive layer, not just visibility into it. Right now points reward playing games generically, but coaches know their content better than any formula does. Letting them weight specific content — make a critical play worth more than a drill they consider basic — award bonus points for strong in-game performance, or periodically reset scores to reopen the leaderboard for players who'd fallen behind, would turn points into a coaching tool rather than just a player-facing motivator. What we shipped fixed the "players stop playing" problem. It didn't yet give coaches a way to shape what players chase.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>What it came down to</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The pull was to fix the formula. That would have solved engagement and quietly wrecked the thing coaches relied on: an honest read on where their players actually stood. The real problem was that one number was being asked to do two jobs — measure skill and motivate play — and those jobs pull in opposite directions, so no single formula could serve both. Splitting them let each number be good at its own job.</p>
+          <p>With more time, I'd give coaches direct control over the incentive layer, not just visibility into it. Right now points reward playing games generically, but coaches know their content better than any formula does. Letting them weight specific content or periodically reset scores to reopen the leaderboard for players who'd fallen behind would turn points into a coaching tool rather than just a player-facing motivator.</p>
         </div>
       </div>
     </div>
