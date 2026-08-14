@@ -299,7 +299,7 @@ a {
   gap: 1.5rem;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1080px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }

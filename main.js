@@ -104,23 +104,21 @@ document.querySelectorAll(".gate-teaser").forEach((teaser) => {
   });
 });
 
-const funSort = document.getElementById("fun-sort");
-const funGrid = document.getElementById("fun-grid");
+function setupSort(selectId, gridId, sortKeys) {
+  const select = document.getElementById(selectId);
+  const grid = document.getElementById(gridId);
+  if (!select || !grid) return;
 
-if (funSort && funGrid) {
-  const sortKeys = {
-    recommended: "order",
-    chronological: "year",
-    cost: "cost",
-  };
-
-  funSort.addEventListener("change", () => {
-    const key = sortKeys[funSort.value] || "order";
-    const cards = Array.from(funGrid.children);
+  select.addEventListener("change", () => {
+    const key = sortKeys[select.value] || sortKeys.recommended;
+    const cards = Array.from(grid.children);
     cards.sort((a, b) => Number(a.dataset[key]) - Number(b.dataset[key]));
-    cards.forEach((card) => funGrid.appendChild(card));
+    cards.forEach((card) => grid.appendChild(card));
   });
 }
+
+setupSort("fun-sort", "fun-grid", { recommended: "order", chronological: "year", cost: "cost" });
+setupSort("work-sort", "work-grid", { recommended: "order", chronological: "year" });
 
 let lightboxEl = null;
 let lightboxState = null;

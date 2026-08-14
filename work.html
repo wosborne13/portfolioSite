@@ -41,18 +41,15 @@
     </section>
 
     <section class="section container">
-      <div class="grid">
-        <a class="card card--framed" href="case-studies/backpack-design-system.html">
-          <div class="card__frame">
-            <img src="images/backpack-hero.svg" alt="Abstract artwork showing scattered shapes resolving into an ordered grid of components, representing the Backpack design system">
-          </div>
-          <div class="card__meta">
-            <h3 class="card__title">Backpack Design System</h3>
-            <span class="card__year">2022–2026</span>
-          </div>
-          <p class="card__tagline">Built a 336-component design system alone, then got engineering to adopt it without a mandate.</p>
-        </a>
-        <a class="card card--framed" href="case-studies/easy-apply-k12.html">
+      <div class="sort-bar">
+        <label class="u-caption sort-bar__label" for="work-sort">Sort</label>
+        <select class="sort-bar__select" id="work-sort">
+          <option value="recommended">Recommended</option>
+          <option value="chronological">Oldest to Newest</option>
+        </select>
+      </div>
+      <div class="grid" id="work-grid">
+        <a class="card card--framed" href="case-studies/easy-apply-k12.html" data-order="1" data-year="2023">
           <div class="card__frame">
             <img src="images/easyapply-hero.svg" alt="Abstract diagram of a single job-seeker profile connecting to multiple job postings, one flagged as Easy Apply">
           </div>
@@ -60,29 +57,9 @@
             <h3 class="card__title">Easy Apply</h3>
             <span class="card__year">2023</span>
           </div>
-          <p class="card__tagline">Rejected a copy-the-competitor plan for a profile-based model that removed the tradeoff entirely.</p>
+          <p class="card__tagline">I cut job application time by 60% on average by questioning assumptions about the application process.</p>
         </a>
-        <a class="card card--framed" href="case-studies/k12-migration-redesign.html">
-          <div class="card__frame">
-            <img src="images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
-          </div>
-          <div class="card__meta">
-            <h3 class="card__title">User Migration Redesign</h3>
-            <span class="card__year">2026</span>
-          </div>
-          <p class="card__tagline">Rebuilt a broken migration flow under a two-day deadline, raising completion from 47% to 88%.</p>
-        </a>
-        <a class="card card--framed" href="case-studies/team-nation-scoring.html">
-          <div class="card__frame">
-            <img src="images/teamnation-hero.svg" alt="Abstract composition of a fluctuating line and a steadily climbing bar chart side by side, representing the split between Readiness and cumulative points">
-          </div>
-          <div class="card__meta">
-            <h3 class="card__title">Team Nation Scoring</h3>
-            <span class="card__year">2021</span>
-          </div>
-          <p class="card__tagline">Diagnosed a drop in engagement as a motivation problem, not a scoring bug, and fixed it without touching the score.</p>
-        </a>
-        <a class="card card--framed" href="case-studies/interview-scheduling.html">
+        <a class="card card--framed" href="case-studies/interview-scheduling.html" data-order="2" data-year="2026">
           <div class="card__frame">
             <img src="images/interviewscheduling-hero.svg" alt="Abstract composition of scattered individual contacts on the left resolving into a single locked calendar block with automatic confirmations on the right">
           </div>
@@ -90,11 +67,43 @@
             <h3 class="card__title">Interview Scheduling</h3>
             <span class="card__year">2026</span>
           </div>
-          <p class="card__tagline">Rebuilt an interview scheduler two calls into user testing after finding the coordination model was backwards.</p>
+          <p class="card__tagline">Saving HR directors hours by streamlining the process of setting up interviews with job seekers.</p>
+        </a>
+        <a class="card card--framed" href="case-studies/k12-migration-redesign.html" data-order="3" data-year="2025.9">
+          <div class="card__frame">
+            <img src="images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">User Migration Redesign</h3>
+            <span class="card__year">2026</span>
+          </div>
+          <p class="card__tagline">Rebuilt a broken migration flow under a two-day deadline, raising completion from 47% to 96%.</p>
+        </a>
+        <a class="card card--framed" href="case-studies/backpack-design-system.html" data-order="4" data-year="2022">
+          <div class="card__frame">
+            <img src="images/backpack-hero.svg" alt="Abstract artwork showing scattered shapes resolving into an ordered grid of components, representing the Backpack design system">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Backpack Design System</h3>
+            <span class="card__year">2022–26</span>
+          </div>
+          <p class="card__tagline">Built a 336-component design system, then pushed adoption despite a lack of resources.</p>
+        </a>
+        <a class="card card--framed" href="case-studies/team-nation-scoring.html" data-order="5" data-year="2021">
+          <div class="card__frame">
+            <img src="images/teamnation-hero.svg" alt="Abstract composition of a fluctuating line and a steadily climbing bar chart side by side, representing the split between Readiness and cumulative points">
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title">Team Nation Scoring</h3>
+            <span class="card__year">2021</span>
+          </div>
+          <p class="card__tagline">Diagnosed a drop in engagement as a motivation problem, not a scoring bug, and tripled select user engagement.</p>
         </a>
       </div>
     </section>
   </main>
+
+  <script src="main.js" defer></script>
 
   <footer class="site-footer">
     <hr class="rule rule--thin">
