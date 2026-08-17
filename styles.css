@@ -1084,6 +1084,13 @@ body.lightbox-open {
   right: clamp(0.5rem, 3vw, 2rem);
 }
 
+/* The base rule above sets display:flex, which — at equal specificity —
+   beats the UA stylesheet's [hidden] { display: none }. Restate it here
+   so a single-image lightbox actually hides its now-unneeded arrows. */
+.lightbox__arrow[hidden] {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .lightbox__arrow {
     width: 2.5rem;
@@ -1145,6 +1152,7 @@ body.zoom-open {
 .zoom-viewer__viewport {
   position: absolute;
   inset: 0;
+  z-index: 0;
   overflow: hidden;
   touch-action: none;
   cursor: grab;
@@ -1165,8 +1173,13 @@ body.zoom-open {
   pointer-events: none;
 }
 
+.zoom-viewer__close {
+  z-index: 1;
+}
+
 .zoom-viewer__hint {
   position: absolute;
+  z-index: 1;
   left: 50%;
   bottom: clamp(1rem, 4vw, 2rem);
   transform: translateX(-50%);
@@ -1187,6 +1200,7 @@ body.zoom-open {
 
 .zoom-viewer__zoom {
   position: absolute;
+  z-index: 1;
   right: clamp(1rem, 3vw, 2rem);
   bottom: clamp(1rem, 3vw, 2rem);
   display: flex;
