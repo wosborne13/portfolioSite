@@ -297,8 +297,7 @@ document.querySelectorAll(".spread-viewer").forEach((viewer) => {
   render();
 });
 
-document.querySelectorAll(".gallery").forEach((gallery) => {
-  const images = Array.from(gallery.querySelectorAll("img"));
+function wireLightboxImages(images) {
   images.forEach((img, index) => {
     img.setAttribute("role", "button");
     img.setAttribute("tabindex", "0");
@@ -310,4 +309,262 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
       }
     });
   });
+}
+
+document.querySelectorAll(".gallery").forEach((gallery) => {
+  wireLightboxImages(Array.from(gallery.querySelectorAll("img")));
+});
+
+document.querySelectorAll(".project-inline-figure--lightbox").forEach((figure) => {
+  const img = figure.querySelector("img");
+  if (img) wireLightboxImages([img]);
+});
+
+/* -------------------------------------------------- */
+/* Zoom viewer (click-to-pan/zoom figure)              */
+/* -------------------------------------------------- */
+let zoomEl = null;
+let zoomState = null;
+
+function buildZoomViewer() {
+  const overlay = document.createElement("div");
+  overlay.className = "zoom-viewer";
+  overlay.innerHTML = `
+    <button type="button" class="lightbox__close zoom-viewer__close" aria-label="Close">✕</button>
+    <div class="zoom-viewer__viewport">
+      <img class="zoom-viewer__img" alt="">
+    </div>
+    <div class="zoom-viewer__zoom">
+      <button type="button" class="zoom-viewer__zoom-btn" data-zoom="in" aria-label="Zoom in">+</button>
+      <button type="button" class="zoom-viewer__zoom-btn" data-zoom="out" aria-label="Zoom out">−</button>
+    </div>
+    <p class="zoom-viewer__hint">Drag to pan · Scroll or pinch to zoom</p>
+  `;
+  document.body.appendChild(overlay);
+
+  const viewport = overlay.querySelector(".zoom-viewer__viewport");
+  const img = overlay.querySelector(".zoom-viewer__img");
+  const hint = overlay.querySelector(".zoom-viewer__hint");
+
+  overlay.querySelector(".zoom-viewer__close").addEventListener("click", closeZoomViewer);
+
+  function hideHint() {
+    hint.classList.add("is-hidden");
+  }
+
+  function clamp() {
+    const s = zoomState;
+    const scaledW = s.naturalWidth * s.scale;
+    const scaledH = s.naturalHeight * s.scale;
+    const vw = viewport.clientWidth;
+    const vh = viewport.clientHeight;
+    s.tx = scaledW <= vw ? (vw - scaledW) / 2 : Math.min(0, Math.max(vw - scaledW, s.tx));
+    s.ty = scaledH <= vh ? (vh - scaledH) / 2 : Math.min(0, Math.max(vh - scaledH, s.ty));
+  }
+
+  function render() {
+    img.style.transform = `translate(${zoomState.tx}px, ${zoomState.ty}px) scale(${zoomState.scale})`;
+  }
+
+  function zoomAt(px, py, newScale) {
+    const s = zoomState;
+    const clamped = Math.min(s.maxScale, Math.max(s.minScale, newScale));
+    const ratio = clamped / s.scale;
+    s.tx = px - (px - s.tx) * ratio;
+    s.ty = py - (py - s.ty) * ratio;
+    s.scale = clamped;
+    clamp();
+    render();
+  }
+
+  viewport.addEventListener("wheel", (event) => {
+    if (!zoomState) return;
+    event.preventDefault();
+    hideHint();
+    const rect = viewport.getBoundingClientRect();
+    const factor = event.deltaY < 0 ? 1.2 : 1 / 1.2;
+    zoomAt(event.clientX - rect.left, event.clientY - rect.top, zoomState.scale * factor);
+  }, { passive: false });
+
+  overlay.querySelectorAll(".zoom-viewer__zoom-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (!zoomState) return;
+      hideHint();
+      const rect = viewport.getBoundingClientRect();
+      const factor = btn.dataset.zoom === "in" ? 1.4 : 1 / 1.4;
+      zoomAt(rect.width / 2, rect.height / 2, zoomState.scale * factor);
+    });
+  });
+
+  const pointers = new Map();
+  let lastMid = null;
+  let pinchStartDist = 0;
+  let pinchStartScale = 1;
+  let gestureHasPinched = false;
+  let dragStart = null;
+  let lastTapTime = 0;
+
+  function dist(a, b) {
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  }
+
+  function mid(a, b) {
+    return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  }
+
+  viewport.addEventListener("pointerdown", (event) => {
+    if (!zoomState) return;
+    try {
+      viewport.setPointerCapture(event.pointerId);
+    } catch (err) {
+      /* ignore - pointer capture is a nice-to-have, not required for pan/zoom to work */
+    }
+    const rect = viewport.getBoundingClientRect();
+    const point = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+    pointers.set(event.pointerId, point);
+    hideHint();
+    viewport.classList.add("is-dragging");
+    if (pointers.size === 1) {
+      dragStart = point;
+    }
+    if (pointers.size === 2) {
+      gestureHasPinched = true;
+      const pts = Array.from(pointers.values());
+      pinchStartDist = dist(pts[0], pts[1]);
+      pinchStartScale = zoomState.scale;
+      lastMid = mid(pts[0], pts[1]);
+    }
+  });
+
+  viewport.addEventListener("pointermove", (event) => {
+    if (!zoomState || !pointers.has(event.pointerId)) return;
+    const rect = viewport.getBoundingClientRect();
+    const point = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+    const prev = pointers.get(event.pointerId);
+    pointers.set(event.pointerId, point);
+
+    if (pointers.size === 1) {
+      zoomState.tx += point.x - prev.x;
+      zoomState.ty += point.y - prev.y;
+      clamp();
+      render();
+    } else if (pointers.size === 2) {
+      const pts = Array.from(pointers.values());
+      const newMid = mid(pts[0], pts[1]);
+      const newDist = dist(pts[0], pts[1]);
+      zoomState.tx += newMid.x - lastMid.x;
+      zoomState.ty += newMid.y - lastMid.y;
+      lastMid = newMid;
+      const targetScale = pinchStartScale * (newDist / pinchStartDist);
+      zoomAt(newMid.x, newMid.y, targetScale);
+    }
+  });
+
+  function endPointer(event) {
+    if (!zoomState) {
+      pointers.delete(event.pointerId);
+      return;
+    }
+    const rect = viewport.getBoundingClientRect();
+    const point = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+    pointers.delete(event.pointerId);
+
+    if (pointers.size === 0) {
+      viewport.classList.remove("is-dragging");
+      // Only treat this as a tap (for double-tap-to-zoom) if the gesture never
+      // involved a second finger and the pointer didn't move far — a pinch's
+      // two near-simultaneous finger-lifts must never be read as a double-tap.
+      const moved = dragStart ? Math.hypot(point.x - dragStart.x, point.y - dragStart.y) : Infinity;
+      if (!gestureHasPinched && moved < 10) {
+        const now = Date.now();
+        if (now - lastTapTime < 350) {
+          const target = zoomState.scale > zoomState.minScale * 1.5 ? zoomState.minScale : zoomState.minScale * 3;
+          zoomAt(point.x, point.y, target);
+          lastTapTime = 0;
+        } else {
+          lastTapTime = now;
+        }
+      } else {
+        lastTapTime = 0;
+      }
+      gestureHasPinched = false;
+      dragStart = null;
+    } else if (pointers.size === 1) {
+      pinchStartDist = 0;
+      lastMid = null;
+      dragStart = Array.from(pointers.values())[0];
+    }
+  }
+
+  viewport.addEventListener("pointerup", endPointer);
+  viewport.addEventListener("pointercancel", endPointer);
+
+  window.addEventListener("resize", () => {
+    if (!zoomState) return;
+    clamp();
+    render();
+  });
+
+  overlay._api = { clamp, render, zoomAt, imgEl: img, hintEl: hint };
+  return overlay;
+}
+
+function openZoomViewer(trigger) {
+  const img = trigger.querySelector("img");
+  if (!img) return;
+  if (!zoomEl) zoomEl = buildZoomViewer();
+
+  const zoomImg = zoomEl.querySelector(".zoom-viewer__img");
+  zoomImg.src = img.currentSrc || img.src;
+  zoomImg.alt = img.alt || "";
+  zoomEl.querySelector(".zoom-viewer__hint").classList.remove("is-hidden");
+  zoomEl.classList.add("is-open");
+  document.body.classList.add("zoom-open");
+  document.addEventListener("keydown", onZoomKeydown);
+  zoomEl.querySelector(".zoom-viewer__close").focus();
+
+  const naturalReady = () => {
+    const viewport = zoomEl.querySelector(".zoom-viewer__viewport");
+    const vw = viewport.clientWidth;
+    const vh = viewport.clientHeight;
+    const naturalWidth = zoomImg.naturalWidth;
+    const naturalHeight = zoomImg.naturalHeight;
+    const fitScale = Math.min(vw / naturalWidth, vh / naturalHeight);
+    zoomState = {
+      naturalWidth,
+      naturalHeight,
+      scale: fitScale,
+      minScale: fitScale,
+      maxScale: fitScale * 6,
+      tx: (vw - naturalWidth * fitScale) / 2,
+      ty: (vh - naturalHeight * fitScale) / 2,
+      trigger,
+    };
+    zoomEl._api.render();
+  };
+
+  if (zoomImg.complete && zoomImg.naturalWidth) {
+    naturalReady();
+  } else {
+    zoomImg.onload = naturalReady;
+  }
+}
+
+function closeZoomViewer() {
+  if (!zoomEl) return;
+  zoomEl.classList.remove("is-open");
+  document.body.classList.remove("zoom-open");
+  document.removeEventListener("keydown", onZoomKeydown);
+  if (zoomState && zoomState.trigger && typeof zoomState.trigger.focus === "function") {
+    zoomState.trigger.focus();
+  }
+  zoomState = null;
+}
+
+function onZoomKeydown(event) {
+  if (event.key === "Escape") closeZoomViewer();
+}
+
+document.querySelectorAll(".zoom-figure__trigger").forEach((trigger) => {
+  trigger.addEventListener("click", () => openZoomViewer(trigger));
 });
