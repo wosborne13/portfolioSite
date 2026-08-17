@@ -130,7 +130,7 @@ function buildLightbox() {
     <button type="button" class="lightbox__close" aria-label="Close">✕</button>
     <button type="button" class="lightbox__arrow lightbox__arrow--prev" aria-label="Previous image">‹</button>
     <figure class="lightbox__figure">
-      <img class="lightbox__img" alt="">
+      <img class="lightbox__img" alt="" draggable="false">
     </figure>
     <button type="button" class="lightbox__arrow lightbox__arrow--next" aria-label="Next image">›</button>
   `;
@@ -222,6 +222,8 @@ document.querySelectorAll(".spread-viewer").forEach((viewer) => {
   const frame = viewer.querySelector(".spread-viewer__frame");
   if (!slideList || !stageImg || !prev || !next) return;
 
+  stageImg.draggable = false;
+
   const slides = Array.from(slideList.children).map((li) => {
     const img = li.querySelector("img");
     const paragraphs = Array.from(li.querySelectorAll("p")).map((p) => p.textContent.trim());
@@ -301,6 +303,10 @@ function wireLightboxImages(images) {
   images.forEach((img, index) => {
     img.setAttribute("role", "button");
     img.setAttribute("tabindex", "0");
+    // Images are natively draggable; without this, a real click that drifts
+    // a pixel or two between mousedown and mouseup starts a drag instead of
+    // firing "click", which silently swallows the lightbox open.
+    img.draggable = false;
     img.addEventListener("click", () => openLightbox(images, index));
     img.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
@@ -315,7 +321,7 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
   wireLightboxImages(Array.from(gallery.querySelectorAll("img")));
 });
 
-document.querySelectorAll(".project-inline-figure--lightbox").forEach((figure) => {
+document.querySelectorAll(".project-figure--lightbox").forEach((figure) => {
   const img = figure.querySelector("img");
   if (img) wireLightboxImages([img]);
 });
@@ -566,5 +572,7 @@ function onZoomKeydown(event) {
 }
 
 document.querySelectorAll(".zoom-figure__trigger").forEach((trigger) => {
+  const triggerImg = trigger.querySelector("img");
+  if (triggerImg) triggerImg.draggable = false;
   trigger.addEventListener("click", () => openZoomViewer(trigger));
 });
