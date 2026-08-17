@@ -71,7 +71,7 @@
 
     <figure class="project-figure project-figure--lightbox container">
       <img src="../images/1_K12JSAuthMigrationDiagram.jpg" alt="Diagram mapping legacy and NextGen accounts across K12JobSpot and Frontline's other product, color-coded by B2C and B2B users, with dotted lines for job postings and notes on migration constraints">
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+      <figcaption>The diagram I made after the initial conversation around migrating users from the old to the new system. At this point in time, Product was still trying to figure out what the best approach would be for the business.</figcaption>
     </figure>
 
     <div class="container">
@@ -96,7 +96,7 @@
 
     <figure class="project-figure project-figure--lightbox container">
       <img src="../images/2_K12JSAuthStartingFlow.jpg" alt="Annotated flowchart of the original migration screens, walking through the starting screen's three choices, sign-in, account creation, and several info-only and two-choice steps before a user reaches the product">
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+      <figcaption>This authentication and migration flow resulted fewer than half of the users making it into the new platform. It could take as many as 12 screens before a user is actually logged in and able to use the platform.</figcaption>
     </figure>
 
     <div class="container">
@@ -121,7 +121,7 @@
 
     <figure class="project-figure project-figure--lightbox container">
       <img src="../images/3_K12JSAuthOnboarding.jpg" alt="Screenshot of the K12JobSpot onboarding flow's Upload Resume step, with a stepper for Upload Resume, Add Personal Details, Add Certificates &amp; Licenses, and Set Profile Visibility">
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+      <figcaption>A streamlined, guided onboarding wizard was a more effective way of getting job seekers started on the right foot. This approach replaced the data migration from the legacy system.</figcaption>
     </figure>
 
     <div class="container">
@@ -149,23 +149,23 @@
         <ul class="spread-viewer__slides" hidden>
         <li>
           <img src="../images/4_K12JSAuthAutomateDecisionsFirstFlow.jpg" alt="Flowchart titled Login Flow: from the login screen, a user chooses to sign in or create a new account; signing in with legacy K12JobSpot credentials routes to account creation">
-          <p>First flow: Caption placeholder — replace with real copy.</p>
+          <p>First flow: My first pass at a possible flow that would take the burden of choice off of the user and get them where they needed to be.</p>
         </li>
         <li>
           <img src="../images/5_K12JSAuthAutomateDecisionsSecondFlow.jpg" alt="Flowchart of screens for upgrading an existing K12JobSpot account to a Frontline Passport, walking through sign-in, account creation, and confirmation screens">
-          <p>Second flow: Caption placeholder — replace with real copy.</p>
+          <p>Second flow: Once the general idea was fleshed out, I dropped some screengrabs in to better communicate the idea to Product and Eng.</p>
         </li>
         <li>
           <img src="../images/6_K12JSAuthAutomateDecisionsThirdFlow.jpg" alt="Flowchart marked Not Viable, cannot pass credentials over to Platform, showing a rejected approach for checking legacy credentials and creating a new account">
-          <p>Third flow: Caption placeholder — replace with real copy.</p>
+          <p>Third flow: Looking to trim down the number of decisions the user had to make even more, I hit my first tech constraint. We couldn't pass credentials over to platform, which meant no passwords until the final sign-in screen owned by platform.</p>
         </li>
         <li>
           <img src="../images/7_K12JSAuthAutomateDecisionsFinalFlow.jpg" alt="Flowchart of the final email-first routing flow, including a backend checks table used to route users based on which accounts are associated with their email">
-          <p>Final flow: Caption placeholder — replace with real copy.</p>
+          <p>Final flow: We could get close to the previous slide's experience by having users enter just their email, then running a series of checks on it behind the scenes. Once done, we'd route the user to the appropriate place. This experience capped out at a much more manageable number of screens, 4.</p>
         </li>
         <li>
           <img src="../images/8_K12JSAuthAutomateDecisionsCloseUp.jpg" alt="Close-up of the backend checks table, listing scenarios for combinations of Frontline Passport, NextGen K12JobSpot, and legacy K12JobSpot accounts and the resulting action">
-          <p>Close-up: Caption placeholder — replace with real copy.</p>
+          <p>Close-up: The checks we were to run in the background covered the full range of possible users and every permutation of account types.</p>
         </li>
         </ul>
       </div>
@@ -196,7 +196,7 @@
 
     <figure class="project-figure project-figure--lightbox container">
       <img src="../images/9_K12JSAuthBandaid.jpg" alt="Screenshot of the shipped sign-in modal warning that accounts older than a cutoff date must create a new account, with Sign In and Create Account buttons">
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+      <figcaption>While not quite as smooth as the email-first approach, this experience still caps out at 4 screens at most. It relies on error messaging rather than backend checks, but was still successful.</figcaption>
     </figure>
 
     <div class="container">
@@ -214,7 +214,7 @@
       <button type="button" class="zoom-figure__trigger" aria-label="Open full story map to zoom and pan">
         <img src="../images/10_K12JSStoryMapAuthOnboardApplyEasyApply1.jpg" alt="Full story map of the onboarding, apply, and easy apply flows, spanning the landing page, authentication, onboarding, save search onboarding, apply onboarding, apply, and easy apply sections">
       </button>
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+      <figcaption>The full storymap of the authentication, onboarding, and application flows in K12JobSpot. The goal of this project was to reduce the authentication and onboarding pieces as much as possible, to let users get to the thing they actually wanted to do as fast as possible.</figcaption>
     </figure>
 
     <div class="container">
