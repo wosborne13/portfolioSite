@@ -929,6 +929,19 @@ a {
   height: auto;
 }
 
+/* Locks the frame to the landscape slides' aspect ratio so a taller/narrower
+   slide (e.g. a portrait flowchart) letterboxes to match instead of
+   stretching the frame to its own full-width height. */
+.spread-viewer--fixed-aspect .spread-viewer__frame {
+  aspect-ratio: 16 / 9;
+}
+
+.spread-viewer--fixed-aspect .spread-viewer__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .spread-viewer__arrow {
   grid-row: 2;
 }
@@ -1011,7 +1024,7 @@ body.lightbox-open {
 
 .lightbox__figure {
   margin: 0;
-  max-width: min(90vw, 1100px);
+  max-width: min(92vw, 1800px);
   display: flex;
   align-items: center;
   justify-content: center;
