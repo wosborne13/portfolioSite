@@ -58,11 +58,6 @@
       <img src="../images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
     </figure>
 
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/1_K12JSAuthMigrationDiagram.jpg" alt="Diagram mapping legacy and NextGen accounts across K12JobSpot and Frontline's other product, color-coded by B2C and B2B users, with dotted lines for job postings and notes on migration constraints">
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
-    </figure>
-
     <div class="container">
       <div class="project-body">
         <div class="project-body__block">
@@ -75,7 +70,7 @@
     </div>
 
     <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/2_K12JSAuthStartingFlow.jpg" alt="Annotated flowchart of the original migration screens, walking through the starting screen's three choices, sign-in, account creation, and several info-only and two-choice steps before a user reaches the product">
+      <img src="../images/1_K12JSAuthMigrationDiagram.jpg" alt="Diagram mapping legacy and NextGen accounts across K12JobSpot and Frontline's other product, color-coded by B2C and B2B users, with dotted lines for job postings and notes on migration constraints">
       <figcaption>Caption placeholder — replace with real copy.</figcaption>
     </figure>
 
@@ -100,7 +95,7 @@
     </div>
 
     <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/3_K12JSAuthOnboarding.jpg" alt="Screenshot of the K12JobSpot onboarding flow's Upload Resume step, with a stepper for Upload Resume, Add Personal Details, Add Certificates &amp; Licenses, and Set Profile Visibility">
+      <img src="../images/2_K12JSAuthStartingFlow.jpg" alt="Annotated flowchart of the original migration screens, walking through the starting screen's three choices, sign-in, account creation, and several info-only and two-choice steps before a user reaches the product">
       <figcaption>Caption placeholder — replace with real copy.</figcaption>
     </figure>
 
@@ -111,7 +106,7 @@
         </div>
         <div class="project-body__block">
           <p>Once I had a clear picture of the flow, I began with what seemed to be the most obvious problem: the unexpected data migration. Was it necessary? We didn't have time to rework the process, so it was a question of whether or not to cut it entirely. It had been in the plan long enough to have become a given. When I raised cutting it, Product pushed back — their worry was reasonable, that users would be upset to find old data gone.</p>
-          <p>Rather than argue, I asked the PM to pull three numbers:</p> 
+          <p>Rather than argue, I asked the PM to pull three numbers:</p>
           <ul class="list-plain" style="max-width: 52ch; margin-bottom: 1rem;">
             <li>How many profiles had been created in the past year?</li>
             <li>How many edited in the past year?</li>
@@ -120,6 +115,22 @@
           <p>About 80,000 accounts had been created/updated in the past year, and only about 1/3rd of them had more than the basics. That meant that only about 1.2% of users would lose data that wasn't likely stale.</p>
           <p>Additionally, the fields in the legacy product didn't match the new product, so even when we did migrate data, it was incomplete. Users were forced to fill in the gaps immediately after getting through the long account flow, which was worse than just starting fresh.</p>
           <p>Once Product saw the numbers, they came around, and were relieved to let it go. They added a line to the migration announcement email telling users who wanted their old data to retrieve it first, since it wouldn't carry over. With data migration off the table, the redesign narrowed to a single job: get the user signed in.</p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="project-figure project-figure--lightbox container">
+      <img src="../images/3_K12JSAuthOnboarding.jpg" alt="Screenshot of the K12JobSpot onboarding flow's Upload Resume step, with a stepper for Upload Resume, Add Personal Details, Add Certificates &amp; Licenses, and Set Profile Visibility">
+      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+    </figure>
+
+    <div class="container">
+      <div class="project-body">
+        <div class="project-body__block">
+          <h2>Automate the Decisions</h2>
+        </div>
+        <div class="project-body__block">
+          <p>I redesigned the flow so that all of the decisions were handled by our system, rather than the user. The user enters an email; the system checks whether it belongs to a new account, an existing Frontline Platform Account, or a legacy account, and routes them to the right screen. I worked through the routing logic with the PM and tech lead, checking each path against what the identity platform could actually support. Since we were handling the checks before asking for a password, we could securely get the user to the right place without a link between the legacy and new account databases. The most screens any given user would encounter was 2 once they input their email.</p>
         </div>
       </div>
     </div>
@@ -163,17 +174,6 @@
     <div class="container">
       <div class="project-body">
         <div class="project-body__block">
-          <h2>Automate the Decisions</h2>
-        </div>
-        <div class="project-body__block">
-          <p>I redesigned the flow so that all of the decisions were handled by our system, rather than the user. The user enters an email; the system checks whether it belongs to a new account, an existing Frontline Platform Account, or a legacy account, and routes them to the right screen. I worked through the routing logic with the PM and tech lead, checking each path against what the identity platform could actually support. Since we were handling the checks before asking for a password, we could securely get the user to the right place without a link between the legacy and new account databases. The most screens any given user would encounter was 2 once they input their email.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
           <h2>The Wrench</h2>
         </div>
         <div class="project-body__block">
@@ -181,11 +181,6 @@
         </div>
       </div>
     </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/9_K12JSAuthBandaid.jpg" alt="Screenshot of the shipped sign-in modal warning that accounts older than a cutoff date must create a new account, with Sign In and Create Account buttons">
-      <figcaption>Caption placeholder — replace with real copy.</figcaption>
-    </figure>
 
     <div class="container">
       <div class="project-body">
@@ -199,10 +194,8 @@
       </div>
     </div>
 
-    <figure class="zoom-figure container">
-      <button type="button" class="zoom-figure__trigger" aria-label="Open full story map to zoom and pan">
-        <img src="../images/10_K12JSStoryMapAuthOnboardApplyEasyApply1.jpg" alt="Full story map of the onboarding, apply, and easy apply flows, spanning the landing page, authentication, onboarding, save search onboarding, apply onboarding, apply, and easy apply sections">
-      </button>
+    <figure class="project-figure project-figure--lightbox container">
+      <img src="../images/9_K12JSAuthBandaid.jpg" alt="Screenshot of the shipped sign-in modal warning that accounts older than a cutoff date must create a new account, with Sign In and Create Account buttons">
       <figcaption>Caption placeholder — replace with real copy.</figcaption>
     </figure>
 
@@ -215,7 +208,16 @@
           <p>Migration completion went from 47% to 96%. Both figures come from Pendo, measured over comparable two-week windows — the first once we had enough volume to be confident the original flow was failing, the second in the two weeks after the new version deployed. Thanks to the flood of new users, the districts have seen a significant increase in quality applicants for the jobs they are posting, which is the ultimate customer outcome we were aiming for.</p>
         </div>
       </div>
+    </div>
 
+    <figure class="zoom-figure container">
+      <button type="button" class="zoom-figure__trigger" aria-label="Open full story map to zoom and pan">
+        <img src="../images/10_K12JSStoryMapAuthOnboardApplyEasyApply1.jpg" alt="Full story map of the onboarding, apply, and easy apply flows, spanning the landing page, authentication, onboarding, save search onboarding, apply onboarding, apply, and easy apply sections">
+      </button>
+      <figcaption>Caption placeholder — replace with real copy.</figcaption>
+    </figure>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>On Reflection</h2>
