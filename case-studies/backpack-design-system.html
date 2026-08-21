@@ -54,8 +54,8 @@
       </div>
     </section>
 
-    <figure class="project-figure container">
-      <img src="../images/backpack-hero.svg" alt="Abstract artwork showing scattered, unrelated shapes resolving into an ordered grid of components, representing the Backpack design system">
+    <figure class="project-figure project-figure--lightbox container">
+      <img src="../images/1_BackpackHero.jpg" alt="Angled grid of Backpack design system documentation pages, covering color, typography, and component rules, fanning into the distance behind the Backpack logo and wordmark reading &quot;a design system for products @ Frontline&quot;">
     </figure>
 
     <div class="container">
@@ -68,7 +68,16 @@
           <p>Leadership had already decided the new system would be based on Frontline Central, one of the company's most established products. My job was to turn that decision into something designers and developers could actually use.</p>
         </div>
       </div>
+    </div>
 
+    <div class="container">
+      <figure class="project-figure project-figure--lightbox" style="max-width: 66%; margin-inline: auto;">
+        <img src="../images/2_BackpackContext.jpg" alt="Diagram of the Frontline Platform's product portfolio as a wheel, divided into Student Management, Human Capital Management, and Business Operations Management quadrants, each broken into individual products around a central Frontline Platform hub">
+        <figcaption>Frontline is divided into different product areas, each with its own unique needs and challenges.</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>Building the foundation</h2>
@@ -80,12 +89,37 @@
       </div>
     </div>
 
-    <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/backpack-detail-a.svg" alt="Abstract layered diagram representing a Figma library architecture of foundations, components, and patterns">
-        <figcaption>Figma library architecture — foundations / components / patterns structure</figcaption>
-      </figure>
-    </div>
+    <section class="spread-viewer-band">
+      <div class="spread-viewer spread-viewer--fixed-aspect container">
+        <div class="spread-viewer__stage">
+          <figure class="spread-viewer__frame">
+            <img class="spread-viewer__img" src="" alt="">
+          </figure>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--next" aria-label="Next image">›</button>
+          <div class="spread-viewer__caption"></div>
+        </div>
+
+        <ul class="spread-viewer__slides" hidden>
+        <li>
+          <img src="../images/3_1_BackpackIdeation.jpg" alt="Whiteboard-style diagram comparing two Figma file structure options, a flatter structure versus heavy use of a Projects subnav, above wireframes for a design system splash page branching into About the System and Component Library sections">
+          <p>Ideation: The first thing to decide was the system architecture.</p>
+        </li>
+        <li>
+          <img src="../images/3_2_BackpackFoundations.jpg" alt="Backpack documentation pages for Color, showing primary and extended product color ramps with accessibility badges, and Typography, showing the Open Sans type scale, usage rules, and dos and don'ts">
+          <p>Foundations: Once structure was decided, I moved on to the foundation of the system. Colors, typography, spacing, icons, etc.</p>
+        </li>
+        <li>
+          <img src="../images/3_3_BackpackComponentRules.jpg" alt="Backpack documentation pages for Badging and Status Indication, showing badge and text indicator variants, and Buttons and Links, showing the full CTA, default, and link button matrix with usage rules and dos and don'ts">
+          <p>Component rules: Each component has its own page, where designers, developers and other stakeholders can find detailed information about usage, variants, and implementation guidelines.</p>
+        </li>
+        <li>
+          <img src="../images/3_4_BackpackComponentSelection.jpg" alt="Grid of Backpack component specs including dropdowns, tabs, checkboxes and radio buttons, inputs, toast messages, sidekick side nav and header, date pickers, dialogs, toggles, and a left caret expander">
+          <p>More Components: Some of the components the system contains.</p>
+        </li>
+        </ul>
+      </div>
+    </section>
 
     <div class="container">
       <div class="project-body">
@@ -101,12 +135,33 @@
       </div>
     </div>
 
-    <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/backpack-detail-b.svg" alt="Abstract exploded-view diagram of a single component annotated with measurement lines, representing a detailed spec">
-        <figcaption>"Exploded view" component spec — measurements, spacing, and states labeled</figcaption>
-      </figure>
-    </div>
+    <section class="spread-viewer-band">
+      <div class="spread-viewer spread-viewer--fixed-aspect container">
+        <div class="spread-viewer__stage">
+          <figure class="spread-viewer__frame">
+            <img class="spread-viewer__img" src="" alt="">
+          </figure>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--next" aria-label="Next image">›</button>
+          <div class="spread-viewer__caption"></div>
+        </div>
+
+        <ul class="spread-viewer__slides" hidden>
+        <li>
+          <img src="../images/4_1_BackpackExplodedDropdown.jpg" alt="Exploded-view spec of the dropdown component, with numbered callouts labeling every layer, size, color token, and text style for the dropdown main bar, dropdown options, and option row">
+          <p>These exploded views provided a stopgap solution after the request for resources to build a component library was denied.</p>
+        </li>
+        <li>
+          <img src="../images/4_2_BackpackExplodedCheckbox.jpg" alt="Exploded-view spec of the checkbox and radio button components, with numbered callouts labeling layer structure, sizing, colors, and text style for each">
+          <p>These exploded views provided a stopgap solution after the request for resources to build a component library was denied.</p>
+        </li>
+        <li>
+          <img src="../images/4_3_BackpackExplodedButton.jpg" alt="Exploded-view spec of the button component, with numbered callouts labeling background, border, icon, text, and padding values">
+          <p>These exploded views provided a stopgap solution after the request for resources to build a component library was denied.</p>
+        </li>
+        </ul>
+      </div>
+    </section>
 
     <div class="container">
       <div class="project-body">
@@ -119,7 +174,33 @@
           <p>I walked him through the system and the robust documentation I'd built, and he saw the value of having a single source of truth for the components his team was building. It would take the guesswork out of building future additions to the product and speed up development. Essentially pivoting to adopt the design system was a way to take a pile of open questions off his team's plate. He agreed, and engineering built the library straight off my Figma specs.</p>
         </div>
       </div>
+    </div>
 
+    <section class="spread-viewer-band">
+      <div class="spread-viewer spread-viewer--fixed-aspect container">
+        <div class="spread-viewer__stage">
+          <figure class="spread-viewer__frame">
+            <img class="spread-viewer__img" src="" alt="">
+          </figure>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--next" aria-label="Next image">›</button>
+          <div class="spread-viewer__caption"></div>
+        </div>
+
+        <ul class="spread-viewer__slides" hidden>
+        <li>
+          <img src="../images/5_1_BackpackColorVariables.jpg" alt="Three Figma variables panels showing primitive color scales and semantic text, surface, border, and icon color aliases built on top of them">
+          <p>Color variables: When I began working with the engineering team, I realized it was time we had our variables built out correctly.</p>
+        </li>
+        <li>
+          <img src="../images/5_2_BackpackColorVariablesTypography.jpg" alt="Figma panels showing the Backpack library published in Manage Libraries, alongside primitive spacing variables and semantic type, font weight, line height, and spacing variables">
+          <p>Typography &amp; spacing variables: I wanted to set things up the right way so we had a solid foundation for the system to expand on.</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>Outcome</h2>
@@ -131,12 +212,10 @@
       </div>
     </div>
 
-    <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/backpack-detail-c.svg" alt="Abstract before-and-after diagram of a shipped product screen, unstyled utility blocks resolving into a cohesive styled interface">
-        <figcaption>Backpack in a shipped product — a real screen built on the system, before and after</figcaption>
-      </figure>
-    </div>
+    <figure class="project-figure project-figure--lightbox container">
+      <img src="../images/6_BackpackOutcome.jpg" alt="Recruiting &amp; Hiring product screen shown on a laptop, styled with Backpack components: a purple app header, sidebar navigation, tabbed applicant funnel, and an applicant detail panel">
+      <figcaption>For the first time in Frontline's history, products have a single source to look at for design and development guidance.</figcaption>
+    </figure>
 
     <div class="container">
       <div class="project-body">
@@ -160,6 +239,8 @@
       </div>
     </section>
   </main>
+
+  <script src="../main.js" defer></script>
 
   <footer class="site-footer">
     <hr class="rule rule--thin">
