@@ -54,8 +54,9 @@
       </div>
     </section>
 
-    <figure class="project-figure container">
-      <img src="../images/interviewscheduling-hero.svg" alt="Abstract composition of scattered individual contacts on the left resolving into a single locked calendar block with automatic confirmations on the right">
+    <figure class="project-figure project-figure--lightbox container">
+      <img src="../images/1_IntSchedHero.png" alt="Screenshot of the Recruiting & Hiring interview scheduler mid-flow, with four applicants selected on the left and a block of four interview windows set on the calendar on the right">
+      <figcaption>[Caption placeholder — the scheduler, mid-flow]</figcaption>
     </figure>
 
     <div class="container">
@@ -68,7 +69,33 @@
           <p>That mattered commercially. Roughly half the customers still on the legacy product used its interview management consistently, and a rebuild that couldn't do interviews gave them a reason not to move. This was first and foremost a migration blocker.</p>
         </div>
       </div>
+    </div>
 
+    <section class="spread-viewer-band">
+      <div class="spread-viewer spread-viewer--fixed-aspect container">
+        <div class="spread-viewer__stage">
+          <figure class="spread-viewer__frame">
+            <img class="spread-viewer__img" src="" alt="">
+          </figure>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--next" aria-label="Next image">›</button>
+          <div class="spread-viewer__caption"></div>
+        </div>
+
+        <ul class="spread-viewer__slides" hidden>
+        <li>
+          <img src="../images/2_1_IntSchedStagesDiagram.png" alt="Diagram of a Recruiting & Hiring hiring funnel, showing applicants moving through Submitted, Initial Screening, Interview, and Supplemental Info stages toward Hired or Not Selected">
+          <p>[Caption placeholder — how the hiring funnel's stages work]</p>
+        </li>
+        <li>
+          <img src="../images/2_2_IntSchedStagesHiFi.png" alt="Screenshot of the Recruiting & Hiring applicant list with a candidate selected, showing her application details next to an empty Interview Series panel with a Schedule Interview button">
+          <p>[Caption placeholder — where the Interview stage lived before this project]</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>Why Scheduling</h2>
@@ -78,7 +105,37 @@
           <p>The typical story we were told was a coordinator works out who should conduct the interview, chases their availability by phone or email, then contacts applicants once there's a window. If things don't line up, or the interviewer drops, the whole sequence restarts. This amounts to a lot of manual, time-consuming work. My first thought was to integrate calendars into the product, however most districts don't have processes and infrastructure to make that useful.</p>
         </div>
       </div>
+    </div>
 
+    <section class="spread-viewer-band">
+      <div class="spread-viewer spread-viewer--fixed-aspect container">
+        <div class="spread-viewer__stage">
+          <figure class="spread-viewer__frame">
+            <img class="spread-viewer__img" src="" alt="">
+          </figure>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--next" aria-label="Next image">›</button>
+          <div class="spread-viewer__caption"></div>
+        </div>
+
+        <ul class="spread-viewer__slides" hidden>
+        <li>
+          <img src="../images/3_1_IntSchedPostGenAct.png" alt="Research slide titled Problem Statement, summarizing that K-12 hiring teams struggle to schedule, conduct, and evaluate interviews consistently, with Known Challenges and Our Focus sections below">
+          <p>[Caption placeholder — the problem statement out of generative research]</p>
+        </li>
+        <li>
+          <img src="../images/3_2_IntSchedPostGenAct.png" alt="Diagram of the current interview scheduling workflow, from manually determining the panel through checking availability, booking a room, contacting candidates, and confirming invites">
+          <p>[Caption placeholder — mapping the current, mostly manual workflow]</p>
+        </li>
+        <li>
+          <img src="../images/3_3_IntSchedPostGenAct.png" alt="Journey map for scheduling a single interview with one candidate, broken into steps, user actions, pain points, and opportunities across determining the panel, finding availability, and scheduling">
+          <p>[Caption placeholder — journey mapping a single interview scheduled]</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>AI Powered Prototype</h2>
@@ -90,9 +147,11 @@
     </div>
 
     <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/interviewscheduling-detail-a.svg" alt="Abstract diagram of the first prototype, interviewers and applicants polled together at once, resulting in interviews scattered across a calendar instead of gathered into a block">
-        <figcaption>First prototype — interviewers and applicants polled together, scheduled wherever availability overlapped</figcaption>
+      <figure class="project-video">
+        <video controls preload="metadata">
+          <source src="../images/4_IntSchedFirstProtoClickthrough.mp4" type="video/mp4">
+        </video>
+        <figcaption>[Caption placeholder — clickthrough of the first prototype]</figcaption>
       </figure>
     </div>
 
@@ -110,6 +169,13 @@
     </div>
 
     <div class="container">
+      <figure class="project-figure project-figure--lightbox">
+        <img src="../images/5_IntSchedWorkflows.png" alt="Diagram comparing the initial prototype flow, which polled interviewers and applicants for availability together, against the revised prototype flow, which locks interviewer availability before applicants are ever polled">
+        <figcaption>[Caption placeholder — old vs. new prototype flow]</figcaption>
+      </figure>
+    </div>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>A quick fix</h2>
@@ -121,9 +187,11 @@
     </div>
 
     <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/interviewscheduling-detail-b.svg" alt="Abstract stepper diagram showing a sequenced flow from selecting interviewers through locking their availability, selecting applicants, configuring details, and sending confirmations">
-        <figcaption>Rebuilt flow — interviewer availability locked before applicants are ever asked</figcaption>
+      <figure class="project-video">
+        <video controls preload="metadata">
+          <source src="../images/6_IntSchedSecondProtoClickthrough.mp4" type="video/mp4">
+        </video>
+        <figcaption>[Caption placeholder — clickthrough of the rebuilt prototype]</figcaption>
       </figure>
     </div>
 
@@ -140,9 +208,9 @@
     </div>
 
     <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/interviewscheduling-detail-c.svg" alt="Abstract diagram of a two-state stepper, one row showing the poll step explicitly sent and the other showing it explicitly marked as not needed, both continuing into the same remaining steps">
-        <figcaption>The poll step in both states — sent, or explicitly marked not needed</figcaption>
+      <figure class="project-figure project-figure--lightbox">
+        <img src="../images/7_IntSchedPollOptional.png" alt="Screenshot of the Schedule Interview modal's first step, showing interviewer selection and an optional Gather Interviewer Availability poll section below it">
+        <figcaption>[Caption placeholder — the poll step made optional]</figcaption>
       </figure>
     </div>
 
@@ -155,7 +223,41 @@
           <p>Every district has interviewers outside the system — a co-op employee with a district email who isn't in the staff directory, a partner district's administrator on a panel, etc. Sending them emails and giving them access to the polling interface added a good deal of work for Engineering. I trimmed the experience down in order to release a usable version of the scheduler within the project timeline, and worked with Engineering and Product to work out a plan to release a complete version as a fast follow.</p>
         </div>
       </div>
+    </div>
 
+    <section class="spread-viewer-band">
+      <div class="spread-viewer spread-viewer--fixed-aspect container">
+        <div class="spread-viewer__stage">
+          <figure class="spread-viewer__frame">
+            <img class="spread-viewer__img" src="" alt="">
+          </figure>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel__arrow spread-viewer__arrow spread-viewer__arrow--next" aria-label="Next image">›</button>
+          <div class="spread-viewer__caption"></div>
+        </div>
+
+        <ul class="spread-viewer__slides" hidden>
+        <li>
+          <img src="../images/8_1_IntSchedFirstVer.png" alt="Screenshot of the early prototype's Interview Details step, showing applicants and interviewers selected together on one screen alongside a calendar for setting interview windows">
+          <p>[Caption placeholder — early version, step 1]</p>
+        </li>
+        <li>
+          <img src="../images/8_2_IntSchedFirstVer.png" alt="Screenshot of the early prototype's calendar and location fields, with a four-window interview block set and a site address and room entered">
+          <p>[Caption placeholder — early version, step 2]</p>
+        </li>
+        <li>
+          <img src="../images/8_3_IntSchedFirstVer.png" alt="Screenshot of the early prototype's Confirmation Emails step, showing the applicant confirmation email template with recipients, subject, and body populated with merge tokens">
+          <p>[Caption placeholder — early version, step 3]</p>
+        </li>
+        <li>
+          <img src="../images/8_4_IntSchedFirstVer.png" alt="Screenshot of the early prototype's Review & Send Invitations step, showing the confirmed interview series details and a Send Interview Invitation to Applicants button">
+          <p>[Caption placeholder — early version, step 4]</p>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="container">
       <div class="project-body">
         <div class="project-body__block">
           <h2>Outcome</h2>
@@ -175,6 +277,8 @@
       </div>
     </section>
   </main>
+
+  <script src="../main.js" defer></script>
 
   <footer class="site-footer">
     <hr class="rule rule--thin">

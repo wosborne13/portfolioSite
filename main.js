@@ -224,6 +224,7 @@ document.querySelectorAll(".spread-viewer").forEach((viewer) => {
 
   stageImg.draggable = false;
 
+  const slideImages = Array.from(slideList.children).map((li) => li.querySelector("img")).filter(Boolean);
   const slides = Array.from(slideList.children).map((li) => {
     const img = li.querySelector("img");
     const paragraphs = Array.from(li.querySelectorAll("p")).map((p) => p.textContent.trim());
@@ -270,8 +271,14 @@ document.querySelectorAll(".spread-viewer").forEach((viewer) => {
   if (frame) {
     frame.addEventListener("click", (event) => {
       const rect = frame.getBoundingClientRect();
-      const clickedLeftHalf = event.clientX - rect.left < rect.width / 2;
-      step(clickedLeftHalf ? -1 : 1);
+      const fraction = (event.clientX - rect.left) / rect.width;
+      if (fraction < 0.25) {
+        step(-1);
+      } else if (fraction > 0.75) {
+        step(1);
+      } else {
+        openLightbox(slideImages, index);
+      }
     });
 
     let touchStartX = null;

@@ -845,6 +845,20 @@ a {
 
 .project-video {
   margin: 0 auto clamp(2.5rem, 6vw, 4rem);
+  max-width: 860px;
+}
+
+.project-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--color-surface);
+}
+
+.project-video figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
 }
 
 .project-statement {
