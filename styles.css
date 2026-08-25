@@ -1274,8 +1274,11 @@ body.zoom-open {
   gap: 0.75rem 1rem;
   padding-block: clamp(2rem, 5vw, 3rem);
   /* Extra room below the "Next project" link before the footer's own
-     rule/padding starts, so content doesn't run straight into it. */
-  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+     rule/padding starts, so content doesn't run straight into it.
+     Matches --cs-row-gap, the same rhythm used between every other
+     section on these pages, so the closing gap reads as deliberate
+     rather than a leftover sliver. */
+  margin-bottom: var(--cs-row-gap);
 }
 
 .project-next__link {
@@ -1716,6 +1719,14 @@ html.gate-page:not(.is-unlocked) .site-footer {
    over their margin-inline and silently un-center the image. */
 .cs-figure { margin-block: 0; }
 .cs-full { margin-inline: 0; }
+/* The interview-scheduling clickthroughs are .cs-full *and* the older
+   .project-video (max-width: 860px; margin: 0 auto) — same bug as the
+   note above, just caught by .project-video instead of .cs-narrow/
+   .cs-md. .cs-full's margin-inline: 0 wins the cascade at equal
+   specificity and zeroes out project-video's centering, pinning the
+   860px-capped video to the left edge. Higher-specificity override
+   restores it. */
+.cs-full.project-video { margin-inline: auto; }
 .cs-figure img,
 .cs-figure video {
   display: block;
