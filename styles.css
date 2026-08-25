@@ -1510,3 +1510,228 @@ html.gate-page:not(.is-unlocked) .site-footer {
 .project-meta__value {
   text-wrap: pretty;
 }
+
+/* -------------------------------------------------- */
+/* Editorial grid system (case-study / fun project     */
+/* pages) — 8-column at 769px+, 2-col tablet, 1-col    */
+/* mobile. See case-studies/layout-experiments for the */
+/* working notes this was built from.                  */
+/* -------------------------------------------------- */
+:root {
+  --cs-gap: 24px;
+  --cs-row-gap: clamp(2.5rem, 6vw, 4rem);
+  --cs-pad: 16px;
+  --cs-max: 1440px;
+
+  --t-heading-lg: clamp(2.5rem, 7vw, 5rem);
+  --t-heading-md: clamp(1.75rem, 4.5vw, 2.5rem);
+  --t-heading-sm: clamp(1.75rem, 4.5vw, 2.5rem);
+  --t-heading-label: 0.875rem;
+  --t-body-lg: clamp(1.125rem, 2.2vw, 1.5rem);
+  --t-body-md: 1rem;
+  --t-body-sm: 0.875rem;
+  --t-caption: 0.875rem;
+  --t-body-xs: 0.75rem;
+}
+
+/* ---------- type scale ---------- */
+.t-heading-lg,
+.t-heading-md,
+.t-heading-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance;
+}
+.t-heading-lg { font-size: var(--t-heading-lg); letter-spacing: -0.03em; line-height: 0.95; }
+.t-heading-md { font-size: var(--t-heading-md); }
+.t-heading-sm { font-size: var(--t-heading-sm); }
+
+.t-heading-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-heading-label);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.t-body-lg { font-family: var(--font-body); font-weight: 500; font-size: var(--t-body-lg); line-height: 1.45; margin: 0; text-wrap: pretty; }
+.t-body-md { font-family: var(--font-body); font-weight: 400; font-size: var(--t-body-md); line-height: 1.6; margin: 0 0 1rem; max-width: 58ch; text-wrap: pretty; }
+.t-body-md:last-child { margin-bottom: 0; }
+.t-body-sm { font-family: var(--font-body); font-weight: 400; font-size: var(--t-body-sm); line-height: 1.6; margin: 0; }
+.t-body-xs { font-family: var(--font-body); font-weight: 400; font-size: var(--t-body-xs); line-height: 1.5; margin: 0; }
+.t-caption { font-family: var(--font-display); font-weight: 400; font-size: var(--t-caption); letter-spacing: 0.01em; margin: 0.75rem 0 0; color: var(--color-muted); }
+
+/* ---------- grid system ---------- */
+.cs-page {
+  max-width: var(--cs-max);
+  margin-inline: auto;
+  padding-inline: var(--cs-pad);
+}
+
+@media (min-width: 641px) {
+  .cs-page { padding-inline: 32px; }
+}
+
+@media (min-width: 1281px) {
+  .cs-page { padding-inline: 64px; }
+}
+
+/* .cs-flow is the outer vertical stack for a section's content. Each
+   child is a *separate* layout unit (a .cs-row, or a standalone
+   figure) rather than one continuous grid — a shared grid lets
+   auto-placement pack a later item into leftover space next to a
+   narrower sibling, which both misaligns things and (for images)
+   reads as off-center. Keeping every visual "row" its own box
+   sidesteps that entirely. */
+.cs-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-row-gap);
+}
+
+/* .cs-row: a label + text pair.
+   - 769-1024px: heading full-width above, both left-aligned within a
+     shared, centered column.
+   - 1025px+: heading sits beside the text in its own narrow rail,
+     left-aligned (the rail is finally wide enough for a heading-sm
+     title without wrapping awkwardly). */
+.cs-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.25rem;
+  column-gap: var(--cs-gap);
+}
+
+/* .t-body-md caps at 58ch as a general readability default, but
+   .cs-text's grid column is already the intended width at every
+   8-col tier — the extra cap just shrinks the paragraph inside its
+   own (correctly sized/positioned) box, leaving dead space and
+   throwing off centering/alignment against the heading. The column
+   width *is* the measure here, so let the paragraph fill it. */
+.cs-row .cs-text p { max-width: none; }
+
+/* Text column is 4 of 8 (the same "image-narrow" width the figures
+   use). Starting on column 3 leaves an equal 2-column margin on the
+   right, matching the 2-column label rail on the left, so the row
+   balances even though nothing is centered via auto-margins. */
+@media (min-width: 769px) {
+  .cs-row { grid-template-columns: repeat(8, 1fr); }
+  .cs-row .cs-label { grid-column: 1 / -1; }
+  .cs-row .cs-text { grid-column: 3 / span 4; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cs-row .cs-label { grid-column: 3 / span 4; }
+}
+
+@media (min-width: 1025px) {
+  .cs-row { row-gap: var(--cs-gap); }
+  .cs-row .cs-label { grid-column: 1 / span 2; padding-top: 0.2rem; }
+}
+
+/* Figures size themselves as a percentage of the full content width,
+   math'd to equal N columns + its internal gaps out of the 8-column
+   row (percentages scale correctly regardless of viewport since the
+   24px gap is constant across every 8-col tier). Narrow/md are
+   centered; wide fills the row. */
+.cs-full { width: 100%; }
+.cs-narrow { width: calc(50% - 12px); margin-inline: auto; }  /* image-narrow: 4 of 8 cols */
+.cs-md { width: calc(75% - 6px); margin-inline: auto; }       /* image-md: 6 of 8 cols */
+
+@media (max-width: 768px) {
+  .cs-narrow, .cs-md { width: 100%; margin-inline: 0; }
+}
+
+/* ---------- overview (project meta) ---------- */
+.cs-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cs-gap) var(--cs-gap);
+  row-gap: 1.75rem;
+}
+@media (min-width: 641px) { .cs-overview { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 769px) { .cs-overview { grid-template-columns: repeat(4, 1fr); } }
+
+.cs-overview__label { display: block; margin-bottom: 0.6rem; }
+
+/* ---------- hero block ---------- */
+.cs-hero {
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: 0.85rem;
+}
+.cs-section {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* ---------- figures ---------- */
+/* margin-block only — margin-inline is owned by the width utility
+   classes above (.cs-full/.cs-narrow/.cs-md) and must not be reset
+   here, since equal-specificity + later source order would win out
+   over their margin-inline and silently un-center the image. */
+.cs-figure { margin-block: 0; }
+.cs-full { margin-inline: 0; }
+.cs-figure img,
+.cs-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--color-surface);
+}
+.cs-figure--lightbox img {
+  cursor: zoom-in;
+  transition: opacity 0.25s ease;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.cs-figure--lightbox img:hover { opacity: 0.85; }
+
+/* -------------------------------------------------- */
+/* Mobile nav (<=640px)                                 */
+/* -------------------------------------------------- */
+.nav__burger {
+  display: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-ink);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__burger svg { display: block; width: 1.5rem; height: 1.5rem; }
+.nav__burger .icon-close { display: none; }
+.nav.is-open .nav__burger .icon-open { display: none; }
+.nav.is-open .nav__burger .icon-close { display: block; }
+
+@media (max-width: 640px) {
+  .nav__burger { display: flex; }
+  .nav { position: relative; }
+
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 16px 1.5rem;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-ink);
+  }
+
+  .nav__links li { border-top: 1px solid var(--color-line); }
+  .nav__links a { display: block; padding: 1rem 0; }
+
+  .nav.is-open .nav__links { display: flex; }
+}

@@ -1,3 +1,19 @@
+document.querySelectorAll(".nav").forEach((nav) => {
+  const burger = nav.querySelector(".nav__burger");
+  if (!burger) return;
+
+  const setOpen = (isOpen) => {
+    nav.classList.toggle("is-open", isOpen);
+    burger.setAttribute("aria-expanded", String(isOpen));
+    burger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  };
+
+  burger.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+  nav.querySelectorAll(".nav__links a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+});
+
 document.querySelectorAll(".carousel").forEach((carousel) => {
   const track = carousel.querySelector(".carousel__track");
   const prev = carousel.querySelector(".carousel__arrow--prev");

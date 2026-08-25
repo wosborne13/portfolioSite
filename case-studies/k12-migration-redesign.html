@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script src="../gate.js" defer></script>
 </head>
@@ -22,121 +22,120 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </nav>
   </header>
 
   <main>
-    <section class="project-hero container">
-      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
-      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Frontline Education - K12JobSpot</p>
-      <h1 class="project-hero__title">User Migration Redesign</h1>
-      <p class="u-lead">Achieving a 104% increase in flow completion after a time-constrained redesign.</p>
+    <section class="cs-page">
+      <a class="back-link u-caption" href="../work.html" style="margin-top: 1.5rem; display: inline-flex;">← Back to Work</a>
+
+      <div class="cs-hero">
+        <p class="t-heading-label" style="margin-top: 1.5rem;">Frontline Education - K12JobSpot</p>
+        <h1 class="t-heading-lg">User Migration Redesign<span class="dot"></span></h1>
+        <p class="t-body-lg">Achieving a 104% increase in flow completion after a time-constrained redesign.</p>
+      </div>
     </section>
 
     <hr class="rule">
 
-    <section class="project-meta container">
-      <div>
-        <span class="u-caption project-meta__label">What I did</span>
-        <p class="project-meta__value">Diagnosed an issue with an existing account migration flow and designed a new approach that reduced the number of decisions users had to make during the migration process, as well as removed a useless additional task.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">The migration flow to the new version of K12JobSpot had just under a 50% completion rate. Clearly a rework was needed, as the whole product rebuild depended on user adoption.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">When it went sideways</span>
-        <p class="project-meta__value">Two days before the final sprint, engineering found the identity platform couldn't build the real-time detection the redesign depended on.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">We shipped a blunter, date-based fallback in the time we had. Migration completion went from 47% to 96%, and the flow dropped from 8-10 screens down to 2-4.</p>
+    <section class="cs-page cs-section">
+      <div class="cs-overview">
+        <div>
+          <span class="t-heading-label cs-overview__label">What I did</span>
+          <p class="t-body-md">Diagnosed an issue with an existing account migration flow and designed a new approach that reduced the number of decisions users had to make during the migration process, as well as removed a useless additional task.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">Why I did it</span>
+          <p class="t-body-md">The migration flow to the new version of K12JobSpot had just under a 50% completion rate. Clearly a rework was needed, as the whole product rebuild depended on user adoption.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">When it went sideways</span>
+          <p class="t-body-md">Two days before the final sprint, engineering found the identity platform couldn't build the real-time detection the redesign depended on.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">What changed</span>
+          <p class="t-body-md">We shipped a blunter, date-based fallback in the time we had. Migration completion went from 47% to 96%, and the flow dropped from 8-10 screens down to 2-4.</p>
+        </div>
       </div>
     </section>
 
-    <figure class="project-figure container">
-      <img src="../images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
-    </figure>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Context</h2>
+        <figure class="cs-full cs-figure">
+          <img src="../images/k12migration-hero.svg" alt="Abstract flow diagram showing a tangled multi-step branching flow resolving into a short, direct flow">
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Context</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Launching a new version of K12JobSpot, the largest education-focused job board in the country, meant moving all 2.6 million users off a legacy identity system and onto a new one owned by our platform team. This required every user to create a new account, with an option to migrate some of the data from their old account. Early adopter numbers were bad: just under 1/2 of the users who started the migration finished it. Everything else about the launch rode on people actually reaching the product, so figuring this out was critical.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>Launching a new version of K12JobSpot, the largest education-focused job board in the country, meant moving all 2.6 million users off a legacy identity system and onto a new one owned by our platform team. This required every user to create a new account, with an option to migrate some of the data from their old account. Early adopter numbers were bad: just under 1/2 of the users who started the migration finished it. Everything else about the launch rode on people actually reaching the product, so figuring this out was critical.</p>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/1_K12JSAuthMigrationDiagram.jpg" alt="Diagram mapping legacy and NextGen accounts across K12JobSpot and Frontline's other product, color-coded by B2C and B2B users, with dotted lines for job postings and notes on migration constraints">
+          <figcaption class="t-caption">The diagram I made after the initial conversation around migrating users from the old to the new system. At this point in time, Product was still trying to figure out what the best approach would be for the business.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">The Problem</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The existing flow asked users to sort themselves before signing in. They had 3 options: new account, legacy account, or no account yet. Each choice opened another branch of screens and confirmations, and a user could pass through eight to ten of them before getting in. Additionally, any users with legacy accounts that managed to make it through the flow were immediately forced to migrate their data, or lose it for good. A huge roadblock when all they were trying to do was get into the product.</p>
+            <p class="t-body-md">A few constraints made this harder than a normal login redesign:</p>
+            <ul class="list-plain" style="margin-bottom: 1rem;">
+              <li>The legacy and modern databases couldn't talk to each other freely.</li>
+              <li>A separate platform team owned authentication.</li>
+              <li>We couldn't customize the platform-owned login screens.</li>
+              <li>Legacy passwords didn't always clear the new security requirements.</li>
+              <li>Data from the old account didn't line up perfectly with the new form fields.</li>
+              <li>Profile data in the new system can only be saved in sections. If a user didn't have data in every field in a section, they were unable to save it until they filled in the missing information.</li>
+            </ul>
+          </div>
         </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/2_K12JSAuthStartingFlow.jpg" alt="Annotated flowchart of the original migration screens, walking through the starting screen's three choices, sign-in, account creation, and several info-only and two-choice steps before a user reaches the product">
+          <figcaption class="t-caption">This authentication and migration flow resulted fewer than half of the users making it into the new platform. It could take as many as 12 screens before a user is actually logged in and able to use the platform.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Making the Cut</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Once I had a clear picture of the flow, I began with what seemed to be the most obvious problem: the unexpected data migration. Was it necessary? We didn't have time to rework the process, so it was a question of whether or not to cut it entirely. It had been in the plan long enough to have become a given. When I raised cutting it, Product pushed back — their worry was reasonable, that users would be upset to find old data gone.</p>
+            <p class="t-body-md">Rather than argue, I asked the PM to pull three numbers:</p>
+            <ul class="list-plain" style="margin-bottom: 1rem;">
+              <li>How many profiles had been created in the past year?</li>
+              <li>How many edited in the past year?</li>
+              <li>How many of those held anything beyond a name and email?</li>
+            </ul>
+            <p class="t-body-md">About 80,000 accounts had been created/updated in the past year, and only about 1/3rd of them had more than the basics. That meant that only about 1.2% of users would lose data that wasn't likely stale.</p>
+            <p class="t-body-md">Additionally, the fields in the legacy product didn't match the new product, so even when we did migrate data, it was incomplete. Users were forced to fill in the gaps immediately after getting through the long account flow, which was worse than just starting fresh.</p>
+            <p class="t-body-md">Once Product saw the numbers, they came around, and were relieved to let it go. They added a line to the migration announcement email telling users who wanted their old data to retrieve it first, since it wouldn't carry over. With data migration off the table, the redesign narrowed to a single job: get the user signed in.</p>
+          </div>
+        </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/3_K12JSAuthOnboarding.jpg" alt="Screenshot of the K12JobSpot onboarding flow's Upload Resume step, with a stepper for Upload Resume, Add Personal Details, Add Certificates &amp; Licenses, and Set Profile Visibility">
+          <figcaption class="t-caption">A streamlined, guided onboarding wizard was a more effective way of getting job seekers started on the right foot. This approach replaced the data migration from the legacy system.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Automate the Decisions</h2>
+          <div class="cs-text">
+            <p class="t-body-md">I redesigned the flow so that all of the decisions were handled by our system, rather than the user. The user enters an email; the system checks whether it belongs to a new account, an existing Frontline Platform Account, or a legacy account, and routes them to the right screen. I worked through the routing logic with the PM and tech lead, checking each path against what the identity platform could actually support. Since we were handling the checks before asking for a password, we could securely get the user to the right place without a link between the legacy and new account databases. The most screens any given user would encounter was 2 once they input their email.</p>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/1_K12JSAuthMigrationDiagram.jpg" alt="Diagram mapping legacy and NextGen accounts across K12JobSpot and Frontline's other product, color-coded by B2C and B2B users, with dotted lines for job postings and notes on migration constraints">
-      <figcaption>The diagram I made after the initial conversation around migrating users from the old to the new system. At this point in time, Product was still trying to figure out what the best approach would be for the business.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>The Problem</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The existing flow asked users to sort themselves before signing in. They had 3 options: new account, legacy account, or no account yet. Each choice opened another branch of screens and confirmations, and a user could pass through eight to ten of them before getting in. Additionally, any users with legacy accounts that managed to make it through the flow were immediately forced to migrate their data, or lose it for good. A huge roadblock when all they were trying to do was get into the product.</p>
-          <p>A few constraints made this harder than a normal login redesign:</p>
-          <ul class="list-plain" style="max-width: 52ch; margin-bottom: 1rem;">
-            <li>The legacy and modern databases couldn't talk to each other freely.</li>
-            <li>A separate platform team owned authentication.</li>
-            <li>We couldn't customize the platform-owned login screens.</li>
-            <li>Legacy passwords didn't always clear the new security requirements.</li>
-            <li>Data from the old account didn't line up perfectly with the new form fields.</li>
-            <li>Profile data in the new system can only be saved in sections. If a user didn't have data in every field in a section, they were unable to save it until they filled in the missing information.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/2_K12JSAuthStartingFlow.jpg" alt="Annotated flowchart of the original migration screens, walking through the starting screen's three choices, sign-in, account creation, and several info-only and two-choice steps before a user reaches the product">
-      <figcaption>This authentication and migration flow resulted fewer than half of the users making it into the new platform. It could take as many as 12 screens before a user is actually logged in and able to use the platform.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Making the Cut</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Once I had a clear picture of the flow, I began with what seemed to be the most obvious problem: the unexpected data migration. Was it necessary? We didn't have time to rework the process, so it was a question of whether or not to cut it entirely. It had been in the plan long enough to have become a given. When I raised cutting it, Product pushed back — their worry was reasonable, that users would be upset to find old data gone.</p>
-          <p>Rather than argue, I asked the PM to pull three numbers:</p>
-          <ul class="list-plain" style="max-width: 52ch; margin-bottom: 1rem;">
-            <li>How many profiles had been created in the past year?</li>
-            <li>How many edited in the past year?</li>
-            <li>How many of those held anything beyond a name and email?</li>
-          </ul>
-          <p>About 80,000 accounts had been created/updated in the past year, and only about 1/3rd of them had more than the basics. That meant that only about 1.2% of users would lose data that wasn't likely stale.</p>
-          <p>Additionally, the fields in the legacy product didn't match the new product, so even when we did migrate data, it was incomplete. Users were forced to fill in the gaps immediately after getting through the long account flow, which was worse than just starting fresh.</p>
-          <p>Once Product saw the numbers, they came around, and were relieved to let it go. They added a line to the migration announcement email telling users who wanted their old data to retrieve it first, since it wouldn't carry over. With data migration off the table, the redesign narrowed to a single job: get the user signed in.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/3_K12JSAuthOnboarding.jpg" alt="Screenshot of the K12JobSpot onboarding flow's Upload Resume step, with a stepper for Upload Resume, Add Personal Details, Add Certificates &amp; Licenses, and Set Profile Visibility">
-      <figcaption>A streamlined, guided onboarding wizard was a more effective way of getting job seekers started on the right foot. This approach replaced the data migration from the legacy system.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Automate the Decisions</h2>
-        </div>
-        <div class="project-body__block">
-          <p>I redesigned the flow so that all of the decisions were handled by our system, rather than the user. The user enters an email; the system checks whether it belongs to a new account, an existing Frontline Platform Account, or a legacy account, and routes them to the right screen. I worked through the routing logic with the PM and tech lead, checking each path against what the identity platform could actually support. Since we were handling the checks before asking for a password, we could securely get the user to the right place without a link between the legacy and new account databases. The most screens any given user would encounter was 2 once they input their email.</p>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -171,67 +170,57 @@
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>The Wrench</h2>
+    <section class="cs-page">
+      <div class="cs-flow">
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">The Wrench</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Two days before the final sprint was due to begin, engineering came back with a problem: the platform team couldn't build the account checks the whole design relied on. They were underwater — buried in requests and firefighting a backend that kept going down, with no room to take on more. Even more problematic: their identity system is shared across every Frontline product. Checking for legacy accounts couldn't be scoped to K12JobSpot alone — switch it on for us and you switch it on everywhere, for every product on the platform. This meant we had to find a new approach, and fast.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>Two days before the final sprint was due to begin, engineering came back with a problem: the platform team couldn't build the account checks the whole design relied on. They were underwater — buried in requests and firefighting a backend that kept going down, with no room to take on more. Even more problematic: their identity system is shared across every Frontline product. Checking for legacy accounts couldn't be scoped to K12JobSpot alone — switch it on for us and you switch it on everywhere, for every product on the platform. This meant we had to find a new approach, and fast.</p>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Bandaid</h2>
+          <div class="cs-text">
+            <p class="t-body-md">We went with a blunter, date-based rule. A message on the starting screen that warned users with accounts older than a certain date to create a new one. Two buttons: sign in, or create an account. Users who picked wrong would be caught by the system — try to create an account you already have and it sends you to sign-in; try to sign in without one and it sends you to create.</p>
+            <p class="t-body-md">It didn't do the work for the user the way the email-first version would have. But it held onto the same rule: give people the fewest choices possible, and cover the edge cases with clear guidance instead of extra screens. Sign-in came out to two screens, account creation three, and even a wrong first guess topped out around four — down from eight to ten.</p>
+          </div>
         </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/9_K12JSAuthBandaid.jpg" alt="Screenshot of the shipped sign-in modal warning that accounts older than a cutoff date must create a new account, with Sign In and Create Account buttons">
+          <figcaption class="t-caption">While not quite as smooth as the email-first approach, this experience still caps out at 4 screens at most. It relies on error messaging rather than backend checks, but was still successful.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Outcome</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Migration completion went from 47% to 96%. Both figures come from Pendo, measured over comparable two-week windows — the first once we had enough volume to be confident the original flow was failing, the second in the two weeks after the new version deployed. Thanks to the flood of new users, the districts have seen a significant increase in quality applicants for the jobs they are posting, which is the ultimate customer outcome we were aiming for.</p>
+          </div>
+        </div>
+
+        <figure class="zoom-figure cs-full">
+          <button type="button" class="zoom-figure__trigger" aria-label="Open full story map to zoom and pan">
+            <img src="../images/10_K12JSStoryMapAuthOnboardApplyEasyApply1.jpg" alt="Full story map of the onboarding, apply, and easy apply flows, spanning the landing page, authentication, onboarding, save search onboarding, apply onboarding, apply, and easy apply sections">
+          </button>
+          <figcaption class="t-caption">The full storymap of the authentication, onboarding, and application flows in K12JobSpot. The goal of this project was to reduce the authentication and onboarding pieces as much as possible, to let users get to the thing they actually wanted to do as fast as possible.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">On Reflection</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Clearly the biggest misstep on this project was the disconnect between the K12JobSpot team and the Platform team. I'm still not quite sure how it happened, since we were meeting with them regularly, but the result was that we didn't know what the platform could and couldn't do until it was almost too late to react. The ideal solution that I had spent time working out and vetting with the K12JobSpot team wasn't viable. Since this project I've made sure to triple-check with my tech leads regarding viability, especially when external teams are involved.</p>
+            <p class="t-body-md">Fortunately, the band-aid version of the flow worked well, exceeding expectations. It worked because both versions traced back to the goal of automating the decisions that the old flow put on the user. Because I was laser focused on shifting the complexity from the user to the system, the quick pivot still served that goal, and the user experience was clearly improved.<span class="dot"></span></p>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Bandaid</h2>
-        </div>
-        <div class="project-body__block">
-          <p>We went with a blunter, date-based rule. A message on the starting screen that warned users with accounts older than a certain date to create a new one. Two buttons: sign in, or create an account. Users who picked wrong would be caught by the system — try to create an account you already have and it sends you to sign-in; try to sign in without one and it sends you to create.</p>
-          <p>It didn't do the work for the user the way the email-first version would have. But it held onto the same rule: give people the fewest choices possible, and cover the edge cases with clear guidance instead of extra screens. Sign-in came out to two screens, account creation three, and even a wrong first guess topped out around four — down from eight to ten.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/9_K12JSAuthBandaid.jpg" alt="Screenshot of the shipped sign-in modal warning that accounts older than a cutoff date must create a new account, with Sign In and Create Account buttons">
-      <figcaption>While not quite as smooth as the email-first approach, this experience still caps out at 4 screens at most. It relies on error messaging rather than backend checks, but was still successful.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Outcome</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Migration completion went from 47% to 96%. Both figures come from Pendo, measured over comparable two-week windows — the first once we had enough volume to be confident the original flow was failing, the second in the two weeks after the new version deployed. Thanks to the flood of new users, the districts have seen a significant increase in quality applicants for the jobs they are posting, which is the ultimate customer outcome we were aiming for.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="zoom-figure container">
-      <button type="button" class="zoom-figure__trigger" aria-label="Open full story map to zoom and pan">
-        <img src="../images/10_K12JSStoryMapAuthOnboardApplyEasyApply1.jpg" alt="Full story map of the onboarding, apply, and easy apply flows, spanning the landing page, authentication, onboarding, save search onboarding, apply onboarding, apply, and easy apply sections">
-      </button>
-      <figcaption>The full storymap of the authentication, onboarding, and application flows in K12JobSpot. The goal of this project was to reduce the authentication and onboarding pieces as much as possible, to let users get to the thing they actually wanted to do as fast as possible.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>On Reflection</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Clearly the biggest misstep on this project was the disconnect between the K12JobSpot team and the Platform team. I'm still not quite sure how it happened, since we were meeting with them regularly, but the result was that we didn't know what the platform could and couldn't do until it was almost too late to react. The ideal solution that I had spent time working out and vetting with the K12JobSpot team wasn't viable. Since this project I've made sure to triple-check with my tech leads regarding viability, especially when external teams are involved.</p>
-          <p>Fortunately, the band-aid version of the flow worked well, exceeding expectations. It worked because both versions traced back to the goal of automating the decisions that the old flow put on the user. Because I was laser focused on shifting the complexity from the user to the system, the quick pivot still served that goal, and the user experience was clearly improved.</p>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <hr class="rule rule--thin">
 
-    <section class="container">
+    <section class="cs-page">
       <div class="project-next">
         <span class="u-caption">Next project</span>
         <a class="project-next__link" href="backpack-design-system.html">Backpack Design System →</a>

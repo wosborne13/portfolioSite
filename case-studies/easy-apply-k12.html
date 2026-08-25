@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script src="../gate.js" defer></script>
 </head>
@@ -22,158 +22,154 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </nav>
   </header>
 
   <main>
-    <section class="project-hero container">
-      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
-      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Frontline Education - K12JobSpot</p>
-      <h1 class="project-hero__title">Easy Apply</h1>
-      <p class="u-lead">Why K12JobSpot's Easy Apply doesn't work like LinkedIn's.</p>
+    <section class="cs-page">
+      <a class="back-link u-caption" href="../work.html" style="margin-top: 1.5rem; display: inline-flex;">← Back to Work</a>
+
+      <div class="cs-hero">
+        <p class="t-heading-label" style="margin-top: 1.5rem;">Frontline Education - K12JobSpot</p>
+        <h1 class="t-heading-lg">Easy Apply<span class="dot"></span></h1>
+        <p class="t-body-lg">Why K12JobSpot's Easy Apply doesn't work like LinkedIn's.</p>
+      </div>
     </section>
 
     <hr class="rule">
 
-    <section class="project-meta container">
-      <div>
-        <span class="u-caption project-meta__label">What I did</span>
-        <p class="project-meta__value">Ran interviews with school districts to test a plan Product had already scoped, then designed a profile-based application system as the alternative when the plan didn't hold up.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">Product had planned Easy Apply as a copy of LinkedIn's — take less applicant data in exchange for more applications — but no one had checked whether our districts would actually accept that trade.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">When it went sideways</span>
-        <p class="project-meta__value">Every medium and large district rejected the concept of a resume-only model outright; application volume and compliance rules made it a non-starter for most of the customer base.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">Average time to apply dropped from 1h 20m to 35m, and districts are seeing roughly 23% more applicants. The Easy Apply system I conceptualized satisfied the needs of both job seekers and employers.</p>
+    <section class="cs-page cs-section">
+      <div class="cs-overview">
+        <div>
+          <span class="t-heading-label cs-overview__label">What I did</span>
+          <p class="t-body-md">Ran interviews with school districts to test a plan Product had already scoped, then designed a profile-based application system as the alternative when the plan didn't hold up.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">Why I did it</span>
+          <p class="t-body-md">Product had planned Easy Apply as a copy of LinkedIn's — take less applicant data in exchange for more applications — but no one had checked whether our districts would actually accept that trade.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">When it went sideways</span>
+          <p class="t-body-md">Every medium and large district rejected the concept of a resume-only model outright; application volume and compliance rules made it a non-starter for most of the customer base.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">What changed</span>
+          <p class="t-body-md">Average time to apply dropped from 1h 20m to 35m, and districts are seeing roughly 23% more applicants. The Easy Apply system I conceptualized satisfied the needs of both job seekers and employers.</p>
+        </div>
       </div>
     </section>
 
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/1_K12JSHero.jpg" alt="Screenshot of K12JobSpot's job search results page with a High School Mathematics Teacher listing open, showing Easy Apply and View Details buttons">
-      <figcaption>The search results allow job seekers to quickly access and apply to positions that match their criteria.</figcaption>
-    </figure>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Context</h2>
+        <!-- image-wide: hero screenshot -->
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/1_K12JSHero.jpg" alt="Screenshot of K12JobSpot's job search results page with a High School Mathematics Teacher listing open, showing Easy Apply and View Details buttons">
+          <figcaption class="t-caption">The search results allow job seekers to quickly access and apply to positions that match their criteria.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Some context</h2>
+          <div class="cs-text">
+            <p class="t-body-md">K12JobSpot is the largest K-12-focused job board in the country. As part of its rebuild, one priority was connecting it to Recruiting &amp; Hiring — Frontline's applicant tracking system, itself being rebuilt after nearly 20 years. Both systems belonged to Frontline, which gave us an option most competitors didn't have: designing the job-seeker and employer sides of the hiring flow as one connected system instead of two disconnected ones.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>K12JobSpot is the largest K-12-focused job board in the country. As part of its rebuild, one priority was connecting it to Recruiting &amp; Hiring — Frontline's applicant tracking system, itself being rebuilt after nearly 20 years. Both systems belonged to Frontline, which gave us an option most competitors didn't have: designing the job-seeker and employer sides of the hiring flow as one connected system instead of two disconnected ones.</p>
+
+        <!-- image-narrow: explanatory diagram -->
+        <figure class="cs-narrow cs-figure project-figure--lightbox">
+          <img src="../images/2_RHK12JSProject_Diagram.jpg" alt="Diagram comparing the decentralized, overcomplicated current state of Recruiting &amp; Hiring and K12JobSpot against a centralized, standardized future state connecting admins and job seekers">
+          <figcaption class="t-caption">Before the rebuild, Recruiting &amp; Hiring and K12JobSpot operated as separate systems, leading to a fragmented user experience.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">The problem</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Repetitive data entry is one of the best-documented reasons job seekers abandon online applications — research, customer feedback, and my own experience applying to jobs all point the same direction. The employer side has the opposite constraint: many school districts can't accept a resume-only application. Depending on the state, they're required to collect very specific information up front — particular teaching certificates, detailed criminal-background questions, minimum years of experience, student-teaching history — none of which a resume reliably captures. On top of that, districts field high application volumes they need to screen quickly.</p>
+            <p class="t-body-md">Product had written requirements before I got involved, and the direction was LinkedIn's Easy Apply model: less information up front, higher application volume. It wasn't a bad instinct — a known competitor was doing it, and matching a proven pattern is a reasonable default when you don't have better information. But nobody had tested whether our districts would accept that tradeoff.</p>
+          </div>
         </div>
+
+        <!-- image-md: product screenshot (modal) -->
+        <figure class="cs-md cs-figure project-figure--lightbox">
+          <img src="../images/3_K12JS_EarlyEasyApplyConcept.jpg" alt="Screenshot of an early Easy Apply concept, a modal for applying to a job with base-level information and a resume upload, labeled Step 1 of 3">
+          <figcaption class="t-caption">The early version of Easy Apply mimicked LinkedIn's approach. Seekers could apply with minimal information and a resume.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">The research</h2>
+          <div class="cs-text">
+            <p class="t-body-md">I ran interviews with 11 districts across a range of sizes to test the LinkedIn model against our actual employer base, since the job-seeker side of the problem was already well understood.</p>
+            <p class="t-body-md">The split was clean. The small district I interviewed was fine trading a resume-only application for more applicants; they were already doing exactly that on LinkedIn. Every medium and large district said no. They receive high volumes per posting and need structured information up front to screen candidates, so a resume upload wasn't enough, and for some, compliance requirements ruled it out entirely.</p>
+            <p class="t-body-md">The result reframed the project. The obvious move, matching LinkedIn, would only work for the smallest slice of our customer base.</p>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">An alternative</h2>
+          <div class="cs-text">
+            <p class="t-body-md">I proposed a profile-based architecture instead. Application sections map to standardized job-seeker profile sections. Employers choose which categories they require; job seekers fill each section out once and reuse it across every application. As a profile fills in, jobs it already qualifies for get flagged "Easy Apply," dropping the process to three clicks — without ever asking employers to accept less data.</p>
+            <p class="t-body-md">The initial reaction was enthusiastic; nobody was attached to the LinkedIn model for its own sake, they just hadn't had a reason to consider anything else. It still took a few follow-up conversations before stakeholders fully let go of it. The LinkedIn pattern was the mental default, and moving people off a default takes more than one good meeting, even when nobody actively opposes the alternative.</p>
+            <p class="t-body-md">I built out the concept, user flows, diagrams, and interaction model, then worked with Product and Engineering to align on how profile data, employer requirements, and matching logic would operate together.</p>
+          </div>
+        </div>
+
+        <!-- image-md: annotated diagram, denser than the first one -->
+        <figure class="cs-md cs-figure project-figure--lightbox">
+          <img src="../images/4_K12JSEasyApplyDiagram.jpg" alt="Diagram showing Easy Apply access expanding across job listings as a job seeker's profile fills in, from an empty profile to a robust one">
+          <figcaption class="t-caption">A graphic I made to help stakeholders visualize the concept I was pitching. Leveraging a standardized profile architecture, Easy Apply allows job seekers to quickly apply to positions while still providing the structured and detailed information employers need.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Outcome</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The numbers that came in after launch backed the bet. Average time to complete an application dropped from 1 hour 20 minutes to 35 minutes across all users. Among people who applied to more than one job in a month, the average number of applications went from 4 to 9 — the job seekers who aren't chasing one specific role are applying to more than twice as many. On the employer side, districts are seeing a 23% increase in application volume on average.</p>
+            <p class="t-body-md">It's now one of K12JobSpot's primary differentiators for job seekers: as far as we know, no job board at this scale runs Easy Apply this way. Sales, marketing, and leadership have all rallied behind it, and it tested well on both sides — districts got the structured data they needed, and job seekers were openly relieved not to re-enter the same information on every application.</p>
+            <p class="t-body-md">The standardized profile architecture also opened up work that was never in the original scope — reporting, filtering, and candidate matching, all built on structured data that wouldn't exist if we'd gone the resume-only route.</p>
+          </div>
+        </div>
+
+        <!-- image-wide: device mockup, hero-style -->
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/5_K12JS_ApplyProcess.jpg" alt="Mockup of the Easy Apply application form on laptop and mobile, showing Personal Details fields pulled from a job seeker's saved profile">
+          <figcaption class="t-caption">Within minutes, a job seeker with a robust profile can submit detailed applications to as many positions as they like.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">The new tradeoff</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The profile model front-loads work onto a job seeker's first application. Easy Apply only kicks in once there's enough saved data to match a posting's requirements, so a brand-new user still does the manual entry up front. A resume parser takes the edge off — upload a resume and it pre-fills what it can — but the first application is never as light as the ones that follow. I'd make the same call again. A slightly heavier first application in exchange for a much lighter every-application-after is the right trade for a job board people come back to, and the jump in repeat applications is the evidence.</p>
+          </div>
+        </div>
+
+        <!-- image-wide: full screenshot -->
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/6_K12JS_EmptyApplications_TheTradeoff.jpg" alt="Placeholder slide reading &quot;Gif of someone applying to 3 jobs&quot; above a screenshot of K12JobSpot's job search results">
+          <figcaption class="t-caption">The only downside to this approach is the initial overhead of building a comprehensive profile, but that's a one-time investment that pays off with each subsequent application.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">What it came down to</h2>
+          <div class="cs-text">
+            <p class="t-body-md">This was an excellent opportunity to leverage the ownership structure of these two new products. LinkedIn trades applicant data for convenience because it doesn't own the employer's hiring system. Frontline owned both the job board (job seekers) and the applicant tracking system (employers), which meant the tradeoff everyone treated as unavoidable was one we could actually design around. The product would be missing one of its biggest strengths without this approach.<span class="dot"></span></p>
+          </div>
+        </div>
+
+        <!-- image-wide: detailed two-panel screenshot -->
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/7_K12JS_ApplicationToProfile.jpg" alt="Side-by-side screenshots of a Recruiting &amp; Hiring job posting's application sections configuration next to a job seeker's My Profile page showing the matching sections">
+          <figcaption class="t-caption">Left: A Recruiting & Hiring job posting's application sections configuration. Right: A job seeker's My Profile page showing the matching sections. Employers can configure the application process to match their specific needs, while job seekers can leverage their standardized profiles to streamline the application process.</figcaption>
+        </figure>
+
       </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/2_RHK12JSProject_Diagram.jpg" alt="Diagram comparing the decentralized, overcomplicated current state of Recruiting &amp; Hiring and K12JobSpot against a centralized, standardized future state connecting admins and job seekers">
-      <figcaption>Before the rebuild, Recruiting &amp; Hiring and K12JobSpot operated as separate systems, leading to a fragmented user experience.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Problem</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Repetitive data entry is one of the best-documented reasons job seekers abandon online applications — research, customer feedback, and my own experience applying to jobs all point the same direction. The employer side has the opposite constraint: many school districts can't accept a resume-only application. Depending on the state, they're required to collect very specific information up front — particular teaching certificates, detailed criminal-background questions, minimum years of experience, student-teaching history — none of which a resume reliably captures. On top of that, districts field high application volumes they need to screen quickly.</p>
-          <p>Product had written requirements before I got involved, and the direction was LinkedIn's Easy Apply model: less information up front, higher application volume. It wasn't a bad instinct — a known competitor was doing it, and matching a proven pattern is a reasonable default when you don't have better information. But nobody had tested whether our districts would accept that tradeoff.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/3_K12JS_EarlyEasyApplyConcept.jpg" alt="Screenshot of an early Easy Apply concept, a modal for applying to a job with base-level information and a resume upload, labeled Step 1 of 3">
-      <figcaption>The early version of Easy Apply mimicked LinkedIn's approach. Seekers could apply with minimal information and a resume.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Research</h2>
-        </div>
-        <div class="project-body__block">
-          <p>I ran interviews with 11 districts across a range of sizes to test the LinkedIn model against our actual employer base, since the job-seeker side of the problem was already well understood.</p>
-          <p>The split was clean. The small district I interviewed was fine trading a resume-only application for more applicants; they were already doing exactly that on LinkedIn. Every medium and large district said no. They receive high volumes per posting and need structured information up front to screen candidates, so a resume upload wasn't enough, and for some, compliance requirements ruled it out entirely.</p>
-          <p>The result reframed the project. The obvious move, matching LinkedIn, would only work for the smallest slice of our customer base.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>The alternative</h2>
-        </div>
-        <div class="project-body__block">
-          <p>I proposed a profile-based architecture instead. Application sections map to standardized job-seeker profile sections. Employers choose which categories they require; job seekers fill each section out once and reuse it across every application. As a profile fills in, jobs it already qualifies for get flagged "Easy Apply," dropping the process to three clicks — without ever asking employers to accept less data.</p>
-          <p>The initial reaction was enthusiastic; nobody was attached to the LinkedIn model for its own sake, they just hadn't had a reason to consider anything else. It still took a few follow-up conversations before stakeholders fully let go of it. The LinkedIn pattern was the mental default, and moving people off a default takes more than one good meeting, even when nobody actively opposes the alternative.</p>
-          <p>I built out the concept, user flows, diagrams, and interaction model, then worked with Product and Engineering to align on how profile data, employer requirements, and matching logic would operate together.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/4_K12JSEasyApplyDiagram.jpg" alt="Diagram showing Easy Apply access expanding across job listings as a job seeker's profile fills in, from an empty profile to a robust one">
-      <figcaption>A graphic I made to help stakeholders visualize the concept I was pitching. Leveraging a standardized profile architecture, Easy Apply allows job seekers to quickly apply to positions while still providing the structured and detailed information employers need.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Outcome</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The numbers that came in after launch backed the bet. Average time to complete an application dropped from 1 hour 20 minutes to 35 minutes across all users. Among people who applied to more than one job in a month, the average number of applications went from 4 to 9 — the job seekers who aren't chasing one specific role are applying to more than twice as many. On the employer side, districts are seeing a 23% increase in application volume on average.</p>
-          <p>It's now one of K12JobSpot's primary differentiators for job seekers: as far as we know, no job board at this scale runs Easy Apply this way. Sales, marketing, and leadership have all rallied behind it, and it tested well on both sides — districts got the structured data they needed, and job seekers were openly relieved not to re-enter the same information on every application.</p>
-          <p>The standardized profile architecture also opened up work that was never in the original scope — reporting, filtering, and candidate matching, all built on structured data that wouldn't exist if we'd gone the resume-only route.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/5_K12JS_ApplyProcess.jpg" alt="Mockup of the Easy Apply application form on laptop and mobile, showing Personal Details fields pulled from a job seeker's saved profile">
-      <figcaption>Within minutes, a job seeker with a robust profile can submit detailed applications to as many positions as they like.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>The New tradeoff</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The profile model front-loads work onto a job seeker's first application. Easy Apply only kicks in once there's enough saved data to match a posting's requirements, so a brand-new user still does the manual entry up front. A resume parser takes the edge off — upload a resume and it pre-fills what it can — but the first application is never as light as the ones that follow. I'd make the same call again. A slightly heavier first application in exchange for a much lighter every-application-after is the right trade for a job board people come back to, and the jump in repeat applications is the evidence.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/6_K12JS_EmptyApplications_TheTradeoff.jpg" alt="Placeholder slide reading &quot;Gif of someone applying to 3 jobs&quot; above a screenshot of K12JobSpot's job search results">
-      <figcaption>The only downside to this approach is the initial overhead of building a comprehensive profile, but that's a one-time investment that pays off with each subsequent application.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>What it came down to</h2>
-        </div>
-        <div class="project-body__block">
-          <p>This was an excellent opportunity to leverage the ownership structure of these two new products. LinkedIn trades applicant data for convenience because it doesn't own the employer's hiring system. Frontline owned both the job board (job seekers) and the applicant tracking system (employers), which meant the tradeoff everyone treated as unavoidable was one we could actually design around. The product would be missing one of its biggest strengths without this approach.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/7_K12JS_ApplicationToProfile.jpg" alt="Side-by-side screenshots of a Recruiting &amp; Hiring job posting's application sections configuration next to a job seeker's My Profile page showing the matching sections">
-      <figcaption>Left: A Recruiting & Hiring job posting's application sections configuration. Right: A job seeker's My Profile page showing the matching sections. Employers can configure the application process to match their specific needs, while job seekers can leverage their standardized profiles to streamline the application process.</figcaption>
-    </figure>
+    </section>
 
     <hr class="rule rule--thin">
 
-    <section class="container">
+    <section class="cs-page">
       <div class="project-next">
         <span class="u-caption">Next project</span>
         <a class="project-next__link" href="interview-scheduling.html">Interview Scheduling →</a>

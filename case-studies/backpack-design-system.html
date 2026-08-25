@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script src="../gate.js" defer></script>
 </head>
@@ -22,75 +22,80 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </nav>
   </header>
 
   <main>
-    <section class="project-hero container">
-      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
-      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Frontline Education</p>
-      <h1 class="project-hero__title">Backpack Design System</h1>
-      <p class="u-lead">Building and championing a design system even after resources were denied.</p>
+    <section class="cs-page">
+      <a class="back-link u-caption" href="../work.html" style="margin-top: 1.5rem; display: inline-flex;">← Back to Work</a>
+
+      <div class="cs-hero">
+        <p class="t-heading-label" style="margin-top: 1.5rem;">Frontline Education</p>
+        <h1 class="t-heading-lg">Backpack Design System<span class="dot"></span></h1>
+        <p class="t-body-lg">Building and championing a design system even after resources were denied.</p>
+      </div>
     </section>
 
     <hr class="rule">
 
-    <section class="project-meta container">
-      <div>
-        <span class="u-caption project-meta__label">What I did</span>
-        <p class="project-meta__value">Built a design system including tokens/variables, components, patterns, accessibility notes, and guidelines. Once complete, I drove adoption and convinced engineering to build a coded component library despite lack of product leadership buy-in.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">Frontline had grown by acquisition into 30+ products in a trenchcoat. Each had its own patterns and look/feel. Nothing was shared between them, and neither design nor engineering could move quickly across products.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">When it went sideways</span>
-        <p class="project-meta__value">Once the design decisions and artifacts had been made, leadership denied me any resources to get a coded component library built. Engineers had to build components by eye.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">6 products now share patterns and have a cohesive look and feel, previously unheard of at Frontline. They are first in line to benefit from a newly-funded design system update.</p>
+    <section class="cs-page cs-section">
+      <div class="cs-overview">
+        <div>
+          <span class="t-heading-label cs-overview__label">What I did</span>
+          <p class="t-body-md">Built a design system including tokens/variables, components, patterns, accessibility notes, and guidelines. Once complete, I drove adoption and convinced engineering to build a coded component library despite lack of product leadership buy-in.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">Why I did it</span>
+          <p class="t-body-md">Frontline had grown by acquisition into 30+ products in a trenchcoat. Each had its own patterns and look/feel. Nothing was shared between them, and neither design nor engineering could move quickly across products.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">When it went sideways</span>
+          <p class="t-body-md">Once the design decisions and artifacts had been made, leadership denied me any resources to get a coded component library built. Engineers had to build components by eye.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">What changed</span>
+          <p class="t-body-md">6 products now share patterns and have a cohesive look and feel, previously unheard of at Frontline. They are first in line to benefit from a newly-funded design system update.</p>
+        </div>
       </div>
     </section>
 
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/1_BackpackHero.jpg" alt="Angled grid of Backpack design system documentation pages, covering color, typography, and component rules, fanning into the distance behind the Backpack logo and wordmark reading &quot;a design system for products @ Frontline&quot;">
-    </figure>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Context</h2>
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/1_BackpackHero.jpg" alt="Angled grid of Backpack design system documentation pages, covering color, typography, and component rules, fanning into the distance behind the Backpack logo and wordmark reading &quot;a design system for products @ Frontline&quot;">
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Context</h2>
+          <div class="cs-text">
+            <p class="t-body-md">When I joined Frontline in September 2022, the company was a portfolio of roughly 30 products acquired over many years, each with its own patterns, conventions, and visual language. There was no shared component library and no common product language across teams. An earlier attempt at a design system had stalled and never got adopted.</p>
+            <p class="t-body-md">Leadership had already decided the new system would be based on Frontline Central, one of the company's most established products. My job was to turn that decision into something designers and developers could actually use.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>When I joined Frontline in September 2022, the company was a portfolio of roughly 30 products acquired over many years, each with its own patterns, conventions, and visual language. There was no shared component library and no common product language across teams. An earlier attempt at a design system had stalled and never got adopted.</p>
-          <p>Leadership had already decided the new system would be based on Frontline Central, one of the company's most established products. My job was to turn that decision into something designers and developers could actually use.</p>
+
+        <figure class="cs-md cs-figure project-figure--lightbox">
+          <img src="../images/2_BackpackContext.jpg" alt="Diagram of the Frontline Platform's product portfolio as a wheel, divided into Student Management, Human Capital Management, and Business Operations Management quadrants, each broken into individual products around a central Frontline Platform hub">
+          <figcaption class="t-caption">Frontline is divided into different product areas, each with its own unique needs and challenges.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Building the foundation</h2>
+          <div class="cs-text">
+            <p class="t-body-md">I built the system's Figma architecture from the ground up: separate libraries for foundations, components, and patterns, audited out of Frontline Central's existing UI. Between September 2022 and March 2023, I documented usage rules, built the variables and styles, and worked with other designers to construct the component set. By May 2023 the whole design team had adopted it. It's now known internally as Backpack, and the asset library holds 336 components.</p>
+            <p class="t-body-md">I also became the de facto component architect and QA reviewer for the rest of the team. Most designers were still building their Figma proficiency, having previously been using Invision, so I reviewed — and often rebuilt — the components other people made, to keep the system internally consistent and make sure the components were robust.</p>
+          </div>
         </div>
+
       </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-figure project-figure--lightbox" style="max-width: 66%; margin-inline: auto;">
-        <img src="../images/2_BackpackContext.jpg" alt="Diagram of the Frontline Platform's product portfolio as a wheel, divided into Student Management, Human Capital Management, and Business Operations Management quadrants, each broken into individual products around a central Frontline Platform hub">
-        <figcaption>Frontline is divided into different product areas, each with its own unique needs and challenges.</figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Building the foundation</h2>
-        </div>
-        <div class="project-body__block">
-          <p>I built the system's Figma architecture from the ground up: separate libraries for foundations, components, and patterns, audited out of Frontline Central's existing UI. Between September 2022 and March 2023, I documented usage rules, built the variables and styles, and worked with other designers to construct the component set. By May 2023 the whole design team had adopted it. It's now known internally as Backpack, and the asset library holds 336 components.</p>
-          <p>I also became the de facto component architect and QA reviewer for the rest of the team. Most designers were still building their Figma proficiency, having previously been using Invision, so I reviewed — and often rebuilt — the components other people made, to keep the system internally consistent and make sure the components were robust.</p>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -121,22 +126,24 @@
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Stopped in my Tracks</h2>
+    <section class="cs-page">
+      <div class="cs-flow">
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Stopped in my Tracks</h2>
+          <div class="cs-text">
+            <p class="t-body-md">By August 2023, developers outside the design team were requesting Figma access to reference the system directly. Without a coded component library, every dev had to eyeball the Figma file and rebuild each component from scratch. The design system existed, but was trapped in Figma.</p>
+            <p class="t-body-md">I brought my manager two ways to close that gap: stand up a small team, a PM plus dedicated dev resources, to build and govern a React library, or pull a couple of devs part-time and let me function as both PM and designer until the library was built out.</p>
+            <p class="t-body-md">Both were rejected. The CPO at the time didn't see enough value to justify moving people around or dedicate resources to the project.</p>
+            <p class="t-body-md">Rather than let that stall the system, I built "exploded view" specs for each component with every measurement, spacing value, and state broken out and labeled directly in Figma so a developer with no library access could reproduce a component accurately instead of guessing. It wasn't a substitute for a real library, but it was the best I could do under the circumstances. As the months passed, more and more teams began referencing the system, but they were still building everything from scratch, and with so many different copies being made, inconsistencies were inevitable.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>By August 2023, developers outside the design team were requesting Figma access to reference the system directly. Without a coded component library, every dev had to eyeball the Figma file and rebuild each component from scratch. The design system existed, but was trapped in Figma.</p>
-          <p>I brought my manager two ways to close that gap: stand up a small team, a PM plus dedicated dev resources, to build and govern a React library, or pull a couple of devs part-time and let me function as both PM and designer until the library was built out.</p>
-          <p>Both were rejected. The CPO at the time didn't see enough value to justify moving people around or dedicate resources to the project.</p>
-          <p>Rather than let that stall the system, I built "exploded view" specs for each component with every measurement, spacing value, and state broken out and labeled directly in Figma so a developer with no library access could reproduce a component accurately instead of guessing. It wasn't a substitute for a real library, but it was the best I could do under the circumstances. As the months passed, more and more teams began referencing the system, but they were still building everything from scratch, and with so many different copies being made, inconsistencies were inevitable.</p>
-        </div>
+
       </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -163,21 +170,23 @@
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Finding an opening</h2>
+    <section class="cs-page">
+      <div class="cs-flow">
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Finding an opening</h2>
+          <div class="cs-text">
+            <p class="t-body-md">In February 2024, I heard rumors of an engineering team building component library for one of the products in our People Solutions group. I tracked down who owned it, a senior front-end developer, and asked him to walk me through the initiative.</p>
+            <p class="t-body-md">Their plan was to build on Tailwind with minimal customization: essentially unstyled utility components, then theme them to their product. I pitched reskinning their Tailwind components to match Backpack instead. He wasn't thrilled by the idea at first, as it would add scope to the project, requiring his team to update the rest of their product to match Backpack as well.</p>
+            <p class="t-body-md">I walked him through the system and the robust documentation I'd built, and he saw the value of having a single source of truth for the components his team was building. It would take the guesswork out of building future additions to the product and speed up development. Essentially pivoting to adopt the design system was a way to take a pile of open questions off his team's plate. He agreed, and engineering built the library straight off my Figma specs.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>In February 2024, I heard rumors of an engineering team building component library for one of the products in our People Solutions group. I tracked down who owned it, a senior front-end developer, and asked him to walk me through the initiative.</p>
-          <p>Their plan was to build on Tailwind with minimal customization: essentially unstyled utility components, then theme them to their product. I pitched reskinning their Tailwind components to match Backpack instead. He wasn't thrilled by the idea at first, as it would add scope to the project, requiring his team to update the rest of their product to match Backpack as well.</p>
-          <p>I walked him through the system and the robust documentation I'd built, and he saw the value of having a single source of truth for the components his team was building. It would take the guesswork out of building future additions to the product and speed up development. Essentially pivoting to adopt the design system was a way to take a pile of open questions off his team's plate. He agreed, and engineering built the library straight off my Figma specs.</p>
-        </div>
+
       </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -200,39 +209,36 @@
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Outcome</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The React library gave developers what the exploded-view specs never could: components they could pull from directly instead of rebuilding by hand. The library also spread further than it was scoped to. It was originally meant for just two products, but once other product leaders learned it was an extension of Backpack, four more products began using it. Sharing components made it easier for those six products to begin building cross-functional experiences, addressing one of the biggest complaints our customers have, that Frontline products don't really work well together.</p>
-          <p>When a new CPO joined and made design system investment a priority, he set aside dedicated headcount — a new PM, a new dev team, and another designer — now kicking off a full visual overhaul and rollout on the foundation I'd already put in place. The products using that shared component library are now first in line to benefit from the updated styles and patterns, which will boost their usability and customer satisfaction. </p>
-        </div>
-      </div>
-    </div>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/6_BackpackOutcome.jpg" alt="Recruiting &amp; Hiring product screen shown on a laptop, styled with Backpack components: a purple app header, sidebar navigation, tabbed applicant funnel, and an applicant detail panel">
-      <figcaption>For the first time in Frontline's history, products have a single source to look at for design and development guidance.</figcaption>
-    </figure>
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Outcome</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The React library gave developers what the exploded-view specs never could: components they could pull from directly instead of rebuilding by hand. The library also spread further than it was scoped to. It was originally meant for just two products, but once other product leaders learned it was an extension of Backpack, four more products began using it. Sharing components made it easier for those six products to begin building cross-functional experiences, addressing one of the biggest complaints our customers have, that Frontline products don't really work well together.</p>
+            <p class="t-body-md">When a new CPO joined and made design system investment a priority, he set aside dedicated headcount — a new PM, a new dev team, and another designer — now kicking off a full visual overhaul and rollout on the foundation I'd already put in place. The products using that shared component library are now first in line to benefit from the updated styles and patterns, which will boost their usability and customer satisfaction.</p>
+          </div>
+        </div>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>On Reflection</h2>
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/6_BackpackOutcome.jpg" alt="Recruiting &amp; Hiring product screen shown on a laptop, styled with Backpack components: a purple app header, sidebar navigation, tabbed applicant funnel, and an applicant detail panel">
+          <figcaption class="t-caption">For the first time in Frontline's history, products have a single source to look at for design and development guidance.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">On Reflection</h2>
+          <div class="cs-text">
+            <p class="t-body-md">If I were starting over, I'd begin with a mature third-party component library rather than building Backpack from scratch. Frontline's interfaces rarely use anything that wouldn't be covered by one of the larger UI kits out there. Starting from something proven would have freed up the bulk of my time for adoption and governance, which is where the actual bottleneck turned out to be.</p>
+            <p class="t-body-md">This project was a crash course in the organizational and political challenges of such a large product portfolio, and it taught me that the work is as much about people and process as it is about pixels and code.<span class="dot"></span></p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>If I were starting over, I'd begin with a mature third-party component library rather than building Backpack from scratch. Frontline's interfaces rarely use anything that wouldn't be covered by one of the larger UI kits out there.  Starting from something proven would have freed up the bulk of my time for adoption and governance, which is where the actual bottleneck turned out to be.</p>
-          <p>This project was a crash course in the organizational and political challenges of such a large product portfolio, and it taught me that the work is as much about people and process as it is about pixels and code.
-          </p>
-        </div>
+
       </div>
-    </div>
+    </section>
 
     <hr class="rule rule--thin">
 
-    <section class="container">
+    <section class="cs-page">
       <div class="project-next">
         <span class="u-caption">Next project</span>
         <a class="project-next__link" href="team-nation-scoring.html">Team Nation Scoring →</a>

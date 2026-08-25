@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script src="../gate.js" defer></script>
 </head>
@@ -22,131 +22,124 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </nav>
   </header>
 
   <main>
-    <section class="project-hero container">
-      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
-      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Team Nation Sports</p>
-      <h1 class="project-hero__title">Team Nation Scoring</h1>
-      <p class="u-lead">Fixing a scoring system that punished players for playing on a learning games platform.</p>
+    <section class="cs-page">
+      <a class="back-link u-caption" href="../work.html" style="margin-top: 1.5rem; display: inline-flex;">← Back to Work</a>
+
+      <div class="cs-hero">
+        <p class="t-heading-label" style="margin-top: 1.5rem;">Team Nation Sports</p>
+        <h1 class="t-heading-lg">Team Nation Scoring<span class="dot"></span></h1>
+        <p class="t-body-lg">Fixing a scoring system that punished players for playing on a learning games platform.</p>
+      </div>
     </section>
 
     <hr class="rule">
 
-    <section class="project-meta container">
-      <div>
-        <span class="u-caption project-meta__label">What I did</span>
-        <p class="project-meta__value">As the designer and PM on this 0-to-1 platform, I diagnosed a drop in engagement as a motivation problem, not a lack of interest, and readjusted the way players were scored to incentivize continued play.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">Games played per team climbed when a team first joined, then plateaued, then fell off. Upon investigation, coaches and players told us the way scores were calculated felt like a punishment for continuing to play.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">When it went sideways</span>
-        <p class="project-meta__value">The Player Readiness Score was working exactly as designed — a fluctuating read on current skill, not a number that kept climbing. So the issue was that we were missing a sense of growth, not that the scoring algorithm was broken.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">I added a separate, cumulative points system and left the Player Readiness Score alone. Engagement skyrocketed, with games played by top-performing players up 3x; across the whole player base, 1.5x.</p>
+    <section class="cs-page cs-section">
+      <div class="cs-overview">
+        <div>
+          <span class="t-heading-label cs-overview__label">What I did</span>
+          <p class="t-body-md">As the designer and PM on this 0-to-1 platform, I diagnosed a drop in engagement as a motivation problem, not a lack of interest, and readjusted the way players were scored to incentivize continued play.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">Why I did it</span>
+          <p class="t-body-md">Games played per team climbed when a team first joined, then plateaued, then fell off. Upon investigation, coaches and players told us the way scores were calculated felt like a punishment for continuing to play.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">When it went sideways</span>
+          <p class="t-body-md">The Player Readiness Score was working exactly as designed — a fluctuating read on current skill, not a number that kept climbing. So the issue was that we were missing a sense of growth, not that the scoring algorithm was broken.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">What changed</span>
+          <p class="t-body-md">I added a separate, cumulative points system and left the Player Readiness Score alone. Engagement skyrocketed, with games played by top-performing players up 3x; across the whole player base, 1.5x.</p>
+        </div>
       </div>
     </section>
 
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/1_TNScoringHero.jpg" alt="Team Nation coach dashboard showing the Overall Performance view, with a Top 10 leaderboard, a Readiness trend line, a Readiness distribution chart, and a player table">
-    </figure>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Context</h2>
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/1_TNScoringHero.jpg" alt="Team Nation coach dashboard showing the Overall Performance view, with a Top 10 leaderboard, a Readiness trend line, a Readiness distribution chart, and a player table">
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Context</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Team Nation teaches athletes their playbooks through gamification: coaches upload their playbooks and other content, players drill it by playing learning games, and everyone's performance lands on a leaderboard.</p>
+            <p class="t-body-md">The core metric was the Player Readiness Score, which was based on a player's performance in learning games. Readiness was calculated from how many questions a player got right and how quickly they answered when they played a game. The intent was that as players continued to practice, their score would reflect their current level of competency, or "Readiness."</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>Team Nation teaches athletes their playbooks through gamification: coaches upload their playbooks and other content, players drill it by playing learning games, and everyone's performance lands on a leaderboard.</p>
-          <p>The core metric was the Player Readiness Score, which was based on a player's performance in learning games. Readiness was calculated from how many questions a player got right and how quickly they answered when they played a game. The intent was that as players continued to practice, their score would reflect their current level of competency, or "Readiness."</p>
+
+        <figure class="cs-md cs-figure project-figure--lightbox">
+          <img src="../images/2_TNScoring.jpg" alt="Marketing graphic showing coach content flowing into gamified drills on mobile, then into player results, with the tagline &quot;Anything you enter in Team Nation gets turned into games for your players&quot;">
+          <figcaption class="t-caption">Many of the coaches that adopted the platform reported a significant increase in player performance.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Problem</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The same story replayed each time we onboarded a team to our beta: games played per team climbed when a team first joined, then plateaued, then dropped off. When we asked coaches and players why, the answer was consistent — they felt punished for continuing to play. Readiness was an average, so a player who'd built up a high score could play another game, do fine, and still watch their score tick down. Once players caught on, the smart move was to stop playing the moment their score looked good. The leaderboard made it worse: with a 100% ceiling, the top players bunched into what looked like ten-way ties, which flattened any sense of competition.</p>
+          </div>
         </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/3_TNOldScoring.jpg" alt="Old scoring screens showing a New High Score moment where Readiness only rose 0.4 percent, next to an early whiteboard sketch of the scoring formula and a player progress screen stuck at 89 percent Readiness">
+          <figcaption class="t-caption">The original way of calculating player scores resulted in disinterest after a couple of weeks.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">The reasoning</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Readiness isn't supposed to only go up. It's a proxy for how well someone knows the material right now, and like any skill, that should slip when you stop practicing and climb when you keep at it. An average that can fall is doing exactly what a measure of current competency should do. The way Readiness was calculated and behaved was correct, it just wasn't the right thing to push players to chase. In fact, as part of this change, I added a decay to the Readiness calculation to better reflect the natural decline in skills when not practiced.</p>
+            <p class="t-body-md">Rather than rework the Readiness Score, I added a second number beside it: points, earned every game, that only ever go up. This way, even if a player's Readiness score fluctuates, they can still see their progress and feel rewarded for their effort.</p>
+          </div>
+        </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/4_TNBrainstorm.jpg" alt="Brainstorm board of sticky notes mapping out how Mastery, Points, and the leaderboard should be calculated, including gamification extras and open questions from stakeholders">
+          <figcaption class="t-caption">Some of the brainstorming I did with the founders to explore other ways of calculating player scores. Of course eventually the simplest option won out.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Design</h2>
+          <div class="cs-text">
+            <p class="t-body-md">I rebuilt the mobile leaderboard around points instead of Readiness, giving the top four spots visual emphasis to sharpen the competition at the top of a team. I also added graphs and other visualizations to help players see their performance over time.</p>
+          </div>
+        </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/5_TNNewScoring.jpg" alt="Redesigned mobile scoreboard showing the top-four spotlight with crowned first place, a player's cumulative points score and season rank, and a past weekly scores trend chart">
+          <figcaption class="t-caption">The new scoring system emphasizes cumulative points to keep players engaged over time. Readiness is still there but serves as a secondary metric for players. Everybody wants the high score.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Outcome</h2>
+          <div class="cs-text">
+            <p class="t-body-md">After launch, games played by top-performing players went up 3x. Across the full player base, games played rose 1.5x. The drop-off we'd watched hit teams as they plateaued stopped following the same curve — the number that had been discouraging play was no longer the one in front of players.</p>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Building on this</h2>
+          <div class="cs-text">
+            <p class="t-body-md">With more time, I'd give coaches direct control over the incentive layer, not just visibility into it. Right now points reward playing games generically, but coaches know their content better than any formula does. Letting them weight specific content or periodically reset scores to reopen the leaderboard for players who'd fallen behind would turn points into a coaching tool rather than just a player-facing motivator.<span class="dot"></span></p>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox project-figure--narrow container">
-      <img src="../images/2_TNScoring.jpg" alt="Marketing graphic showing coach content flowing into gamified drills on mobile, then into player results, with the tagline &quot;Anything you enter in Team Nation gets turned into games for your players&quot;">
-      <figcaption>Many of the coaches that adopted the platform reported a significant increase in player performance.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Problem</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The same story replayed each time we onboarded a team to our beta: games played per team climbed when a team first joined, then plateaued, then dropped off. When we asked coaches and players why, the answer was consistent — they felt punished for continuing to play. Readiness was an average, so a player who'd built up a high score could play another game, do fine, and still watch their score tick down. Once players caught on, the smart move was to stop playing the moment their score looked good. The leaderboard made it worse: with a 100% ceiling, the top players bunched into what looked like ten-way ties, which flattened any sense of competition.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/3_TNOldScoring.jpg" alt="Old scoring screens showing a New High Score moment where Readiness only rose 0.4 percent, next to an early whiteboard sketch of the scoring formula and a player progress screen stuck at 89 percent Readiness">
-      <figcaption>The original way of calculating player scores resulted in disinterest after a couple of weeks.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>The reasoning</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Readiness isn't supposed to only go up. It's a proxy for how well someone knows the material right now, and like any skill, that should slip when you stop practicing and climb when you keep at it. An average that can fall is doing exactly what a measure of current competency should do. The way Readiness was calculated and behaved was correct, it just wasn't the right thing to push players to chase. In fact, as part of this change, I added a decay to the Readiness calculation to better reflect the natural decline in skills when not practiced.</p>
-          <p>Rather than rework the Readiness Score, I added a second number beside it: points, earned every game, that only ever go up. This way, even if a player's Readiness score fluctuates, they can still see their progress and feel rewarded for their effort.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/4_TNBrainstorm.jpg" alt="Brainstorm board of sticky notes mapping out how Mastery, Points, and the leaderboard should be calculated, including gamification extras and open questions from stakeholders">
-      <figcaption>Some of the brainstorming I did with the founders to explore other ways of calculating player scores. Of course eventually the simplest option won out.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Design</h2>
-        </div>
-        <div class="project-body__block">
-          <p>I rebuilt the mobile leaderboard around points instead of Readiness, giving the top four spots visual emphasis to sharpen the competition at the top of a team. I also added graphs and other visualizations to help players see their performance over time.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/5_TNNewScoring.jpg" alt="Redesigned mobile scoreboard showing the top-four spotlight with crowned first place, a player's cumulative points score and season rank, and a past weekly scores trend chart">
-      <figcaption>The new scoring system emphasizes cumulative points to keep players engaged over time. Readiness is still there but serves as a secondary metric for players. Everybody wants the high score.</figcaption>
-    </figure>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Outcome</h2>
-        </div>
-        <div class="project-body__block">
-          <p>After launch, games played by top-performing players went up 3x. Across the full player base, games played rose 1.5x. The drop-off we'd watched hit teams as they plateaued stopped following the same curve — the number that had been discouraging play was no longer the one in front of players.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Building on this</h2>
-        </div>
-        <div class="project-body__block">
-          <p>With more time, I'd give coaches direct control over the incentive layer, not just visibility into it. Right now points reward playing games generically, but coaches know their content better than any formula does. Letting them weight specific content or periodically reset scores to reopen the leaderboard for players who'd fallen behind would turn points into a coaching tool rather than just a player-facing motivator.</p>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <hr class="rule rule--thin">
 
-    <section class="container">
+    <section class="cs-page">
       <div class="project-next">
         <span class="u-caption">Next project</span>
         <a class="project-next__link" href="easy-apply-k12.html">Easy Apply →</a>

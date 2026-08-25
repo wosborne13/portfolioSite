@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -21,129 +21,105 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </nav>
   </header>
 
   <main>
-    <section class="project-hero container">
-      <a class="back-link u-caption" href="../fun.html">← Back to Fun</a>
-      <h1 class="project-hero__title" style="margin-top: 1.5rem;">Checks &amp; Balances</h1>
-      <p class="u-lead">This is a speculative, satirical project which imagines a (perhaps not-so-distant)
-        future where political corruption is even more rampant and even more obvious than it is today.
-        Regular citizens must vote with their wallets in addition to at the ballots. As such, an app for
-        crowdfunded bribery is created, called Checks and Balances. Below is what a proposal for said app
-        would look like.</p>
+    <section class="cs-page">
+      <a class="back-link u-caption" href="../fun.html" style="margin-top: 1.5rem; display: inline-flex;">← Back to Fun</a>
+
+      <div class="cs-hero">
+        <h1 class="t-heading-lg">Checks &amp; Balances<span class="dot"></span></h1>
+        <p class="t-body-lg">This is a speculative, satirical project which imagines a (perhaps not-so-distant) future where political corruption is even more rampant and even more obvious than it is today. Regular citizens must vote with their wallets in addition to at the ballots. As such, an app for crowdfunded bribery is created, called Checks and Balances. Below is what a proposal for said app would look like.</p>
+      </div>
     </section>
 
     <hr class="rule">
 
-    <figure class="project-figure container">
-      <img src="../images/checksandbalances-hero.svg" alt="Abstract illustration of a balance scale weighing a ballot against a dollar bill">
-    </figure>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Meet Terry</h2>
+        <figure class="cs-full cs-figure">
+          <img src="../images/checksandbalances-hero.svg" alt="Abstract illustration of a balance scale weighing a ballot against a dollar bill">
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Meet Terry</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Terry is a working-class American who is really worried about an upcoming bill called the CASH Act. He has written letters to his senator, but hasn't gotten any responses. Terry isn't sure if they made it to his senator, or that his voice is being heard.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>Terry is a working-class American who is really worried about an upcoming bill called the
-            CASH Act. He has written letters to his senator, but hasn't gotten any responses. Terry isn't
-            sure if they made it to his senator, or that his voice is being heard.</p>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Meet Sen. McMonnell</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Senator McMonnell is Terry's senator. He has been in politics for longer than anyone can remember, which of course means he is trustworthy and reliable. He has so many voices clamoring for his attention that he hasn't had a chance to read Terry's letters, and is unaware of his concerns about the CASH Act.</p>
+          </div>
         </div>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Get connected</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Senator McMonnell, it's well known, is eager to listen to the will of his constituency — especially when they express their will through legal tender. So Terry downloads Checks &amp; Balances.</p>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">See representatives at every level of government</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Once registered, Terry can see a list of all of his representatives, can easily find his senator, and any upcoming votes.</p>
+          </div>
+        </div>
+
+        <figure class="cs-md cs-figure">
+          <img src="../images/checksandbalances-detail-a.svg" alt="Abstract list of representatives at every level of government, with the user's senator highlighted">
+          <figcaption class="t-caption">See representatives at every level of government.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Upcoming votes clearly labeled, with related information for voters</h2>
+          <div class="cs-text">
+            <p class="t-body-md">From here, Terry can view every bill &amp; issue Senator McMonnell is going to be voting on. He can also see how many votes each issue has, either for or against it.</p>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Easy voting, direct from a linked bank account</h2>
+          <div class="cs-text">
+            <p class="t-body-md">With instant transfers, Terry can vote in a matter of seconds! The more important an issue is, the more funds he can choose to vote with. Since the CASH Act will have a huge impact on him, he votes $150.00 towards yes.</p>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">See the progress</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Terry can monitor the issues he's voted on, and can even see each vote as it comes in. This helps him stay informed, educated, and gives him the satisfaction of knowing he participated in our glorious democracy!<span class="dot"></span></p>
+          </div>
+        </div>
+
+        <figure class="cs-md cs-figure">
+          <img src="../images/checksandbalances-detail-b.svg" alt="Abstract progress tracker showing votes for and against an issue accumulating in real time">
+          <figcaption class="t-caption">See the progress.</figcaption>
+        </figure>
+
       </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Meet Sen. McMonnell</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Senator McMonnell is Terry's senator. He has been in politics for longer than anyone can
-            remember, which of course means he is trustworthy and reliable. He has so many voices
-            clamoring for his attention that he hasn't had a chance to read Terry's letters, and is
-            unaware of his concerns about the CASH Act.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Get connected</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Senator McMonnell, it's well known, is eager to listen to the will of his constituency —
-            especially when they express their will through legal tender. So Terry downloads Checks &amp;
-            Balances.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>See representatives at every level of government</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Once registered, Terry can see a list of all of his representatives, can easily find his
-            senator, and any upcoming votes.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/checksandbalances-detail-a.svg" alt="Abstract list of representatives at every level of government, with the user's senator highlighted">
-        <figcaption>See representatives at every level of government</figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Upcoming votes clearly labeled, with related information for voters</h2>
-        </div>
-        <div class="project-body__block">
-          <p>From here, Terry can view every bill &amp; issue Senator McMonnell is going to be voting on.
-            He can also see how many votes each issue has, either for or against it.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Easy voting, direct from a linked bank account</h2>
-        </div>
-        <div class="project-body__block">
-          <p>With instant transfers, Terry can vote in a matter of seconds! The more important an issue
-            is, the more funds he can choose to vote with. Since the CASH Act will have a huge impact on
-            him, he votes $150.00 towards yes.</p>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>See the progress</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Terry can monitor the issues he's voted on, and can even see each vote as it comes in. This
-            helps him stay informed, educated, and gives him the satisfaction of knowing he participated
-            in our glorious democracy!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-inline-figure">
-        <img src="../images/checksandbalances-detail-b.svg" alt="Abstract progress tracker showing votes for and against an issue accumulating in real time">
-        <figcaption>See the progress</figcaption>
-      </figure>
-    </div>
+    </section>
 
     <hr class="rule rule--thin">
 
-    <section class="container">
+    <section class="cs-page">
       <div class="project-next">
         <span class="u-caption">Next project</span>
         <a class="project-next__link" href="birds-arent-real.html">Birds Aren't Real →</a>
       </div>
     </section>
   </main>
+
+  <script src="../main.js" defer></script>
 
   <footer class="site-footer">
     <hr class="rule rule--thin">

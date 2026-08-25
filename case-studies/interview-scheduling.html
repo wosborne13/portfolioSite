@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315130f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23d6371f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=IBM+Plex+Serif:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script src="../gate.js" defer></script>
 </head>
@@ -22,57 +22,68 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
+      <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </nav>
   </header>
 
   <main>
-    <section class="project-hero container">
-      <a class="back-link u-caption" href="../work.html">← Back to Work</a>
-      <p class="u-caption project-hero__kicker" style="margin-top: 1.5rem;">Frontline Education - Recruiting &amp; Hiring</p>
-      <h1 class="project-hero__title">Interview Scheduling</h1>
-      <p class="u-lead">Streamlining a very manual and time-intensive process into a single smooth flow.</p>
+    <section class="cs-page">
+      <a class="back-link u-caption" href="../work.html" style="margin-top: 1.5rem; display: inline-flex;">← Back to Work</a>
+
+      <div class="cs-hero">
+        <p class="t-heading-label" style="margin-top: 1.5rem;">Frontline Education - Recruiting &amp; Hiring</p>
+        <h1 class="t-heading-lg">Interview Scheduling<span class="dot"></span></h1>
+        <p class="t-body-lg">Streamlining a very manual and time-intensive process into a single smooth flow.</p>
+      </div>
     </section>
 
     <hr class="rule">
 
-    <section class="project-meta container">
-      <div>
-        <span class="u-caption project-meta__label">What I did</span>
-        <p class="project-meta__value">Led generative research, created a prototype using AI tooling, tested said prototype, and iterated until we had a polished solution.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">Why I did it</span>
-        <p class="project-meta__value">Scheduling interviews is one of the most time-consuming parts of the hiring process. The old version of Recruiting &amp; Hiring only partially addressed this, and solving it fully would drive adoption of the new version.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">When it went sideways</span>
-        <p class="project-meta__value">The first prototype was built on a coordination model no district actually uses. Two calls into the testing round, it was clear we had to rework our prototype and approach.</p>
-      </div>
-      <div>
-        <span class="u-caption project-meta__label">What changed</span>
-        <p class="project-meta__value">98% of districts on the new Recruiting &amp; Hiring now use the scheduler, compared to just under 60% using the legacy version equivalent. It's become a strong selling point.</p>
+    <section class="cs-page cs-section">
+      <div class="cs-overview">
+        <div>
+          <span class="t-heading-label cs-overview__label">What I did</span>
+          <p class="t-body-md">Led generative research, created a prototype using AI tooling, tested said prototype, and iterated until we had a polished solution.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">Why I did it</span>
+          <p class="t-body-md">Scheduling interviews is one of the most time-consuming parts of the hiring process. The old version of Recruiting &amp; Hiring only partially addressed this, and solving it fully would drive adoption of the new version.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">When it went sideways</span>
+          <p class="t-body-md">The first prototype was built on a coordination model no district actually uses. Two calls into the testing round, it was clear we had to rework our prototype and approach.</p>
+        </div>
+        <div>
+          <span class="t-heading-label cs-overview__label">What changed</span>
+          <p class="t-body-md">98% of districts on the new Recruiting &amp; Hiring now use the scheduler, compared to just under 60% using the legacy version equivalent. It's become a strong selling point.</p>
+        </div>
       </div>
     </section>
 
-    <figure class="project-figure project-figure--lightbox container">
-      <img src="../images/1_IntSchedHero.png" alt="Screenshot of the Recruiting & Hiring interview scheduler mid-flow, with four applicants selected on the left and a block of four interview windows set on the calendar on the right">
-      <figcaption>[Caption placeholder — the scheduler, mid-flow]</figcaption>
-    </figure>
+    <section class="cs-page">
+      <div class="cs-flow">
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Context</h2>
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/1_IntSchedHero.png" alt="Screenshot of the Recruiting & Hiring interview scheduler mid-flow, with four applicants selected on the left and a block of four interview windows set on the calendar on the right">
+          <figcaption class="t-caption">The scheduler, mid-flow.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Context</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Recruiting &amp; Hiring is Frontline's applicant tracking system, and it was being rebuilt from the ground up. In the new version, each job posting gets a hiring funnel made of configurable stages, and one of those stage types is Interview. It existed as a label and nothing more — districts could move an applicant into it, then had to leave the product entirely to do anything about it: phone calls, email, a calendar tool, etc.</p>
+            <p class="t-body-md">That mattered commercially. Roughly half the customers still on the legacy product used its interview management consistently, and a rebuild that couldn't do interviews gave them a reason not to move. This was first and foremost a migration blocker.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>Recruiting &amp; Hiring is Frontline's applicant tracking system, and it was being rebuilt from the ground up. In the new version, each job posting gets a hiring funnel made of configurable stages, and one of those stage types is Interview. It existed as a label and nothing more — districts could move an applicant into it, then had to leave the product entirely to do anything about it: phone calls, email, a calendar tool, etc.</p>
-          <p>That mattered commercially. Roughly half the customers still on the legacy product used its interview management consistently, and a rebuild that couldn't do interviews gave them a reason not to move. This was first and foremost a migration blocker.</p>
-        </div>
+
       </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -85,30 +96,32 @@
         <ul class="spread-viewer__slides" hidden>
         <li>
           <img src="../images/2_1_IntSchedStagesDiagram.png" alt="Diagram of a Recruiting & Hiring hiring funnel, showing applicants moving through Submitted, Initial Screening, Interview, and Supplemental Info stages toward Hired or Not Selected">
-          <p>[Caption placeholder — how the hiring funnel's stages work]</p>
+          <p>How the hiring funnel's stages work.</p>
         </li>
         <li>
           <img src="../images/2_2_IntSchedStagesHiFi.png" alt="Screenshot of the Recruiting & Hiring applicant list with a candidate selected, showing her application details next to an empty Interview Series panel with a Schedule Interview button">
-          <p>[Caption placeholder — where the Interview stage lived before this project]</p>
+          <p>Where the Interview stage lived before this project.</p>
         </li>
         </ul>
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Why Scheduling</h2>
+    <section class="cs-page">
+      <div class="cs-flow">
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Why Scheduling</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The work started with generative research across school districts. The PM on the project and I wrote up a research plan and met with customers to learn about their current process. We were looking to identify pain points and separate nice-to-haves from essentials. Districts didn't agree on what hurt most — one named room availability, another background check turnaround, another inconsistency between hiring managers. But scheduling kept coming back, and it sat upstream of most of the others.</p>
+            <p class="t-body-md">The typical story we were told was a coordinator works out who should conduct the interview, chases their availability by phone or email, then contacts applicants once there's a window. If things don't line up, or the interviewer drops, the whole sequence restarts. This amounts to a lot of manual, time-consuming work. My first thought was to integrate calendars into the product, however most districts don't have processes and infrastructure to make that useful.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>The work started with generative research across school districts. The PM on the project and I wrote up a research plan and met with customers to learn about their current process. We were looking to identify pain points and separate nice-to-haves from essentials. Districts didn't agree on what hurt most — one named room availability, another background check turnaround, another inconsistency between hiring managers. But scheduling kept coming back, and it sat upstream of most of the others.</p>
-          <p>The typical story we were told was a coordinator works out who should conduct the interview, chases their availability by phone or email, then contacts applicants once there's a window. If things don't line up, or the interviewer drops, the whole sequence restarts. This amounts to a lot of manual, time-consuming work. My first thought was to integrate calendars into the product, however most districts don't have processes and infrastructure to make that useful.</p>
-        </div>
+
       </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -121,112 +134,90 @@
         <ul class="spread-viewer__slides" hidden>
         <li>
           <img src="../images/3_1_IntSchedPostGenAct.png" alt="Research slide titled Problem Statement, summarizing that K-12 hiring teams struggle to schedule, conduct, and evaluate interviews consistently, with Known Challenges and Our Focus sections below">
-          <p>[Caption placeholder — the problem statement out of generative research]</p>
+          <p>The problem statement out of generative research.</p>
         </li>
         <li>
           <img src="../images/3_2_IntSchedPostGenAct.png" alt="Diagram of the current interview scheduling workflow, from manually determining the panel through checking availability, booking a room, contacting candidates, and confirming invites">
-          <p>[Caption placeholder — mapping the current, mostly manual workflow]</p>
+          <p>Mapping the current, mostly manual workflow.</p>
         </li>
         <li>
           <img src="../images/3_3_IntSchedPostGenAct.png" alt="Journey map for scheduling a single interview with one candidate, broken into steps, user actions, pain points, and opportunities across determining the panel, finding availability, and scheduling">
-          <p>[Caption placeholder — journey mapping a single interview scheduled]</p>
+          <p>Journey mapping a single interview scheduled.</p>
         </li>
         </ul>
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>AI Powered Prototype</h2>
+    <section class="cs-page">
+      <div class="cs-flow">
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">AI Powered Prototype</h2>
+          <div class="cs-text">
+            <p class="t-body-md">I looked at how scheduling works in other products to understand what conventions users might be used to, then built a clickable prototype in Lovable — intentionally rough, closer to a wireframe than a finished interface, since its job was to give district administrators something concrete to react to. Building it in an AI tool meant I could rebuild it between sessions instead of between rounds, which turned out to be important.</p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>I looked at how scheduling works in other products to understand what conventions users might be used to, then built a clickable prototype in Lovable — intentionally rough, closer to a wireframe than a finished interface, since its job was to give district administrators something concrete to react to. Building it in an AI tool meant I could rebuild it between sessions instead of between rounds, which turned out to be important.</p>
+
+        <figure class="cs-full cs-figure project-video">
+          <video controls preload="metadata">
+            <source src="../images/4_IntSchedFirstProtoClickthrough.mp4" type="video/mp4">
+          </video>
+          <figcaption class="t-caption">Clickthrough of the first prototype.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">When you assume...</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The first version of the prototype had the coordinator select interviewers and applicants on the same screen, poll everyone at once, and schedule wherever availability overlapped. The thought was to get both processes moving in parallel.</p>
+            <p class="t-body-md">After two calls I realized we had missed some key things in our initial round of discovery. Interviews are almost always conducted by a panel, and getting a panel into one room is difficult, so districts book a single block and run every candidate through it back to back. Districts aren't interested in catering to candidates. If one or more can't make the times that the interviewers are available, they're out of luck. Additionally, the person setting up interviews sometimes just tells the interviewers when to be there, and it's expected that they'll show up.</p>
+            <p class="t-body-md">A flow that required a poll would be dead weight for a meaningful share of the customer base. When interviewer availability was a consideration, it was a question of whether Monday or Tuesday worked better, not whether they were available at noon, one, or two. Thanks in part to the AI tooling, I was able to rebuild the prototype between sessions and tested the new version on the remaining districts.</p>
+          </div>
         </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/5_IntSchedWorkflows.png" alt="Diagram comparing the initial prototype flow, which polled interviewers and applicants for availability together, against the revised prototype flow, which locks interviewer availability before applicants are ever polled">
+          <figcaption class="t-caption">Old vs. new prototype flow.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">A quick fix</h2>
+          <div class="cs-text">
+            <p class="t-body-md">The new structure separated the steps: select interviewers and (optionally) poll their availability, select applicants, configure interview details (date, time, and location), set up confirmation emails, then review and send. This is where the scheduler's job ends. Applicants receive a link and book their own slot; once they do, the system sends confirmations to the applicant and the interviewers with a calendar file attached.</p>
+          </div>
+        </div>
+
+        <figure class="cs-full cs-figure project-video">
+          <video controls preload="metadata">
+            <source src="../images/6_IntSchedSecondProtoClickthrough.mp4" type="video/mp4">
+          </video>
+          <figcaption class="t-caption">Clickthrough of the rebuilt prototype.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">A New Problem</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Splitting the steps introduced an ambiguity I hadn't anticipated. Users now saw two calendars in one flow — one for polling interviewer availability, one showing the slots offered to applicants — and several read the first as scheduling the actual interviews.</p>
+            <p class="t-body-md">The fix was two-part: I replaced the tab structure with a stepper, so the sequence reads as a process with a position in it, and I hid the first calendar unless a user explicitly started a poll for interviewers. This allowed users who needed the poll to engage with it while allowing others to proceed without seeing a calendar interface they didn't actually need. The changes increased user clarity and the success rate of the test.</p>
+          </div>
+        </div>
+
+        <figure class="cs-full cs-figure project-figure--lightbox">
+          <img src="../images/7_IntSchedPollOptional.png" alt="Screenshot of the Schedule Interview modal's first step, showing interviewer selection and an optional Gather Interviewer Availability poll section below it">
+          <figcaption class="t-caption">The poll step made optional.</figcaption>
+        </figure>
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Technical Snag</h2>
+          <div class="cs-text">
+            <p class="t-body-md">Every district has interviewers outside the system — a co-op employee with a district email who isn't in the staff directory, a partner district's administrator on a panel, etc. Sending them emails and giving them access to the polling interface added a good deal of work for Engineering. I trimmed the experience down in order to release a usable version of the scheduler within the project timeline, and worked with Engineering and Product to work out a plan to release a complete version as a fast follow.</p>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-video">
-        <video controls preload="metadata">
-          <source src="../images/4_IntSchedFirstProtoClickthrough.mp4" type="video/mp4">
-        </video>
-        <figcaption>[Caption placeholder — clickthrough of the first prototype]</figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>When you assume...</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The first version of the prototype had the coordinator select interviewers and applicants on the same screen, poll everyone at once, and schedule wherever availability overlapped. The thought was to get both processes moving in parallel.</p>
-          <p>After two calls I realized we had missed some key things in our initial round of discovery. Interviews are almost always conducted by a panel, and getting a panel into one room is difficult, so districts book a single block and run every candidate through it back to back. Districts aren't interested in catering to candidates. If one or more can't make the times that the interviewers are available, they're out of luck. Additionally, the person setting up interviews sometimes just tells the interviewers when to be there, and it's expected that they'll show up.</p>
-          <p>A flow that required a poll would be dead weight for a meaningful share of the customer base. When interviewer availability was a consideration, it was a question of whether Monday or Tuesday worked better, not whether they were available at noon, one, or two. Thanks in part to the AI tooling, I was able to rebuild the prototype between sessions and tested the new version on the remaining districts.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-figure project-figure--lightbox">
-        <img src="../images/5_IntSchedWorkflows.png" alt="Diagram comparing the initial prototype flow, which polled interviewers and applicants for availability together, against the revised prototype flow, which locks interviewer availability before applicants are ever polled">
-        <figcaption>[Caption placeholder — old vs. new prototype flow]</figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>A quick fix</h2>
-        </div>
-        <div class="project-body__block">
-          <p>The new structure separated the steps: select interviewers and (optionally) poll their availability, select applicants, configure interview details (date, time, and location), set up confirmation emails, then review and send. This is where the scheduler's job ends. Applicants receive a link and book their own slot; once they do, the system sends confirmations to the applicant and the interviewers with a calendar file attached.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-video">
-        <video controls preload="metadata">
-          <source src="../images/6_IntSchedSecondProtoClickthrough.mp4" type="video/mp4">
-        </video>
-        <figcaption>[Caption placeholder — clickthrough of the rebuilt prototype]</figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>A New Problem</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Splitting the steps introduced an ambiguity I hadn't anticipated. Users now saw two calendars in one flow — one for polling interviewer availability, one showing the slots offered to applicants — and several read the first as scheduling the actual interviews.</p>
-          <p>The fix was two-part: I replaced the tab structure with a stepper, so the sequence reads as a process with a position in it, and I hid the first calendar unless a user explicitly started a poll for interviewers. This allowed users who needed the poll to engage with it while allowing others to proceed without seeing a calendar interface they didn't actually need. The changes increased user clarity and the success rate of the test.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <figure class="project-figure project-figure--lightbox">
-        <img src="../images/7_IntSchedPollOptional.png" alt="Screenshot of the Schedule Interview modal's first step, showing interviewer selection and an optional Gather Interviewer Availability poll section below it">
-        <figcaption>[Caption placeholder — the poll step made optional]</figcaption>
-      </figure>
-    </div>
-
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Technical Snag</h2>
-        </div>
-        <div class="project-body__block">
-          <p>Every district has interviewers outside the system — a co-op employee with a district email who isn't in the staff directory, a partner district's administrator on a panel, etc. Sending them emails and giving them access to the polling interface added a good deal of work for Engineering. I trimmed the experience down in order to release a usable version of the scheduler within the project timeline, and worked with Engineering and Product to work out a plan to release a complete version as a fast follow.</p>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <section class="spread-viewer-band">
-      <div class="spread-viewer spread-viewer--fixed-aspect container">
+      <div class="spread-viewer spread-viewer--fixed-aspect cs-page">
         <div class="spread-viewer__stage">
           <figure class="spread-viewer__frame">
             <img class="spread-viewer__img" src="" alt="">
@@ -239,38 +230,40 @@
         <ul class="spread-viewer__slides" hidden>
         <li>
           <img src="../images/8_1_IntSchedFirstVer.png" alt="Screenshot of the early prototype's Interview Details step, showing applicants and interviewers selected together on one screen alongside a calendar for setting interview windows">
-          <p>[Caption placeholder — early version, step 1]</p>
+          <p>Early version, step 1.</p>
         </li>
         <li>
           <img src="../images/8_2_IntSchedFirstVer.png" alt="Screenshot of the early prototype's calendar and location fields, with a four-window interview block set and a site address and room entered">
-          <p>[Caption placeholder — early version, step 2]</p>
+          <p>Early version, step 2.</p>
         </li>
         <li>
           <img src="../images/8_3_IntSchedFirstVer.png" alt="Screenshot of the early prototype's Confirmation Emails step, showing the applicant confirmation email template with recipients, subject, and body populated with merge tokens">
-          <p>[Caption placeholder — early version, step 3]</p>
+          <p>Early version, step 3.</p>
         </li>
         <li>
           <img src="../images/8_4_IntSchedFirstVer.png" alt="Screenshot of the early prototype's Review & Send Invitations step, showing the confirmed interview series details and a Send Interview Invitation to Applicants button">
-          <p>[Caption placeholder — early version, step 4]</p>
+          <p>Early version, step 4.</p>
         </li>
         </ul>
       </div>
     </section>
 
-    <div class="container">
-      <div class="project-body">
-        <div class="project-body__block">
-          <h2>Outcome</h2>
+    <section class="cs-page">
+      <div class="cs-flow">
+
+        <div class="cs-row">
+          <h2 class="cs-label t-heading-sm">Outcome</h2>
+          <div class="cs-text">
+            <p class="t-body-md">98% of districts on the new Recruiting &amp; Hiring are using the interview scheduler — close to universal adoption among the districts who have it. The old process, whether using the old R&amp;H feature or some other solution, involved a lot of manual steps and time. The new process automates everything possible and vastly reduces the time scheduling takes on average. In testing, districts estimated this would take scheduling from a multi-hour task down to under half an hour. It also moved sales conversations, which was the original business case — the feature exists because its absence was a reason for legacy customers to stay put.<span class="dot"></span></p>
+          </div>
         </div>
-        <div class="project-body__block">
-          <p>98% of districts on the new Recruiting &amp; Hiring are using the interview scheduler — close to universal adoption among the districts who have it. The old process, whether using the old R&amp;H feature or some other solution, involved a lot of manual steps and time. The new process automates everything possible and vastly reduces the time scheduling takes on average. In testing, districts estimated this would take scheduling from a multi-hour task down to under half an hour. It also moved sales conversations, which was the original business case — the feature exists because its absence was a reason for legacy customers to stay put.</p>
-        </div>
+
       </div>
-    </div>
+    </section>
 
     <hr class="rule rule--thin">
 
-    <section class="container">
+    <section class="cs-page">
       <div class="project-next">
         <span class="u-caption">Next project</span>
         <a class="project-next__link" href="k12-migration-redesign.html">User Migration Redesign →</a>
