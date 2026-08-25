@@ -1681,7 +1681,7 @@ html.gate-page:not(.is-unlocked) .site-footer {
   display: block;
   width: 100%;
   height: auto;
-  background: var(--color-surface);
+  background: transparent;
 }
 .cs-figure--lightbox img {
   cursor: zoom-in;
