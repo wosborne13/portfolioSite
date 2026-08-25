@@ -1712,6 +1712,16 @@ html.gate-page:not(.is-unlocked) .site-footer {
   padding-block: clamp(2rem, 5vw, 3.5rem);
 }
 
+/* Bottom-only variant: the last .cs-flow section on a case-study page
+   sits flush against the closing "Next project" rule with no padding
+   of its own (its neighbor above already handles the overview→flow
+   gap via .cs-section's top padding, so a plain .cs-section here would
+   double that gap). This adds matching breathing room below the final
+   figure/caption without touching the top. */
+.cs-section--bottom {
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
 /* ---------- figures ---------- */
 /* margin-block only — margin-inline is owned by the width utility
    classes above (.cs-full/.cs-narrow/.cs-md) and must not be reset
