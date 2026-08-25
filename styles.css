@@ -924,6 +924,10 @@ a {
 .spread-viewer-band {
   background: var(--color-surface);
   padding-block: clamp(2.5rem, 6vw, 4rem);
+  /* Margin (not padding) so the breathing room above/below the band
+     shows the page's lighter --color-bg instead of extending the
+     band's own darker --color-surface fill. */
+  margin-block: var(--cs-row-gap);
 }
 
 .spread-viewer__stage {
@@ -980,6 +984,9 @@ a {
   max-width: 52ch;
   text-align: left;
   color: var(--color-ink);
+  /* Every other caption on the site (.t-caption) is set in the sans
+     display face; this one was falling back to the serif body font. */
+  font-family: var(--font-display);
 }
 
 .spread-viewer__caption p {
@@ -1266,6 +1273,9 @@ body.zoom-open {
   justify-content: space-between;
   gap: 0.75rem 1rem;
   padding-block: clamp(2rem, 5vw, 3rem);
+  /* Extra room below the "Next project" link before the footer's own
+     rule/padding starts, so content doesn't run straight into it. */
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .project-next__link {
@@ -1285,8 +1295,21 @@ body.zoom-open {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
+  margin-top: 1.5rem;
   text-decoration: none;
   font-weight: 700;
+}
+
+/* .cs-hero's own padding-top exists for pages where it opens the page
+   directly; every current case-study/fun page instead precedes it with
+   a .back-link, whose line height + margin-top already separates it
+   from the nav above, so stacking cs-hero's full padding-top on top of
+   that reads as an oversized gap before the title. Trim it down here
+   rather than lowering .back-link's margin (which would crowd it
+   against the nav) or .cs-hero's own padding (which still needs to
+   pull its weight on a hypothetical back-link-less page). */
+.back-link + .cs-hero {
+  padding-top: clamp(0.5rem, 2vw, 1rem);
 }
 
 .back-link:hover {
@@ -1564,7 +1587,20 @@ html.gate-page:not(.is-unlocked) .site-footer {
 .t-body-md:last-child { margin-bottom: 0; }
 .t-body-sm { font-family: var(--font-body); font-weight: 400; font-size: var(--t-body-sm); line-height: 1.6; margin: 0; }
 .t-body-xs { font-family: var(--font-body); font-weight: 400; font-size: var(--t-body-xs); line-height: 1.5; margin: 0; }
-.t-caption { font-family: var(--font-display); font-weight: 400; font-size: var(--t-caption); letter-spacing: 0.01em; margin: 0.75rem 0 0; color: var(--color-muted); }
+/* Capped to the same measure as the body-text column (.cs-text, 4 of 8
+   cols) and centered, regardless of how wide its own figure is — a
+   caption under a cs-full image shouldn't run the full image width.
+   Sized in cqw against .cs-flow (the shared ancestor every figure width
+   variant shares) rather than the caption's own parent, since that
+   parent's width varies by figure variant (cs-full/md/narrow) while the
+   target measure doesn't. */
+.t-caption { font-family: var(--font-display); font-weight: 400; font-size: var(--t-caption); letter-spacing: 0.01em; margin: 0.75rem auto 0; max-width: calc(50cqw - 12px); color: var(--color-muted); }
+
+@media (max-width: 768px) {
+  /* .cs-row's text column and the cs-md/cs-narrow figures both go
+     full-width below this breakpoint, so the caption should too. */
+  .t-caption { max-width: none; }
+}
 
 /* ---------- grid system ---------- */
 .cs-page {
@@ -1592,6 +1628,10 @@ html.gate-page:not(.is-unlocked) .site-footer {
   display: flex;
   flex-direction: column;
   gap: var(--cs-row-gap);
+  /* Query container for .t-caption's cqw-based max-width below — lets a
+     caption size itself off .cs-flow's width even when its immediate
+     parent figure is narrower (cs-md/cs-narrow). */
+  container-type: inline-size;
 }
 
 /* .cs-row: a label + text pair.
