@@ -1469,11 +1469,20 @@ html.gate-page:not(.is-unlocked) .site-footer {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   padding: var(--container-pad);
   background: rgba(237, 231, 220, 0.45);
   z-index: 5;
+}
+
+.gate-teaser__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  text-align: center;
 }
 
 .gate-teaser.is-unlocked .gate-teaser__overlay {
