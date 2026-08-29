@@ -69,6 +69,7 @@
         <!-- image-wide: hero screenshot -->
         <figure class="cs-full cs-figure project-figure--lightbox">
           <img src="../images/1_K12JSHero.png" alt="Screenshot of K12JobSpot's job search results page with a High School Mathematics Teacher listing open, showing Easy Apply and View Details buttons">
+          <figcaption class="t-caption">K12JobSpot allows users to quickly find and apply to jobs on any device.</figcaption>
         </figure>
 
         <div class="cs-row">
@@ -133,9 +134,14 @@
 
         <!-- image-wide: device mockup, hero-style -->
         <figure class="cs-full cs-figure">
-          <video autoplay loop muted playsinline aria-label="Mockup of the Easy Apply application form on laptop and mobile, showing Personal Details fields pulled from a job seeker's saved profile">
-            <source src="../images/5_K12JS_ApplyProcess.mp4" type="video/mp4">
-          </video>
+          <div class="autoplay-video">
+            <video autoplay loop muted playsinline preload="metadata" aria-label="Mockup of the Easy Apply application form on laptop and mobile, showing Personal Details fields pulled from a job seeker's saved profile">
+              <source src="../images/5_K12JS_ApplyProcess.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="autoplay-video__play" aria-label="Play video" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
           <figcaption class="t-caption">In under a minute, a job seeker with a robust profile can submit detailed applications to as many positions as they like.</figcaption>
         </figure>
 
@@ -148,7 +154,7 @@
 
         <!-- image-wide: full screenshot -->
         <figure class="cs-full cs-figure project-figure--lightbox">
-          <img src="../images/6_K12JS_EmptyApplications_TheTradeoff.png" alt="Placeholder slide reading &quot;Gif of someone applying to 3 jobs&quot; above a screenshot of K12JobSpot's job search results">
+          <img src="../images/6_K12JS_EmptyApplications_TheTradeoff.png" alt="K12JobSpot's Apply form for a High School Mathematics Teacher position shown on laptop and mobile, with an empty Personal Details section, a sidebar listing profile categories, and no work history added yet">
           <figcaption class="t-caption">The only downside to this approach is the initial overhead of building a comprehensive profile, but that's a one-time investment that pays off with each subsequent application.</figcaption>
         </figure>
 

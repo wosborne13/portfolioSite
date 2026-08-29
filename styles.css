@@ -1762,6 +1762,50 @@ html.gate-page:not(.is-unlocked) .site-footer {
 .cs-figure--lightbox img:hover { opacity: 0.85; }
 
 /* -------------------------------------------------- */
+/* Autoplay video with fallback play button            */
+/* The video loops muted by default; the button only    */
+/* appears when playback has stopped (autoplay blocked, */
+/* reduced-motion, or a manual pause).                  */
+/* -------------------------------------------------- */
+.autoplay-video {
+  position: relative;
+  line-height: 0;
+}
+.autoplay-video video { cursor: pointer; }
+.autoplay-video__play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(3.25rem, 8vw, 4.25rem);
+  height: clamp(3.25rem, 8vw, 4.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(21, 19, 15, 0.72);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.autoplay-video__play:hover {
+  background: var(--color-accent);
+  transform: scale(1.05);
+}
+.autoplay-video__play:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+.autoplay-video__play[hidden] { display: none; }
+.autoplay-video__play svg {
+  width: 46%;
+  height: 46%;
+  fill: currentColor;
+  margin-left: 8%; /* optically centre the triangle in the circle */
+}
+
+/* -------------------------------------------------- */
 /* Mobile nav (<=640px)                                 */
 /* -------------------------------------------------- */
 .nav__burger {

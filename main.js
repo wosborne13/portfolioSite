@@ -599,3 +599,40 @@ document.querySelectorAll(".zoom-figure__trigger").forEach((trigger) => {
   if (triggerImg) triggerImg.draggable = false;
   trigger.addEventListener("click", () => openZoomViewer(trigger));
 });
+
+/* -------------------------------------------------- */
+/* Autoplay video with fallback play button            */
+/* -------------------------------------------------- */
+document.querySelectorAll(".autoplay-video").forEach((wrap) => {
+  const video = wrap.querySelector("video");
+  const button = wrap.querySelector(".autoplay-video__play");
+  if (!video || !button) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // The button is shown only while playback is stopped.
+  const setStopped = (stopped) => { button.hidden = !stopped; };
+
+  const play = () => {
+    const attempt = video.play();
+    if (attempt && typeof attempt.catch === "function") attempt.catch(() => setStopped(true));
+  };
+
+  video.addEventListener("playing", () => setStopped(false));
+  video.addEventListener("pause", () => setStopped(true));
+  video.addEventListener("ended", () => setStopped(true));
+
+  button.addEventListener("click", play);
+  video.addEventListener("click", () => {
+    if (video.paused) play();
+    else video.pause();
+  });
+
+  if (reduceMotion) {
+    video.removeAttribute("autoplay");
+    video.pause();
+    setStopped(true);
+  } else {
+    play();
+  }
+});
